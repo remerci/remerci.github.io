@@ -1,305 +1,41 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-lang="en" xml:lang="en">
-<head>
-<title>赵鑫的org-mode笔记</title>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-<meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2010-09-14 17:10:49 CST"/>
-<meta name="author" content="Zhao Xin"/>
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
-  html { font-family: Times, serif; font-size: 12pt; }
-  .title  { text-align: center; }
-  .todo   { color: red; }
-  .done   { color: green; }
-  .tag    { background-color:lightblue; font-weight:normal }
-  .target { }
-  .timestamp { color: grey }
-  .timestamp-kwd { color: CadetBlue }
-  p.verse { margin-left: 3% }
-  pre {
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-	font-family: courier, monospace;
-        font-size: 90%;
-        overflow:auto;
-  }
-  table { border-collapse: collapse; }
-  td, th { vertical-align: top; }
-  dt { font-weight: bold; }
-  div.figure { padding: 0.5em; }
-  div.figure p { text-align: center; }
-  .linenr { font-size:smaller }
-  .code-highlighted {background-color:#ffff00;}
-  .org-info-js_info-navigation { border-style:none; }
-  #org-info-js_console-label { font-size:10px; font-weight:bold;
-                               white-space:nowrap; }
-  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-                                 font-weight:bold; }
-  /*]]>*/-->
-</style><link rel="stylesheet"
-                href="spring.css"
-                type="text/css">
-<script type="text/javascript">
-<!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*/-->
-</script>
-</head><body>
-<h1 class="title">赵鑫的org-mode笔记</h1>
+---
+layout: page
+description: "陈素封"
+---
 
+{% for post in paginator.posts %}
+<div class="post-preview">
+    <a href="{{ post.url | prepend: site.baseurl }}">
+        <h2 class="post-title">            
+            {{ post.title }}
+        </h2>
+        {% if post.subtitle %}
+        <h3 class="post-subtitle">
+            {{ post.subtitle }}
+        </h3>
+        {% endif %}
+        <div class="post-content-preview">
+            {{ post.content | strip_html | truncate:150 }}
+        </div>
+    </a>
+    <p class="post-meta">Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}</p>
+</div>
 
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">常用笔记： </a></li>
-<li><a href="#sec-2">已完成笔记： </a></li>
-<li><a href="#sec-3">elisp tutorial</a></li>
-<li><a href="#sec-4">如何做笔记</a>
-<ul>
-<li><a href="#sec-4.1">几个软件的配合 </a></li>
-<li><a href="#sec-4.2">高效率工具 </a></li>
-<li><a href="#sec-4.3">linux distro </a></li>
+<hr>
+{% endfor %}
+
+<!-- Pager -->
+{% if paginator.total_pages > 1 %}
+<ul class="pager">
+    {% if paginator.previous_page %}
+    <li class="previous">
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+    </li>
+    {% endif %}
+    {% if paginator.next_page %}
+    <li class="next">
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+    </li>
+    {% endif %}
 </ul>
-</li>
-<li><a href="#sec-5">linux内核情景分析</a></li>
-<li><a href="#sec-6">Slice</a>
-<ul>
-<li><a href="#sec-6.1">at命令</a></li>
-<li><a href="#sec-6.2">bash</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1">常用笔记： </h2>
-<div id="text-1">
-
-
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<col align="left"></col><col align="left"></col><col align="left"></col>
-<tbody>
-<tr><td><a href="./todo.html">todo</a></td><td><a href="./memo.html">memo</a></td><td><a href="#journal.org">journal</a></td></tr>
-</tbody>
-</table>
-
-
-</div>
-
-</div>
-
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2">已完成笔记： </h2>
-<div id="text-2">
-
-
-<ul>
-<li>
-<a href="./org.html">Org-mode</a> <a href="./part-resize.html">关于分区大小调整和备份</a>
-
-</li>
-<li>
-<a href="./thesis.html">My Thesis</a>
-
-</li>
-<li>
-<a href="./self-control.html">关于自律</a>
-
-</li>
-</ul>
-</div>
-
-</div>
-
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3">elisp tutorial &nbsp;&nbsp;&nbsp;<span class="tag">elisp</span></h2>
-<div id="text-3">
-
-<p>(set 'num 7)  ;给变量num赋值7
-(set 'num (+ num 1))  ;num=num+1
-</p>
-<p>
-defun定义函数，最多可有5个参数。有可选的interactive参数才能M-x或设置快捷键。
-</p>
-<p>
-defun中常用到的其它 special form: if, let, save-excursion
-</p>
-<p>
-<i>&lt;info:eintr:append-to-buffer&gt;</i>
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-4" class="outline-2">
-<h2 id="sec-4">如何做笔记 &nbsp;&nbsp;&nbsp;<span class="tag">soft&nbsp;thinking_in_notes&nbsp;efficiency</span></h2>
-<div id="text-4">
-
-<dl>
-<dt>软件</dt><dd>
-osmo, sunbird, zim, org-mode, tomboy, basket, muse, viki
-
-</dd>
-</dl>
-
-</div>
-
-<div id="outline-container-4.1" class="outline-3">
-<h3 id="sec-4.1">几个软件的配合 </h3>
-<div id="text-4.1">
-
-<ul>
-<li>
-launchy, runny plugin for script
-</li>
-<li>
-autohotkey
-</li>
-<li>
-firefox &amp; todoist
-</li>
-<li>
-gmail 发布消息到 blog 并接收反馈提醒
-
-</li>
-</ul>
-</div>
-
-</div>
-
-<div id="outline-container-4.2" class="outline-3">
-<h3 id="sec-4.2">高效率工具 </h3>
-<div id="text-4.2">
-
-<ul>
-<li>
-awesome, screenwm
-</li>
-<li>
-elinks, mutt
-</li>
-<li>
-gnu freetalk fama-im / twitter 机器人 / remember the milk 机器人
-</li>
-<li>
-firefox ubiquity/ mac quicksilver
-</li>
-<li>
-command: units, bc, cal, dict, display, cdrecord, apvlv(pdf)
-</li>
-<li>
-sed/awk, wget/curl
-</li>
-<li>
-cron, screen, expect
-</li>
-<li>
-make scrpit
-
-</li>
-</ul>
-</div>
-
-</div>
-
-<div id="outline-container-4.3" class="outline-3">
-<h3 id="sec-4.3">linux distro </h3>
-<div id="text-4.3">
-
-<ul>
-<li>
-gentoo, arch, debian, bsd
-
-</li>
-</ul>
-</div>
-</div>
-
-</div>
-
-<div id="outline-container-5" class="outline-2">
-<h2 id="sec-5">linux内核情景分析 &nbsp;&nbsp;&nbsp;<span class="tag">kernel</span></h2>
-<div id="text-5">
-
-
-<ul>
-<li>
-微内核：仅提供进程间通信功能，其它内核功能用进程实现。
-
-</li>
-<li>
-宏内核：文件系统，内存管理，进程管理等。
-
-</li>
-</ul>
-</div>
-
-</div>
-
-<div id="outline-container-6" class="outline-2">
-<h2 id="sec-6">Slice &nbsp;&nbsp;&nbsp;<span class="tag">slice</span></h2>
-<div id="text-6">
-
-
-</div>
-
-<div id="outline-container-6.1" class="outline-3">
-<h3 id="sec-6.1">at命令 &nbsp;&nbsp;&nbsp;<span class="tag">at</span></h3>
-<div id="text-6.1">
-
-<p>以前 at 命令始终无法生效，昨天终于知道原因了。
-</p>
-<p>
-先是发现 touch 一个新文件是可以成功的，可见 at 命令的机制是成功的，执行 gedit 等不成功感觉与可视窗口有关。
-后发现在 10.04 上 at 命令的出错发信机制是成功的，看到 mail 后进一步明确这点。
-尝试在 gedit 前加上 export DISPLAY=:0.0, 终于可以成功了。
-</p></div>
-
-</div>
-
-<div id="outline-container-6.2" class="outline-3">
-<h3 id="sec-6.2">bash &nbsp;&nbsp;&nbsp;<span class="tag">bash</span></h3>
-<div id="text-6.2">
-
-
-<p>
-shell脚本中对空格有严格的规定。如变量赋值，在=前后不能有空格。而test命令 [] 必须有空格隔开操作符。
-</p>
-<p>
-<a href="//data/doc/program/shell/guide-bash-beginners-cn/ch07.html">第 7 章 条件语句</a>
-</p>
-
-
-</div>
-</div>
-</div>
-<div id="postamble"><p class="author"> Author: Zhao Xin
-<a href="mailto:zhaoxin_remerci@gmail.com">&lt;zhaoxin_remerci@gmail.com&gt;</a>
-</p>
-<p class="date"> Date: 2010-09-14 17:10:49 CST</p>
-<p>HTML generated by org-mode 6.21b in emacs 23</p>
-</div></body>
-</html>
+{% endif %}
