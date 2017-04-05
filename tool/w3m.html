@@ -1,0 +1,991 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2017-01-18 三 23:11 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>w3m 使用</title>
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="remerci" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+ <link rel='stylesheet' href='/windata/notes/publish/org_notes/public_html/Acss/main.css' type='text/css'/> 
+
+    <link rel="stylesheet" type="text/css" href="/windata/notes/publish/org_notes/public_html/Acss/prettify.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="preamble" class="status">
+<div class='nav'>
+<ul>
+<li><a href='http://remerci.com'>博客</a></li>
+<li><a href='/windata/notes/publish/org_notes/public_html/index.html'>Wiki目录</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<h1 class="title">w3m 使用</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgheadline1">0.1. 查看 manual 后收获：</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline12">1. w3m 操作指南</a>
+<ul>
+<li><a href="#orgheadline2">1.1. 页面操作</a></li>
+<li><a href="#orgheadline3">1.2. 超链接操作</a></li>
+<li><a href="#orgheadline4">1.3. 文件/流 操作</a></li>
+<li><a href="#orgheadline5">1.4. 缓存操作</a></li>
+<li><a href="#orgheadline6">1.5. 缓存选择模式（也就是按了 s 以後）</a></li>
+<li><a href="#orgheadline7">1.6. 书签操作</a></li>
+<li><a href="#orgheadline8">1.7. 搜索</a></li>
+<li><a href="#orgheadline9">1.8. 标记</a></li>
+<li><a href="#orgheadline10">1.9. 杂项</a></li>
+<li><a href="#orgheadline11">1.10. 行编辑模式</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline13">2. emacs-w3m 使用</a></div>
+</div>
+
+<div id="orgheadline1" class="outline-3">
+<h3 id="orgheadline1"><span class="section-number-3">0.1</span> 查看 manual 后收获：</h3>
+<div class="outline-text-3" id="text-0-1">
+<ul class="org-ul">
+<li>由 html 转成 txt：<br  /></li>
+</ul>
+
+<p>
+cat a.html | w3m -dump -T text/html &gt;a.txt<br  />
+</p>
+
+<ul class="org-ul">
+<li>.w3m/keymap 文件可以个性化键设定<br  /></li>
+</ul>
+</div>
+</div>
+
+<div id="orgheadline12" class="outline-2">
+<h2 id="orgheadline12"><span class="section-number-2">1</span> w3m 操作指南</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="orgheadline2" class="outline-3">
+<h3 id="orgheadline2"><span class="section-number-3">1.1</span> 页面操作</h3>
+<div class="outline-text-3" id="text-1-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&gt;</th>
+<th scope="col" class="org-left">右移一屏</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">&lt;</th>
+<th scope="col" class="org-left">左移一屏</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">TAB</th>
+<th scope="col" class="org-left">转到下个超链接</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">C-u,ESC TAB</th>
+<th scope="col" class="org-left">到上个超链接</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">[</th>
+<th scope="col" class="org-left">到第一个超链接</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">]</th>
+<th scope="col" class="org-left">到最後一个超链接</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">SPC,C-v</td>
+<td class="org-left">向下翻页</td>
+</tr>
+
+<tr>
+<td class="org-left">b,ESC v</td>
+<td class="org-left">向上翻页</td>
+</tr>
+
+<tr>
+<td class="org-left">l,C-f</td>
+<td class="org-left">焦点向右</td>
+</tr>
+
+<tr>
+<td class="org-left">h,C-b</td>
+<td class="org-left">焦点向左</td>
+</tr>
+
+<tr>
+<td class="org-left">j,C-n</td>
+<td class="org-left">焦点向下</td>
+</tr>
+
+<tr>
+<td class="org-left">k,C-p</td>
+<td class="org-left">焦点向上</td>
+</tr>
+
+<tr>
+<td class="org-left">J</td>
+<td class="org-left">向下滚动一行</td>
+</tr>
+
+<tr>
+<td class="org-left">K</td>
+<td class="org-left">向上滚动一行</td>
+</tr>
+
+<tr>
+<td class="org-left">^,C-a</td>
+<td class="org-left">到行首</td>
+</tr>
+
+<tr>
+<td class="org-left">$,C-e</td>
+<td class="org-left">到行尾</td>
+</tr>
+
+<tr>
+<td class="org-left">w</td>
+<td class="org-left">到下一个单词</td>
+</tr>
+
+<tr>
+<td class="org-left">W</td>
+<td class="org-left">到上一个单词</td>
+</tr>
+
+<tr>
+<td class="org-left">.</td>
+<td class="org-left">屏幕右移一列</td>
+</tr>
+
+<tr>
+<td class="org-left">,</td>
+<td class="org-left">屏幕左移一列</td>
+</tr>
+
+<tr>
+<td class="org-left">g,M-&lt;</td>
+<td class="org-left">到首行</td>
+</tr>
+
+<tr>
+<td class="org-left">G,M-&gt;</td>
+<td class="org-left">到末行</td>
+</tr>
+
+<tr>
+<td class="org-left">ESC g</td>
+<td class="org-left">到指定行</td>
+</tr>
+
+<tr>
+<td class="org-left">Z</td>
+<td class="org-left">当前行居中</td>
+</tr>
+
+<tr>
+<td class="org-left">z</td>
+<td class="org-left">当前列居中</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="orgheadline3" class="outline-3">
+<h3 id="orgheadline3"><span class="section-number-3">1.2</span> 超链接操作</h3>
+<div class="outline-text-3" id="text-1-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">L, f</th>
+<th scope="col" class="org-left">follow link</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">a, ESC RET</th>
+<th scope="col" class="org-left">链接另存为</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">u</th>
+<th scope="col" class="org-left">查看链接 url</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">i</th>
+<th scope="col" class="org-left">查看图片 url</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">I</th>
+<th scope="col" class="org-left">查看图片</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">ESC I</th>
+<th scope="col" class="org-left">图片另存为</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">:</th>
+<th scope="col" class="org-left">标记 url 字符串为锚点</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">ESC :</th>
+<th scope="col" class="org-left">标记 ID 串为锚点</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">c</th>
+<th scope="col" class="org-left">查看当前页面的 URL</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">=</th>
+<th scope="col" class="org-left">显示当前页面属性</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">C-g</th>
+<th scope="col" class="org-left">查看当前行号</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">C-h</th>
+<th scope="col" class="org-left">查看历史记录</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">F</th>
+<th scope="col" class="org-left">提交表单</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">M</th>
+<th scope="col" class="org-left">用外部浏览器打开当前页面</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">ESC M</th>
+<th scope="col" class="org-left">用外部浏览器打开链接</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">RET</td>
+<td class="org-left">打开超链接</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="orgheadline4" class="outline-3">
+<h3 id="orgheadline4"><span class="section-number-3">1.3</span> 文件/流 操作</h3>
+<div class="outline-text-3" id="text-1-3">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">V</th>
+<th scope="col" class="org-left">打开文件</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">@</th>
+<th scope="col" class="org-left">执行外部命令并导入</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">#</th>
+<th scope="col" class="org-left">执行外部命令并浏览</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">U</td>
+<td class="org-left">打开 url</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="orgheadline5" class="outline-3">
+<h3 id="orgheadline5"><span class="section-number-3">1.4</span> 缓存操作</h3>
+<div class="outline-text-3" id="text-1-4">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">C-l</th>
+<th scope="col" class="org-left">重画屏幕</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">B</td>
+<td class="org-left">返回</td>
+</tr>
+
+<tr>
+<td class="org-left">v</td>
+<td class="org-left">查看源代码</td>
+</tr>
+
+<tr>
+<td class="org-left">s</td>
+<td class="org-left">选择缓存</td>
+</tr>
+
+<tr>
+<td class="org-left">E</td>
+<td class="org-left">编辑缓存代码</td>
+</tr>
+
+<tr>
+<td class="org-left">R</td>
+<td class="org-left">刷新</td>
+</tr>
+
+<tr>
+<td class="org-left">S</td>
+<td class="org-left">页面另存为</td>
+</tr>
+
+<tr>
+<td class="org-left">ESC s</td>
+<td class="org-left">源码另存为</td>
+</tr>
+
+<tr>
+<td class="org-left">ESC e</td>
+<td class="org-left">编辑图片</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="orgheadline6" class="outline-3">
+<h3 id="orgheadline6"><span class="section-number-3">1.5</span> 缓存选择模式（也就是按了 s 以後）</h3>
+<div class="outline-text-3" id="text-1-5">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">k,C-p</td>
+<td class="org-left">上一缓存</td>
+</tr>
+
+<tr>
+<td class="org-left">j,C-n</td>
+<td class="org-left">下一缓存</td>
+</tr>
+
+<tr>
+<td class="org-left">D</td>
+<td class="org-left">删除当前缓存</td>
+</tr>
+
+<tr>
+<td class="org-left">RET</td>
+<td class="org-left">转至选择的缓存</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="orgheadline7" class="outline-3">
+<h3 id="orgheadline7"><span class="section-number-3">1.6</span> 书签操作</h3>
+<div class="outline-text-3" id="text-1-6">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">ESC b</td>
+<td class="org-left">打开书签</td>
+</tr>
+
+<tr>
+<td class="org-left">ESC a</td>
+<td class="org-left">添加当前页到书签</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="orgheadline8" class="outline-3">
+<h3 id="orgheadline8"><span class="section-number-3">1.7</span> 搜索</h3>
+<div class="outline-text-3" id="text-1-7">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">/,C-s</td>
+<td class="org-left">向前搜索</td>
+</tr>
+
+<tr>
+<td class="org-left">?,C-r</td>
+<td class="org-left">向後搜索</td>
+</tr>
+
+<tr>
+<td class="org-left">n</td>
+<td class="org-left">下一个</td>
+</tr>
+
+<tr>
+<td class="org-left">N</td>
+<td class="org-left">上一个</td>
+</tr>
+
+<tr>
+<td class="org-left">C-w</td>
+<td class="org-left">打开/关闭,循环搜索</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="orgheadline9" class="outline-3">
+<h3 id="orgheadline9"><span class="section-number-3">1.8</span> 标记</h3>
+<div class="outline-text-3" id="text-1-8">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">C-SPC</td>
+<td class="org-left">设定/取消标记（好像这个键一般被输入法占用了）</td>
+</tr>
+
+<tr>
+<td class="org-left">ESC p</td>
+<td class="org-left">转至上一标记</td>
+</tr>
+
+<tr>
+<td class="org-left">ESC n</td>
+<td class="org-left">转至下一标记</td>
+</tr>
+
+<tr>
+<td class="org-left">"</td>
+<td class="org-left">使用正则表达式标记</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="orgheadline10" class="outline-3">
+<h3 id="orgheadline10"><span class="section-number-3">1.9</span> 杂项</h3>
+<div class="outline-text-3" id="text-1-9">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">!</td>
+<td class="org-left">执行外部命令</td>
+</tr>
+
+<tr>
+<td class="org-left">H</td>
+<td class="org-left">帮助</td>
+</tr>
+
+<tr>
+<td class="org-left">o</td>
+<td class="org-left">设置选项</td>
+</tr>
+
+<tr>
+<td class="org-left">C-k</td>
+<td class="org-left">显示接受到的 cookie</td>
+</tr>
+
+<tr>
+<td class="org-left">C-c</td>
+<td class="org-left">终止</td>
+</tr>
+
+<tr>
+<td class="org-left">C-z</td>
+<td class="org-left">挂起（输入 jobs 命令可以列出被停止运行的进程及编号， 运行命令 bg %进程编号可将进程转为后台运行，fg %进程号将进程转向前台进行）</td>
+</tr>
+
+<tr>
+<td class="org-left">q</td>
+<td class="org-left">退出（需确认）</td>
+</tr>
+
+<tr>
+<td class="org-left">Q</td>
+<td class="org-left">退出而不确认</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="orgheadline11" class="outline-3">
+<h3 id="orgheadline11"><span class="section-number-3">1.10</span> 行编辑模式</h3>
+<div class="outline-text-3" id="text-1-10">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">C-f</td>
+<td class="org-left">光标向後</td>
+</tr>
+
+<tr>
+<td class="org-left">C-b</td>
+<td class="org-left">光标向前</td>
+</tr>
+
+<tr>
+<td class="org-left">C-h</td>
+<td class="org-left">删除前一字符</td>
+</tr>
+
+<tr>
+<td class="org-left">C-d</td>
+<td class="org-left">删除当前字符</td>
+</tr>
+
+<tr>
+<td class="org-left">C-k</td>
+<td class="org-left">删除光标後所有内容</td>
+</tr>
+
+<tr>
+<td class="org-left">C-u</td>
+<td class="org-left">删除光标前所有内容</td>
+</tr>
+
+<tr>
+<td class="org-left">C-a</td>
+<td class="org-left">光标到行首</td>
+</tr>
+
+<tr>
+<td class="org-left">C-e</td>
+<td class="org-left">光标到行尾</td>
+</tr>
+
+<tr>
+<td class="org-left">C-p</td>
+<td class="org-left">取得历史记录中的前一个词</td>
+</tr>
+
+<tr>
+<td class="org-left">C-n</td>
+<td class="org-left">取得历史记录中的後一个词</td>
+</tr>
+
+<tr>
+<td class="org-left">TAB,SPC</td>
+<td class="org-left">自动完成文件名</td>
+</tr>
+
+<tr>
+<td class="org-left">RETURN</td>
+<td class="org-left">确定</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div id="orgheadline13" class="outline-2">
+<h2 id="orgheadline13"><span class="section-number-2">2</span> emacs-w3m 使用</h2>
+<div class="outline-text-2" id="text-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-center" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-center">s</th>
+<th scope="col" class="org-left">Display the list of visited URLs in this session.</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-center">C-c C-@</th>
+<th scope="col" class="org-left">Record the position of the cursor in the page in history.</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-center">C-c C-v</th>
+<th scope="col" class="org-left">Move to the position which has been marked with C-c C-@ (w3m-history-store-position) in the currently displayed page.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-center">a</td>
+<td class="org-left">Add the current page to the bookmarks, or if called with a prefix argument, prompt for a URL and add it (w3m-bookmark-add-current-url).</td>
+</tr>
+
+<tr>
+<td class="org-center">M-a</td>
+<td class="org-left">Add the URL under point to the bookmarks (w3m-bookmark-add-this-url).</td>
+</tr>
+
+<tr>
+<td class="org-center">v</td>
+<td class="org-left">Visit the bookmarks page (w3m-bookmark-view).</td>
+</tr>
+
+<tr>
+<td class="org-center">C-k</td>
+<td class="org-left">Kill the bookmark under point (w3m-bookmark-kill-entry).</td>
+</tr>
+
+<tr>
+<td class="org-center">E</td>
+<td class="org-left">Visit the bookmarks file (w3m-bookmark-edit).</td>
+</tr>
+
+<tr>
+<td class="org-center">C-_</td>
+<td class="org-left">Undo the last changes (w3m-bookmark-undo).</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-center">g</td>
+<td class="org-left">Prompt for a URL in the minibuffer and make emacs-w3m display the corresponding page (independently of the position of the point) in an emacs-w3m buffer. This binding will be familiar to you if you already use Gnus or Mew (w3m-goto-url).</td>
+</tr>
+
+<tr>
+<td class="org-center">G</td>
+<td class="org-left">Prompt for a URL in the minibuffer, and display it in a new session. This function works just like g(M-x w3m-goto-url), except that it opens a new session. When you use emacs-w3m on Emacs 21, 22 or XEmacs, opening a new session means displaying the page in a new tab. For more information about tabs, please refer to 3.5 Everybody likes tabs (w3m-goto-url-new-session).</td>
+</tr>
+
+<tr>
+<td class="org-center">c</td>
+<td class="org-left">Display the URL of the page being displayed in the echo area and put it in the kill-ring (w3m-print-current-url).</td>
+</tr>
+
+<tr>
+<td class="org-center">u</td>
+<td class="org-left">Display the target URL of the link under point in the echo area and put it in the kill-ring (w3m-print-this-url).</td>
+</tr>
+
+<tr>
+<td class="org-center">R</td>
+<td class="org-left">Reload the page (w3m-reload-this-page).</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-center">C-c C-t</td>
+<td class="org-left">Create an identical copy of the currently active buffer, under a new name. This is used to start a new session without loading a web page in the new buffer (w3m-copy-buffer).</td>
+</tr>
+
+<tr>
+<td class="org-center">C-c C-w</td>
+<td class="org-left">Close the current emacs-w3m buffer (w3m-delete-buffer).</td>
+</tr>
+
+<tr>
+<td class="org-center">C-c M-w</td>
+<td class="org-left">Close all emacs-w3m buffers, but the active one (w3m-delete-other-buffers).</td>
+</tr>
+
+<tr>
+<td class="org-center">C-c C-p</td>
+<td class="org-left">Move to the previous emacs-w3m buffer. This is usually the next buffer to the left in the tabs line under Emacs 21 and later. If called with a numeric argument N, move N buffers to the previous (w3m-previous-buffer).</td>
+</tr>
+
+<tr>
+<td class="org-center">C-c C-n</td>
+<td class="org-left">Move to the next emacs-w3m buffer. This is usually the next buffer to the right in the tabs line under Emacs 21 and later. If called with a numeric argument N, move N buffers to the next (w3m-next-buffer).</td>
+</tr>
+
+<tr>
+<td class="org-center">C-c C-a</td>
+<td class="org-left">Prompt for a buffer name in the minibuffer. M-p and M-n cycle through the list of existing buffers and TAB completes (w3m-switch-buffer).</td>
+</tr>
+
+<tr>
+<td class="org-center">C-c C-s</td>
+<td class="org-left">Show the buffer list in a separate window (w3m-select-buffer). In this window, C-c C-s toggles between horizontal and vertical modes, RET selects the buffer under point and buries the buffer list, w selects the buffer under point and gives it the focus, n, p and the arrow keys can be used to move down or up.</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-center">=</td>
+<td class="org-left">Show the information about currently displayed web page. It includes title, URL, document type, last modified date(w3m-view-header).</td>
+</tr>
+
+<tr>
+<td class="org-center">E</td>
+<td class="org-left">Edit the local file pointed by URL of current page(w3m-edit-current-url).</td>
+</tr>
+
+<tr>
+<td class="org-center">e</td>
+<td class="org-left">Edit the local file pointed by URL under point(w3m-edit-this-url).</td>
+</tr>
+
+<tr>
+<td class="org-center">M</td>
+<td class="org-left">Launch an external browser (other than emacs-w3m) and display the same web page as currently displayed in emacs-w3m(w3m-view-url-with-external-browser). The external browser to be used is defined by the variable w3m-content-type-alist, depending on the kind of URL.</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-center">S</td>
+<td class="org-left">Begin a new search. If called with a prefix argument, prompt for the engine to use (w3m-search).</td>
+</tr>
+
+<tr>
+<td class="org-center">g, group:ba:w3m&amp;bi:emacs</td>
+<td class="org-left">分别用 baidu 搜索 w3m 和 bing 搜索 emacs</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-center">T</td>
+<td class="org-left">Toggle displaying of inline images in this buffer and buffers created from this buffer, later on (w3m-toggle-inline-images).</td>
+</tr>
+
+<tr>
+<td class="org-center">I</td>
+<td class="org-left">View the image under point in an external viewer (w3m-view-image).</td>
+</tr>
+
+<tr>
+<td class="org-center">M-i</td>
+<td class="org-left">Save the image under point to an external file. The default name will be the original name of the image, so most of the time M-i RET will save the image with the right name (w3m-save-image).</td>
+</tr>
+
+<tr>
+<td class="org-center">M-[</td>
+<td class="org-left">Zoom out the image under point (w3m-zoom-out-image).</td>
+</tr>
+
+<tr>
+<td class="org-center">M-]</td>
+<td class="org-left">Zoom in the image under point (w3m-zoom-in-image).</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: remerci</p>
+<p class="date">Created: 2017-01-18 三 23:11</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

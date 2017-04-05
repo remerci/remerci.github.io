@@ -1,0 +1,896 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2017-01-18 三 23:10 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title></title>
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="remerci" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+ <link rel='stylesheet' href='/windata/notes/publish/org_notes/public_html/Acss/main.css' type='text/css'/> 
+
+    <link rel="stylesheet" type="text/css" href="/windata/notes/publish/org_notes/public_html/Acss/prettify.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="preamble" class="status">
+<div class='nav'>
+<ul>
+<li><a href='http://remerci.com'>博客</a></li>
+<li><a href='/windata/notes/publish/org_notes/public_html/index.html'>Wiki目录</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgheadline61">1. ml</a>
+<ul>
+<li><a href="#orgheadline33">1.1. kindle</a>
+<ul>
+<li><a href="#orgheadline1">1.1.1. 句子</a></li>
+<li><a href="#orgheadline2">1.1.2. <code>=======================</code> math <code>=======================</code></a></li>
+<li><a href="#orgheadline3">1.1.3. 行列式的本质是什么</a></li>
+<li><a href="#orgheadline4">1.1.4. 科学事实与统计思维 wiz&#xa0;&#xa0;&#xa0;<span class="tag"><span class="statistic">statistic</span></span></a></li>
+<li><a href="#orgheadline5">1.1.5. 数学家正在集结: 群论 &#x2013; 对称性 &#x2013; 现代粒子物理学</a></li>
+<li><a href="#orgheadline6">1.1.6. 概率: 了解不确定性</a></li>
+<li><a href="#orgheadline7">1.1.7. 数盟社区: 从傅里叶变换到小波变换的通俗解释</a></li>
+<li><a href="#orgheadline8">1.1.8. 科研圈: 数学最让人难以理解的一点, 是它竟然可以让人理解</a></li>
+<li><a href="#orgheadline11">1.1.9. 数学猜想</a>
+<ul>
+<li><a href="#orgheadline9">1.1.9.1. 4 色定理</a></li>
+<li><a href="#orgheadline10">1.1.9.2. 3x+1 猜想</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline12">1.1.10. <code>=======================</code> ml &amp; algorithm <code>=======================</code></a></li>
+<li><a href="#orgheadline13">1.1.11. 数据科学工具包 wiz</a></li>
+<li><a href="#orgheadline14">1.1.12. 大数据: 4V, Volume, Variety, Velocity, Veracity</a></li>
+<li><a href="#orgheadline15">1.1.13. 大数据思维的十大原理: 由人找信息(搜索)变为信息找人(推荐)</a></li>
+<li><a href="#orgheadline16">1.1.14. 大数据, 小数据: 相关性, 因果性因决策层次不同各有其用, 不可偏废.</a></li>
+<li><a href="#orgheadline17">1.1.15. NetFlix 工程总监眼中的分类算法:</a></li>
+<li><a href="#orgheadline18">1.1.16. 干货: 深度学习 vs 概率图模型 vs 逻辑学</a></li>
+<li><a href="#orgheadline19">1.1.17. 机器学习与统计学是互补的吗?</a></li>
+<li><a href="#orgheadline20">1.1.18. 可微分式编程: 深度学习发展的新趋势</a></li>
+<li><a href="#orgheadline21">1.1.19. zhihu 如何成为一名数据科学家？资料</a></li>
+<li><a href="#orgheadline22">1.1.20. 机器学习中防止过拟合的处理方法</a></li>
+<li><a href="#orgheadline23">1.1.21. 数盟: 大数据挖掘技术在企业创新中的应用</a></li>
+<li><a href="#orgheadline24">1.1.22. 数盟: Linkedin 文本分析平台: 主题挖掘的四大技术步骤</a></li>
+<li><a href="#orgheadline25">1.1.23. python 开发者: 你应该掌握的七种回归技术</a></li>
+<li><a href="#orgheadline26">1.1.24. <code>=======================</code> other <code>=======================</code></a></li>
+<li><a href="#orgheadline27">1.1.25. 知识图谱</a></li>
+<li><a href="#orgheadline28">1.1.26. 少数人如何影响民意: 在一个拥有多个超级枢纽结点(hub)的多样化网络 勒曼称这是"多数人错觉"(Majority Illusion)。</a></li>
+<li><a href="#orgheadline29">1.1.27. 拓扑数据分析和机器学习相互促进</a></li>
+<li><a href="#orgheadline30">1.1.28. 来, 用利用业余时间拯救世界吧 科学松鼠会 统计思维&#xa0;&#xa0;&#xa0;<span class="tag"><span class="statistic">statistic</span></span></a></li>
+<li><a href="#orgheadline31">1.1.29. 2016 年热门技术方向预测</a></li>
+<li><a href="#orgheadline32">1.1.30. 如何设计像你的大脑一样工作的欺诈侦测系统</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline50">1.2. math</a>
+<ul>
+<li><a href="#orgheadline36">1.2.1. <span class="done DONE">DONE</span> 离散数学&#xa0;&#xa0;&#xa0;<span class="tag"><span class="topic">topic</span></span></a>
+<ul>
+<li><a href="#orgheadline34">1.2.1.1. 闭包</a></li>
+<li><a href="#orgheadline35">1.2.1.2. 十分钟理解矩阵 -&gt; wiz note</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline37">1.2.2. 卷积</a></li>
+<li><a href="#orgheadline38">1.2.3. FFT (wiz 笔记中的动图很有帮助)</a></li>
+<li><a href="#orgheadline39">1.2.4. 信号与系统 (本科教材)</a></li>
+<li><a href="#orgheadline49">1.2.5. 近代数学&#xa0;&#xa0;&#xa0;<span class="tag"><span class="topic">topic</span></span></a>
+<ul>
+<li><a href="#orgheadline40">1.2.5.1. 牛人解说数学体系</a></li>
+<li><a href="#orgheadline43">1.2.5.2. 无限引申</a></li>
+<li><a href="#orgheadline46">1.2.5.3. 统计计算&#xa0;&#xa0;&#xa0;<span class="tag"><span class="topic">topic</span></span></a></li>
+<li><a href="#orgheadline47">1.2.5.4. 可计算性&#xa0;&#xa0;&#xa0;<span class="tag"><span class="topic">topic</span></span></a></li>
+<li><a href="#orgheadline48">1.2.5.5. 张量</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgheadline53">1.3. <span class="done DONE">DONE</span> 动态规划&#xa0;&#xa0;&#xa0;<span class="tag"><span class="topic">topic</span></span></a>
+<ul>
+<li><a href="#orgheadline51">1.3.1. res</a></li>
+<li><a href="#orgheadline52">1.3.2. notes</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline60">1.4. 数据挖掘导论</a>
+<ul>
+<li><a href="#orgheadline57">1.4.1. 基础</a>
+<ul>
+<li><a href="#orgheadline54">1.4.1.1. 线代</a></li>
+<li><a href="#orgheadline55">1.4.1.2. 回归</a></li>
+<li><a href="#orgheadline56">1.4.1.3. 优化</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline58">1.4.2. 数据的进一步认识</a></li>
+<li><a href="#orgheadline59">1.4.3. 探索数据</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="orgheadline61" class="outline-2">
+<h2 id="orgheadline61"><span class="section-number-2">1</span> ml</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="orgheadline33" class="outline-3">
+<h3 id="orgheadline33"><span class="section-number-3">1.1</span> kindle</h3>
+<div class="outline-text-3" id="text-1-1">
+</div><div id="orgheadline1" class="outline-4">
+<h4 id="orgheadline1"><span class="section-number-4">1.1.1</span> 句子</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<ul class="org-ul">
+<li>数学，计算机科学和领域专业知识这强大的三重奏，重新定义了作出决策的过程，直觉或<br  />
+本能不再是复杂决策的关键。<br  /></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline2" class="outline-4">
+<h4 id="orgheadline2"><span class="section-number-4">1.1.2</span> <code>=======================</code> math <code>=======================</code></h4>
+</div>
+<div id="orgheadline3" class="outline-4">
+<h4 id="orgheadline3"><span class="section-number-4">1.1.3</span> 行列式的本质是什么</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<p>
+矩阵对应的数值 -&gt; 2 个线性变换的比率<br  />
+</p>
+<p>
+:DATE:     2015-11-15<br  />
+:FROM:     知乎<br  />
+</p>
+</div>
+</div>
+<div id="orgheadline4" class="outline-4">
+<h4 id="orgheadline4"><span class="section-number-4">1.1.4</span> 科学事实与统计思维 wiz&#xa0;&#xa0;&#xa0;<span class="tag"><span class="statistic">statistic</span></span></h4>
+<div class="outline-text-4" id="text-1-1-4">
+<ol class="org-ol">
+<li>均值回归效应可能造成误导<br  /></li>
+<li>注意基础比率谬误<br  /></li>
+<li>显著性水平<br  /></li>
+<li>相关影响风险，风险感知<br  /></li>
+</ol>
+</div>
+</div>
+<div id="orgheadline5" class="outline-4">
+<h4 id="orgheadline5"><span class="section-number-4">1.1.5</span> 数学家正在集结: 群论 &#x2013; 对称性 &#x2013; 现代粒子物理学</h4>
+</div>
+<div id="orgheadline6" class="outline-4">
+<h4 id="orgheadline6"><span class="section-number-4">1.1.6</span> 概率: 了解不确定性</h4>
+<div class="outline-text-4" id="text-1-1-6">
+<ul class="org-ul">
+<li>历史<br  />
+<ul class="org-ul">
+<li>点数分配问题 -&gt; 数学期望, 帕斯卡三角形(杨辉三角)<br  /></li>
+<li>布丰投针 -&gt; 几何概率 -&gt; 贝特朗悖论 -&gt; 柯尔莫哥洛夫 sigma 代数上的测度<br  /></li>
+<li>概率模型: 随机图, 渗流模型, 自回避行走<br  /></li>
+</ul></li>
+<li>大数定理, 中心极限定理(结果是实数的随机基本事件), 正态分布<br  /></li>
+<li>铁制磁铁, 770 摄氏度 -&gt; 相变 -&gt; 流言, 传染病, 微博转发<br  /></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline7" class="outline-4">
+<h4 id="orgheadline7"><span class="section-number-4">1.1.7</span> 数盟社区: 从傅里叶变换到小波变换的通俗解释</h4>
+<div class="outline-text-4" id="text-1-1-7">
+<p>
+时频域, <a href="https://link.zhihu.com/?target=http://users.rowan.edu/~polikar/WAVELETS/WTtutorial.html">参考资料</a><br  />
+</p>
+</div>
+</div>
+<div id="orgheadline8" class="outline-4">
+<h4 id="orgheadline8"><span class="section-number-4">1.1.8</span> 科研圈: 数学最让人难以理解的一点, 是它竟然可以让人理解</h4>
+<div class="outline-text-4" id="text-1-1-8">
+<ul class="org-ul">
+<li>哥德尔 不完备性定理: 数学大部分定理符合直观, 可以证明<br  />
+<ul class="org-ul">
+<li>选择效应, 物理基础, 大脑特性<br  /></li>
+</ul></li>
+<li>费马大定理, 庞加莱猜想, 孪生素数, 黎曼猜想<br  /></li>
+<li>黎曼猜想, "数学家正在集结: 群论 &#x2013; 对称性 &#x2013; 现代粒子物理学" 群论<br  /></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline11" class="outline-4">
+<h4 id="orgheadline11"><span class="section-number-4">1.1.9</span> 数学猜想</h4>
+<div class="outline-text-4" id="text-1-1-9">
+</div><div id="orgheadline9" class="outline-5">
+<h5 id="orgheadline9"><span class="section-number-5">1.1.9.1</span> 4 色定理</h5>
+<div class="outline-text-5" id="text-1-1-9-1">
+<ul class="org-ul">
+<li>4 是平面的色数, 体现了平面的拓扑性质<br  /></li>
+<li>环面:7<br  /></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline10" class="outline-5">
+<h5 id="orgheadline10"><span class="section-number-5">1.1.9.2</span> 3x+1 猜想</h5>
+<div class="outline-text-5" id="text-1-1-9-2">
+<ul class="org-ul">
+<li>奇数 3x+1, 偶数 x/2<br  /></li>
+<li>27: 经过 77 步到 9232, 再经 32 步到 1<br  /></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="orgheadline12" class="outline-4">
+<h4 id="orgheadline12"><span class="section-number-4">1.1.10</span> <code>=======================</code> ml &amp; algorithm <code>=======================</code></h4>
+</div>
+<div id="orgheadline13" class="outline-4">
+<h4 id="orgheadline13"><span class="section-number-4">1.1.11</span> 数据科学工具包 wiz</h4>
+</div>
+<div id="orgheadline14" class="outline-4">
+<h4 id="orgheadline14"><span class="section-number-4">1.1.12</span> 大数据: 4V, Volume, Variety, Velocity, Veracity</h4>
+<div class="outline-text-4" id="text-1-1-12">
+</div>
+</div>
+<div id="orgheadline15" class="outline-4">
+<h4 id="orgheadline15"><span class="section-number-4">1.1.13</span> 大数据思维的十大原理: 由人找信息(搜索)变为信息找人(推荐)</h4>
+<div class="outline-text-4" id="text-1-1-13">
+</div>
+</div>
+<div id="orgheadline16" class="outline-4">
+<h4 id="orgheadline16"><span class="section-number-4">1.1.14</span> 大数据, 小数据: 相关性, 因果性因决策层次不同各有其用, 不可偏废.</h4>
+</div>
+<div id="orgheadline17" class="outline-4">
+<h4 id="orgheadline17"><span class="section-number-4">1.1.15</span> NetFlix 工程总监眼中的分类算法:</h4>
+<div class="outline-text-4" id="text-1-1-15">
+<ul class="org-ul">
+<li>分类算法效率复杂度排序: 逻辑回归, SVM, 决策树集成, 深度学习<br  /></li>
+<li>SVM 优点: 线性不可分问题, 高维空间; 缺点: 训练低效<br  /></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline18" class="outline-4">
+<h4 id="orgheadline18"><span class="section-number-4">1.1.16</span> 干货: 深度学习 vs 概率图模型 vs 逻辑学</h4>
+<div class="outline-text-4" id="text-1-1-16">
+<ul class="org-ul">
+<li>变分法, Gibbs 抽样, 置信传播算法<br  /></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline19" class="outline-4">
+<h4 id="orgheadline19"><span class="section-number-4">1.1.17</span> 机器学习与统计学是互补的吗?</h4>
+<div class="outline-text-4" id="text-1-1-17">
+<ul class="org-ul">
+<li>机器学习借鉴统计学: 用极大似然或贝叶斯方法估计, 用期望最大化(EM, Expectation<br  />
+Maximization)处理隐含变量, 机器学习的上一次热潮与非参数化贝叶斯方法有关<br  /></li>
+<li>过去十年中二者相汇: 工具是图模型和非参数法，期望最大化和 MCMC（马尔科夫链蒙特卡<br  />
+洛）的学习/推理方法<br  /></li>
+<li>用仿真模拟来表达模型: 近贝叶斯法(ABC, approximate Bayesian computation), 概率规<br  />
+划(probabilistic programming)<br  /></li>
+<li>确定哪些因素会导致特定的结果（一种统计推断）将能创造出洞察，并能极大地有助于设<br  />
+计出更好的预测机制<br  /></li>
+<li>校准不确定度估计也有助于基于协变量（基于内容的过滤）或过去的用户点击行为（协同<br  />
+过滤）来做出预测<br  /></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline20" class="outline-4">
+<h4 id="orgheadline20"><span class="section-number-4">1.1.18</span> 可微分式编程: 深度学习发展的新趋势</h4>
+<div class="outline-text-4" id="text-1-1-18">
+<ul class="org-ul">
+<li>深度学习的成功因素 1: 后向传输, 规则链(一种简单的微积分技巧)<br  />
+<ul class="org-ul">
+<li>将潜在方案模板组织成一个有向图, 反向遍历使算法可自动计算"梯度矢量"<br  /></li>
+</ul></li>
+<li>权重绑定: 网络优化后的组件参数固定, 类比函数式编程<br  /></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline21" class="outline-4">
+<h4 id="orgheadline21"><span class="section-number-4">1.1.19</span> zhihu 如何成为一名数据科学家？资料</h4>
+</div>
+<div id="orgheadline22" class="outline-4">
+<h4 id="orgheadline22"><span class="section-number-4">1.1.20</span> 机器学习中防止过拟合的处理方法</h4>
+<div class="outline-text-4" id="text-1-1-20">
+<dl class="org-dl">
+<dt>机器学习预测的理论前提</dt><dd>i.i.d independently &amp; identically distributed<br  /></dd>
+<dt>(no term)</dt><dd>正则的理解<br  />
+<ul class="org-ul">
+<li>先验: 拉普拉斯和高斯分布<br  /></li>
+<li>偏差(bias)和方差(variance)之间的平衡<br  /></li>
+</ul></dd>
+</dl>
+</div>
+</div>
+<div id="orgheadline23" class="outline-4">
+<h4 id="orgheadline23"><span class="section-number-4">1.1.21</span> 数盟: 大数据挖掘技术在企业创新中的应用</h4>
+<div class="outline-text-4" id="text-1-1-21">
+<ul class="org-ul">
+<li>TERM:<br  />
+<dl class="org-dl">
+<dt>ERP</dt><dd>Enterprise Resource Planning<br  /></dd>
+<dt>MIS</dt><dd>Management Information System<br  /></dd>
+<dt>CRM</dt><dd>Customer Relationship Management<br  /></dd>
+<dt>EDW</dt><dd>Enterprise Data Warehouse, 企业级数据仓库<br  /></dd>
+<dt>DAU</dt><dd>Daily Active Users<br  /></dd>
+</dl></li>
+<li>信息化 -&gt; 智能化 (采集 -&gt; 存储 -&gt; 分析)<br  />
+<ul class="org-ul">
+<li>ERP, MIS -&gt; 统计报表 -&gt; CRM 精准运营, 个性化服务 -&gt; 时间序列预测<br  /></li>
+<li>人工录入, 调查问卷, 电话随访 -&gt; APP 记录, 爬虫, 传感器<br  /></li>
+<li>关系数据库 -&gt; EDW -&gt; Big Table, GFS, 云计算<br  /></li>
+<li>Map-Reduce, Hadoop -&gt; 流式计算 twitter(storm), Yahoo(S4), Berkeley(spark), 斯坦福(Phoenix)<br  /></li>
+<li>结构化(资产负债表, 现金流表, DAU) -&gt; 半结构化(日志) -&gt; 非结构化(语音, 视频)<br  /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline24" class="outline-4">
+<h4 id="orgheadline24"><span class="section-number-4">1.1.22</span> 数盟: Linkedin 文本分析平台: 主题挖掘的四大技术步骤</h4>
+<div class="outline-text-4" id="text-1-1-22">
+<ul class="org-ul">
+<li>TF-IDF(Term Frequency - Inverse Document Freq)<br  /></li>
+<li>LDA(Latent Dirichlet allocation)<br  /></li>
+<li>互信息(cooccurrence)<br  /></li>
+<li>Linkedin Voices<br  />
+<ul class="org-ul">
+<li>词性(POS, part of speech)标注<br  /></li>
+<li>词性模式匹配<br  /></li>
+<li>主题抽取<br  /></li>
+<li>主题排序<br  /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline25" class="outline-4">
+<h4 id="orgheadline25"><span class="section-number-4">1.1.23</span> python 开发者: 你应该掌握的七种回归技术</h4>
+<div class="outline-text-4" id="text-1-1-23">
+<ul class="org-ul">
+<li>线性回归<br  />
+<ul class="org-ul">
+<li>多元回归存在多重共线性, 自相关性和异方差性<br  /></li>
+<li>对异常值非常敏感<br  /></li>
+</ul></li>
+<li>逻辑回归<br  />
+<ul class="org-ul">
+<li>二项分布的最佳连结函数, logit<br  /></li>
+<li>通过对观测样本的极大似然估计来选择参数<br  /></li>
+</ul></li>
+<li>逐步回归 stepwise<br  />
+<ul class="org-ul">
+<li>观察统计值 R-square, t-stats, AIC, BIC, 来识别重要变量, Mallow's CP 准则<br  /></li>
+<li>向前选择, 向后剔除<br  /></li>
+</ul></li>
+<li>Ridge(岭回归)L2 正则, Lasso(套索回归)L1 正则(可剔除参数)<br  /></li>
+<li>ElasticNet 回归: L1 训练, L2 正则化矩阵.<br  /></li>
+<li>R-square 指标评估模型性能 (参考"模型性能指标")<br  /></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline26" class="outline-4">
+<h4 id="orgheadline26"><span class="section-number-4">1.1.24</span> <code>=======================</code> other <code>=======================</code></h4>
+</div>
+<div id="orgheadline27" class="outline-4">
+<h4 id="orgheadline27"><span class="section-number-4">1.1.25</span> 知识图谱</h4>
+<div class="outline-text-4" id="text-1-1-25">
+<ul class="org-ul">
+<li>文档表示方式: 词汇向量词袋（Bag-of-Words，BOW） -&gt; 知识图谱的一个子图<br  /></li>
+<li>关系抽取:<br  />
+<ul class="org-ul">
+<li>自举（bootstrapping）的思想，按照“模板生成实例抽取”的流程不断迭代<br  /></li>
+<li>句法分析, 聚类<br  /></li>
+<li>远程监督（Distant Supervision）<br  /></li>
+<li>利用推理规则实现关系抽取的经典方法是 Path Ranking Algorithm<br  /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline28" class="outline-4">
+<h4 id="orgheadline28"><span class="section-number-4">1.1.26</span> 少数人如何影响民意: 在一个拥有多个超级枢纽结点(hub)的多样化网络 勒曼称这是"多数人错觉"(Majority Illusion)。</h4>
+<div class="outline-text-4" id="text-1-1-26">
+</div>
+</div>
+<div id="orgheadline29" class="outline-4">
+<h4 id="orgheadline29"><span class="section-number-4">1.1.27</span> 拓扑数据分析和机器学习相互促进</h4>
+<div class="outline-text-4" id="text-1-1-27">
+<ul class="org-ul">
+<li>2016 诺贝尔物理学奖, 拓扑与奇异材料特性的关系<br  /></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline30" class="outline-4">
+<h4 id="orgheadline30"><span class="section-number-4">1.1.28</span> 来, 用利用业余时间拯救世界吧 科学松鼠会 统计思维&#xa0;&#xa0;&#xa0;<span class="tag"><span class="statistic">statistic</span></span></h4>
+<div class="outline-text-4" id="text-1-1-28">
+<ul class="org-ul">
+<li>数学和统计学不同<br  /></li>
+<li>选择偏差<br  /></li>
+<li>相关性和因果性混淆<br  /></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline31" class="outline-4">
+<h4 id="orgheadline31"><span class="section-number-4">1.1.29</span> 2016 年热门技术方向预测</h4>
+<div class="outline-text-4" id="text-1-1-29">
+<ul class="org-ul">
+<li>Kafka, Doker, Spark<br  /></li>
+<li>Scala, Go, Python, Java<br  /></li>
+<li>大数据, 云, devops<br  /></li>
+<li>英特尔 3D XPoint, NAND 闪存. 应用性能瓶颈从存储转移到 CPU 和网络<br  /></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline32" class="outline-4">
+<h4 id="orgheadline32"><span class="section-number-4">1.1.30</span> 如何设计像你的大脑一样工作的欺诈侦测系统</h4>
+<div class="outline-text-4" id="text-1-1-30">
+<ul class="org-ul">
+<li>实时处理, 流处理, 离线处理<br  /></li>
+<li>kafka, SparkStreaming, flume 等的配合使用<br  /></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="orgheadline50" class="outline-3">
+<h3 id="orgheadline50"><span class="section-number-3">1.2</span> math</h3>
+<div class="outline-text-3" id="text-1-2">
+</div><div id="orgheadline36" class="outline-4">
+<h4 id="orgheadline36"><span class="section-number-4">1.2.1</span> <span class="done DONE">DONE</span> 离散数学&#xa0;&#xa0;&#xa0;<span class="tag"><span class="topic">topic</span></span></h4>
+<div class="outline-text-4" id="text-1-2-1">
+</div><div id="orgheadline34" class="outline-5">
+<h5 id="orgheadline34"><span class="section-number-5">1.2.1.1</span> 闭包</h5>
+<div class="outline-text-5" id="text-1-2-1-1">
+<ul class="org-ul">
+<li>集合, 关系, 性质. 等价与划分, 关系的矩阵及图表示, 偏序, 多元<br  /></li>
+<li>函数 f1 内定义函数 f2, 并返回 f2, c=f1(), 此时, c 以 f2 对象的身份可访问 f1 内局部变量, 相应 f1 虽然调用完毕, 但不会从内存回收.<br  /></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline35" class="outline-5">
+<h5 id="orgheadline35"><span class="section-number-5">1.2.1.2</span> 十分钟理解矩阵 -&gt; wiz note</h5>
+<div class="outline-text-5" id="text-1-2-1-2">
+<ul class="org-ul">
+<li>线性空间是容纳向量对象运动的空间, 矩阵是对运动(变换)的描述；<br  /></li>
+<li>线性空间中的基是非奇异(向量线性无关)方阵中的向量, 坐标系也是矩阵；<br  /></li>
+<li>MA=B 表明坐标系 M 下 A 变换等同于坐标系 I 下的 B 变换, 运动的相对性；<br  /></li>
+<li>非方阵, 线性变换作为一种映射, 核与像等概念；<br  /></li>
+<li>行列式是组成 M 的各向量按照平行四边法则搭成一个 n 维立方体的体积；<br  /></li>
+<li><b>数学分析的观念</b>: 一个对象可以表达为无穷多个合理选择的对象的线性和；<br  /></li>
+<li>齐民友的&lt;重温微积分&gt; -&gt; 高等数学是研究运动的数学<br  /></li>
+<li>参考资料:<br  /></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="orgheadline37" class="outline-4">
+<h4 id="orgheadline37"><span class="section-number-4">1.2.2</span> 卷积</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<p>
+y(t) {f(t)的零状态响应} = f(t) * h(t) {单位冲击响应}<br  />
+</p>
+</div>
+</div>
+<div id="orgheadline38" class="outline-4">
+<h4 id="orgheadline38"><span class="section-number-4">1.2.3</span> FFT (wiz 笔记中的动图很有帮助)</h4>
+<div class="outline-text-4" id="text-1-2-3">
+<dl class="org-dl">
+<dt>欧位公式</dt><dd>e<sup>ix</sup> = cos{x} + isin{x}.<br  />
+<ul class="org-ul">
+<li>if x=&pi;, then Paradoxically e<sup>i&pi;</sup>+1=0<br  /></li>
+<li id="圆与 sin(x)的关系">直线上的投影<br  /></li>
+<li id="螺旋线立体投影">cos, sin<br  /></li>
+<li id="cos{t}=(e<sup>it</sup>+e<sup>-it</sup>)/2">极化方向不同的两束光波, 磁场抵消, 电场加倍.<br  /></li>
+</ul></dd>
+<dt>(no term)</dt><dd>时频域关系<br  />
+<ul class="org-ul">
+<li>时域周期连续 &lt;-&gt; 频域非周期离散<br  /></li>
+<li>时域非周期连续 &lt;-&gt; 频域非周期连续 (连续的跨度差别较大: 小跨度 &lt;-&gt; 大跨度. 联系 <b>不相容原理</b>)<br  /></li>
+</ul></dd>
+</dl>
+</div>
+</div>
+<div id="orgheadline39" class="outline-4">
+<h4 id="orgheadline39"><span class="section-number-4">1.2.4</span> 信号与系统 (本科教材)</h4>
+<div class="outline-text-4" id="text-1-2-4">
+<dl class="org-dl">
+<dt>内积</dt><dd>矢量点乘, 相关系数<br  /></dd>
+<dt>系统性质</dt><dd>记忆, 因果, 稳定, 可逆, 时不变<br  /></dd>
+</dl>
+</div>
+</div>
+<div id="orgheadline49" class="outline-4">
+<h4 id="orgheadline49"><span class="section-number-4">1.2.5</span> 近代数学&#xa0;&#xa0;&#xa0;<span class="tag"><span class="topic">topic</span></span></h4>
+<div class="outline-text-4" id="text-1-2-5">
+</div><div id="orgheadline40" class="outline-5">
+<h5 id="orgheadline40"><span class="section-number-5">1.2.5.1</span> 牛人解说数学体系</h5>
+<div class="outline-text-5" id="text-1-2-5-1">
+<ul class="org-ul">
+<li>分析: 实分析(极限, 可数无穷, 测度, 赋范线性空间), 泛函, 拓扑<br  />
+<ul class="org-ul">
+<li>线性空间, 内积空间<br  /></li>
+<li>Cauchy 序列, 完备线性空间, Banach 空间<br  /></li>
+<li>开集, 闭集, 开球, 闭包<br  /></li>
+<li>测度, Riemann 积分, Lebesgue 积分<br  /></li>
+<li>紧性: 子序列收敛<br  /></li>
+<li>$L^p$空间, Dirichlet 函数<br  /></li>
+</ul></li>
+<li>抽象代数: 群(有限单群)环(理想)域模格, 研究有特定运算规则的集合.<br  />
+<ul class="org-ul">
+<li>群的分类: 置换, 循环, 李群, 散在(魔群) "数学家正在集结: 群论 &#x2013; 对称性 &#x2013; 现代粒子物理学"<br  />
+<ul class="org-ul">
+<li>196883, 最小忠实表示维数, 月光理论(moonshine theory)<br  /></li>
+</ul></li>
+<li>正规子群(左右陪集相等)<br  /></li>
+<li>同态, 同构<br  /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline43" class="outline-5">
+<h5 id="orgheadline43"><span class="section-number-5">1.2.5.2</span> 无限引申</h5>
+<div class="outline-text-5" id="text-1-2-5-2">
+</div><ol class="org-ol"><li><a id="orgheadline41"></a>如何直观地解释紧致性, 胡鞍钢的回答<br  /><div class="outline-text-6" id="text-1-2-5-2-1">
+<ul class="org-ul">
+<li>把性质从局部往整体推的法宝<br  /></li>
+<li>从 0 到 1, 每次一小步, 不一定能到. 某种有限性条件使步长有非零下界, 则必能到.<br  /></li>
+</ul>
+</div></li>
+<li><a id="orgheadline42"></a>如何解释有限, 可数, 不可数与无限<br  /><div class="outline-text-6" id="text-1-2-5-2-2">
+<ul class="org-ul">
+<li>代数数集, 可计算数, 可定义数 可数的<br  /></li>
+<li id="康托尔函数">[0,1]上定义的连续函数, 导数几乎处处为零, f(0)=0, f(1)=1<br  /></li>
+<li>测度论<br  /></li>
+</ul>
+</div></li></ol>
+</div>
+<div id="orgheadline46" class="outline-5">
+<h5 id="orgheadline46"><span class="section-number-5">1.2.5.3</span> 统计计算&#xa0;&#xa0;&#xa0;<span class="tag"><span class="topic">topic</span></span></h5>
+<div class="outline-text-5" id="text-1-2-5-3">
+</div><ol class="org-ol"><li><a id="orgheadline44"></a>Monte Carlo<br  /><div class="outline-text-6" id="text-1-2-5-3-1">
+<p>
+得有伪随机数模拟热扰动<br  />
+</p>
+</div></li>
+<li><a id="orgheadline45"></a>MetropolisMethod MCMC<br  /></li></ol>
+</div>
+<div id="orgheadline47" class="outline-5">
+<h5 id="orgheadline47"><span class="section-number-5">1.2.5.4</span> 可计算性&#xa0;&#xa0;&#xa0;<span class="tag"><span class="topic">topic</span></span></h5>
+<div class="outline-text-5" id="text-1-2-5-4">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">知乎</td>
+<td class="org-left">数学上能否指出某个公理体系中符合哪些条件的真命题是可以证明的</td>
+</tr>
+
+<tr>
+<td class="org-left">科学松鼠会</td>
+<td class="org-left">计算的极限</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="orgheadline48" class="outline-5">
+<h5 id="orgheadline48"><span class="section-number-5">1.2.5.5</span> 张量</h5>
+<div class="outline-text-5" id="text-1-2-5-5">
+<p>
+张量的物理本质是多重方向性, 数学上的对应就是线性变换。所有的变换、基底、坐标都只是用来描述这个多重方向性的<br  />
+工具。相应地，标量就是不具有方向性的物理量，矢量就是具有一重方向性的物理量。<br  />
+</p>
+<dl class="org-dl">
+<dt>流形</dt><dd>流形（manifold)是局部具有欧几里得空间性质的空间，是欧几里得空间中的曲<br  />
+线、曲面等概念的推广。<br  /></dd>
+<dt>切空间</dt><dd>切空间是在某一点所有的切向量组成的线性空间。向量（切向量）存在多种定<br  />
+义。直观的讲，如果所研究的流形是一个三维空间中的曲面，则在每一点的切向量，就<br  />
+是和该曲面相切的向量，切空间就是和该曲面相切的平面。<br  /></dd>
+<dt>二次型</dt><dd>二次型，quadratic form。 <b>线性代数</b> 的重要内容之一，它起源于几何学中二次<br  />
+曲线方程和二次曲面方程化为标准形问题的研究。二次型理论与 <b>域</b> 的特征有关。<br  /></dd>
+<dt>对偶空间</dt><dd>对偶空间构造是 行向量(1×n)与列向量(n×1)的关系的抽象化。这个结构能够<br  />
+在无限维度空间进行并为测度,分布及希尔伯特空间提供重要的观点。对偶空间的应用<br  />
+是泛函分析理论的一特征。 傅立叶变换亦内蕴对偶空间的概念。<br  /></dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div id="orgheadline53" class="outline-3">
+<h3 id="orgheadline53"><span class="section-number-3">1.3</span> <span class="done DONE">DONE</span> 动态规划&#xa0;&#xa0;&#xa0;<span class="tag"><span class="topic">topic</span></span></h3>
+<div class="outline-text-3" id="text-1-3">
+</div>
+<div id="orgheadline51" class="outline-4">
+<h4 id="orgheadline51"><span class="section-number-4">1.3.1</span> res</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<ul class="org-ul">
+<li><a href="https://www.zhihu.com/question/23995189">https://www.zhihu.com/question/23995189</a><br  /></li>
+<li><a href="http://blog.csdn.net/woshioosm/article/details/7438834">http://blog.csdn.net/woshioosm/article/details/7438834</a><br  /></li>
+<li><a href="http://www.360doc.com/content/13/0601/00/8076359_289597587.shtml">http://www.360doc.com/content/13/0601/00/8076359_289597587.shtml</a><br  /></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline52" class="outline-4">
+<h4 id="orgheadline52"><span class="section-number-4">1.3.2</span> notes</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<ul class="org-ul">
+<li>阶段划分<br  />
+<ul class="org-ul">
+<li>最优子结构<br  /></li>
+<li>无后效性<br  /></li>
+</ul></li>
+<li>与其它关系<br  />
+<dl class="org-dl">
+<dt>递推</dt><dd>每个阶段只有一个状态<br  /></dd>
+<dt>贪心</dt><dd>每个阶段的最优状态都是由上一个阶段的最优状态得到的<br  /></dd>
+<dt>搜索</dt><dd>每个阶段的最优状态是由之前所有阶段的状态的组合得到的<br  /></dd>
+<dt>动态规划</dt><dd>每个阶段的最优状态可以从之前某个阶段的某个或某些状态直接得到而不管之前这个状态是如何得到的<br  /></dd>
+</dl></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="orgheadline60" class="outline-3">
+<h3 id="orgheadline60"><span class="section-number-3">1.4</span> 数据挖掘导论</h3>
+<div class="outline-text-3" id="text-1-4">
+</div><div id="orgheadline57" class="outline-4">
+<h4 id="orgheadline57"><span class="section-number-4">1.4.1</span> 基础</h4>
+<div class="outline-text-4" id="text-1-4-1">
+</div><div id="orgheadline54" class="outline-5">
+<h5 id="orgheadline54"><span class="section-number-5">1.4.1.1</span> 线代</h5>
+<div class="outline-text-5" id="text-1-4-1-1">
+<ul class="org-ul">
+<li>向量距离，角度<br  />
+<ul class="org-ul">
+<li>点积，长度，投影，基向量<br  /></li>
+</ul></li>
+<li>矩阵（线性变换）<br  />
+<ul class="org-ul">
+<li>缩放，旋转，反射，投影，<br  /></li>
+<li>行列空间，秩，左右零空间<br  />
+<ul class="org-ul">
+<li>m 维方阵有逆：iff 零空间为 0, 或 iff 行列空间都是 m 维<br  /></li>
+</ul></li>
+<li>本征值，奇异值分解<br  /></li>
+<li>数据解释，最小二乘<br  /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline55" class="outline-5">
+<h5 id="orgheadline55"><span class="section-number-5">1.4.1.2</span> 回归</h5>
+<div class="outline-text-5" id="text-1-4-1-2">
+<ul class="org-ul">
+<li>模型性能分析<br  />
+<ul class="org-ul">
+<li>SST(y_i-ybar)^2=SSE(y_i-f(x_i))^2+SSM(f(x_i)-ybar)^2<br  /></li>
+<li>判决系数 R^2=SSM/SST 因变量中的大部分变异能被模型解释, 则值接近 1.<br  /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline56" class="outline-5">
+<h5 id="orgheadline56"><span class="section-number-5">1.4.1.3</span> 优化</h5>
+<div class="outline-text-5" id="text-1-4-1-3">
+<ul class="org-ul">
+<li>无约束<br  />
+<ul class="org-ul">
+<li>解析法: 导数<br  /></li>
+<li>数值法<br  />
+<ul class="org-ul">
+<li>黄金搜索<br  /></li>
+<li>牛顿法<br  /></li>
+<li>梯度下降法<br  /></li>
+</ul></li>
+</ul></li>
+<li>有约束<br  />
+<ul class="org-ul">
+<li>拉格朗日乘子<br  /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="orgheadline58" class="outline-4">
+<h4 id="orgheadline58"><span class="section-number-4">1.4.2</span> 数据的进一步认识</h4>
+<div class="outline-text-4" id="text-1-4-2">
+<ul class="org-ul">
+<li>属性的数值特点及相应处理方式<br  />
+<ul class="org-ul">
+<li>标称, 序数, 比率, 区间<br  /></li>
+<li><a href="file:///windata/notes/org/notes/algorithm/attr_process.png">处理方法图</a><br  /></li>
+</ul></li>
+<li>数据集的特点<br  />
+<ul class="org-ul">
+<li>维度, 稀疏, 分辨率<br  /></li>
+<li>记录, 矩阵, 图形(关联, 分子结构) / <b>子结构挖掘</b><br  /></li>
+</ul></li>
+<li>数据质量：精度，偏倚<br  /></li>
+<li>应用需求：时效，相关，文档（精度，类型，单位，来源） / <b>抽样偏倚</b><br  /></li>
+<li>预处理<br  />
+<ul class="org-ul">
+<li>聚集<br  /></li>
+<li>抽样 / <b>随机</b>, <b>分层</b>, <b>容量</b>, <b>渐近</b><br  /></li>
+<li>降维 / <b>PCA, 奇异值分解 (SVD, singular value decomposition)</b><br  /></li>
+<li>特征<br  /></li>
+<li>离散 / <b>熵</b><br  /></li>
+<li>变换 / <b>归一</b>, <b>保序</b><br  /></li>
+</ul></li>
+<li>度量相似性<br  />
+<ul class="org-ul">
+<li>闵可夫斯基距离<br  /></li>
+<li>Jaccard 系数<br  /></li>
+<li>余弦系数<br  /></li>
+<li>Pearson 系数<br  /></li>
+<li>Bregman 散度  / <b>凸函数, 梯度, 内积</b><br  /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline59" class="outline-4">
+<h4 id="orgheadline59"><span class="section-number-4">1.4.3</span> 探索数据</h4>
+<div class="outline-text-4" id="text-1-4-3">
+<ul class="org-ul">
+<li>汇总统计<br  />
+<ul class="org-ul">
+<li>频率，众数，百分位数<br  /></li>
+<li>均值，中位，截断均值<br  /></li>
+<li>极差，方差，标准差<br  /></li>
+<li>绝对平均偏差（AAD），中位数绝对偏差（MAD），四分位数极差（IQR）<br  /></li>
+<li>协方差矩阵，相关矩阵<br  /></li>
+<li>倾斜度，多模态<br  /></li>
+</ul></li>
+<li>可视化<br  />
+<ul class="org-ul">
+<li>茎叶图，直方图，盒状图，饼图<br  /></li>
+<li>经验累计分布函数图（ECDF），百分位数图<br  /></li>
+<li>散布图<br  /></li>
+<li>等高线图，曲面图，矢量场图<br  /></li>
+<li>矩阵像素化图<br  /></li>
+<li>平行坐标系<br  /></li>
+<li>星形坐标，Chernoff 脸<br  /></li>
+<li>ACCENT 原则<br  /></li>
+</ul></li>
+<li>OLAP<br  /></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: remerci</p>
+<p class="date">Created: 2017-01-18 三 23:10</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

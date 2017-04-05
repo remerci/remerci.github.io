@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2017-01-18 三 23:10 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>latex 学习笔记</title>
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="remerci" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+ <link rel='stylesheet' href='/windata/notes/publish/org_notes/public_html/Acss/main.css' type='text/css'/> 
+
+    <link rel="stylesheet" type="text/css" href="/windata/notes/publish/org_notes/public_html/Acss/prettify.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="preamble" class="status">
+<div class='nav'>
+<ul>
+<li><a href='http://remerci.com'>博客</a></li>
+<li><a href='/windata/notes/publish/org_notes/public_html/index.html'>Wiki目录</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<h1 class="title">latex 学习笔记</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgheadline1">1. latex 列表环境</a></li>
+<li><a href="#orgheadline6">2. latex 中文、字体相关支持和注意事项</a>
+<ul>
+<li><a href="#orgheadline2">2.1. CJK*模式和中英文混排</a></li>
+<li><a href="#orgheadline4">2.2. 字体</a>
+<ul>
+<li><a href="#orgheadline3">2.2.1. type1 字体生成</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline5">2.3. 中文段落缩进</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline7">3. 写文章时的注意事项</a></li>
+<li><a href="#orgheadline14">4. 基本写法</a>
+<ul>
+<li><a href="#orgheadline8">4.1. 引言区</a></li>
+<li><a href="#orgheadline9">4.2. 文章结构</a></li>
+<li><a href="#orgheadline10">4.3. 摘要</a></li>
+<li><a href="#orgheadline11">4.4. 插入图形</a></li>
+<li><a href="#orgheadline12">4.5. 插入公式</a></li>
+<li><a href="#orgheadline13">4.6. 插入参考文献</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline22">5. 一些问题的解决方法</a>
+<ul>
+<li><a href="#orgheadline15">5.1. 公式中的汉字</a></li>
+<li><a href="#orgheadline16">5.2. 字体和字号的手动调整</a></li>
+<li><a href="#orgheadline17">5.3. 字体嵌入问题</a></li>
+<li><a href="#orgheadline18">5.4. 文档的编码问题</a></li>
+<li><a href="#orgheadline19">5.5. pdf 中文书签</a></li>
+<li><a href="#orgheadline20">5.6. 图形 caption 中的断行</a></li>
+<li><a href="#orgheadline21">5.7. 正文的罗马数字</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+&lt;contents depth="3"&gt;<br  />
+</p>
+
+<p>
+latex 包含三种模式：段落，公式，LR(左右)。<br  />
+</p>
+
+<p>
+<a href="xetex.html">xetex.html</a>的使用。<br  />
+</p>
+
+<p>
+关于 emacs, winedt 使用的技巧的常用文档模版见<a href="latex_tools&amp;templates.html">编辑、编译技巧和文档模版</a>。<br  />
+关于 metapost, gnuplot, 图形排版等技巧见<a href="latex-fig.html">latex 插图</a>。<br  />
+关于 latex 表格宏包及命令用法，见<a href="latex-table.html">latex 表格</a>。<br  />
+</p>
+
+<div id="orgheadline1" class="outline-2">
+<h2 id="orgheadline1"><span class="section-number-2">1</span> latex 列表环境</h2>
+</div>
+
+
+<div id="orgheadline6" class="outline-2">
+<h2 id="orgheadline6"><span class="section-number-2">2</span> latex 中文、字体相关支持和注意事项</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="orgheadline2" class="outline-3">
+<h3 id="orgheadline2"><span class="section-number-3">2.1</span> CJK*模式和中英文混排</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+CJK*模式自动忽略中文字符间的所有空格.加空格的方法是在空格前面加上\ 字符.实际上<br  />
+CJK*模式忽略中文字符后面的空格,因此中文后面如果接着英文,必须加上保护的空格\ 或者~<br  />
+符号,否则可能造成断行错误.<br  />
+</p>
+
+<p>
+CJK 中{CJK*}环境是没有空格的{CJK}环境有空格，在文章中使用<br  />
+\CJKspace<br  />
+就切换到 CJK 环境模式，而用<br  />
+\CJKnospace<br  />
+就切换到*模式<br  />
+</p>
+
+<p>
+CJK 宏包重新定义了符号~的意义.~的原始定义是不可断行的空格,CJK 将其重定义成一个比较合适的弹性距离,大约相当于四分之一个汉字宽度,用于分隔中英文字符.我们通过使用命令<br  />
+\CJKtilde \def~{\hspace{0.25em plus 0.125em minus 0.08em}}<br  />
+来实现~的重定义.如果要恢复原始定义,可以用命令<br  />
+\standardtilde<br  />
+</p>
+
+<p>
+用 cct&amp;latex 编译,cct&amp;latex 按钮会调用 cctspace 程序对源文件做预处理，在中英文间加<br  />
+'~'<br  />
+</p>
+
+<p>
+但这样实际上仍无法解决所有问题，参看<a href="../../reference/latex/CJK-spacing.txt">这里</a><br  />
+</p>
+</div>
+</div>
+
+<div id="orgheadline4" class="outline-3">
+<h3 id="orgheadline4"><span class="section-number-3">2.2</span> 字体</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+在 CJK 中可以使用 Type1 字库和 TrueType 字库，但有许多细微的差别,输出结果取决于所用的<br  />
+工具.<br  />
+</p>
+
+<ul class="org-ul">
+<li>dvips 和 dvipdfm 可以直接使用 Type1 字库,不能直接使用 TrueType 字库,因此必须通过 ttf2pk 生成中间的 pk 字库,这是一种点阵字库,所以生成的 PostScript 文件在效果较差.<br  /></li>
+<li>dvipdfmx 和 pdfLaTeX 生成 PDF 文件可以直接使用两种字库，前者直接使用 TrueType 字库时<br  />
+生成的 PDF 文件是唯一能支持对中文内容进行正常拷贝粘贴的.(推荐使用)<br  /></li>
+<li>更新: 利用 cmap 宏包可以用 pdflatex 生成支持中文拷贝的 pdf 文件.<br  /></li>
+</ul>
+
+<p>
+王垠的 gbkfonts 生成的是 gbk，c19 编码的汉字，相应 c10 编码的是 gb 汉字。<br  />
+</p>
+</div>
+
+<div id="orgheadline3" class="outline-4">
+<h4 id="orgheadline3"><span class="section-number-4">2.2.1</span> type1 字体生成</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<p>
+主要有两个方法，一个是 yunwang 的方法，用 fontforge 或 ttf2pt1；另一个是 wangyin 的<br  />
+gbkfonts。<br  />
+任何方法都会产生大量字体、map 等格式文件，它们的用途不一，具体分析如下（afm, pk 文<br  />
+件还不知道是否有用，可能是中间产生的）：<br  />
+</p>
+
+<p>
+dvi 文件生成需要 fd 文件和 tfm 文件；dvips 需要 map 文件和 pfb type1 字体文件；dvipdfmx 需<br  />
+要 map 文件和 truetype 字体文件；pdflatex 需要 map 文件和 enc 文件（不需要 tfm 文件），用<br  />
+pdflatex 需要在 tex 文件开头声明所用的 map 文件。其中 fd 字体定义文件是 cjk 所需，不可缺<br  />
+少。<br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="orgheadline5" class="outline-3">
+<h3 id="orgheadline5"><span class="section-number-3">2.3</span> 中文段落缩进</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+\CJKindent 这个命令设定了每段开头空两格.如果第一段也要空格的话，就使用<br  />
+indentfirst 包。如果你不用\CJKindent 命令的话，\setlength{\parindent}{2em}这也能起<br  />
+到空两格的作用。<br  />
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="orgheadline7" class="outline-2">
+<h2 id="orgheadline7"><span class="section-number-2">3</span> 写文章时的注意事项</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>Latex 引号，双引号 ``''<br  /></li>
+<li>命令后空白\latex{}<br  /></li>
+<li>中文行间无空白 逆%回车<br  /></li>
+</ul>
+</div>
+</div>
+
+<div id="orgheadline14" class="outline-2">
+<h2 id="orgheadline14"><span class="section-number-2">4</span> 基本写法</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+这里先介绍一些基本的内容，再以我的 tex 文件为模板，介绍各个部分的写法。<br  />
+</p>
+
+<p>
+我使用的 ubuntu linux 系统，用的 texlive2007。编译文件的方法和 ctex 的不一样，不过 winedt 的工具栏上有编译按钮，应该不难。一般步骤先用 latex 将 tex 编译成 dvi 文件，再用类似于 dvipdfmx 之类的命令将 dvi 文件转换为 pdf 文件。latex 编译第一次可能没能将交叉引用信息编译好，再编译一次就好了。<br  />
+</p>
+
+<p>
+所有的命令都是\开头，一些符号如大括号，下划线有特殊意思，需要前面加\才可显示出来。%是行注释符，其后的该行内容不编译进文件中。源文件中连续的两行被视作一段内容，空行用来分段。<br  />
+</p>
+</div>
+
+<div id="orgheadline8" class="outline-3">
+<h3 id="orgheadline8"><span class="section-number-3">4.1</span> 引言区</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+下面是我的引言区，主要用来说明文档使用的模板和宏包；给出文章的题目和作者、单位等信息。<br  />
+&lt;src lang="latex"&gt;<br  />
+\documentclass{IEEEconf} %使用的模板<br  />
+</p>
+
+<p>
+%使用的宏包<br  />
+\usepackage{graphicx}    %图形宏包，用于插入图形环境<br  />
+\usepackage{indentfirst} %latex 默认每章的第一段不段首缩进，使用这个宏包就可以使其缩进了。<br  />
+</p>
+
+<p>
+%\author 命令用于加入作者及其单位，email 信息<br  />
+\author{ZHAO Xin\hspace{1cm} WANG Xiao-dong\hspace{1cm} YU Wan-rong\hspace{1cm} ZHOU<br  />
+  Xing-ming\\            %作者信息，\hspace{1cm}设置作者间空白，\\断行<br  />
+\begin{affiliation}<br  />
+National Laboratory for Parallel and Distributed Processing<br  />
+National University of Defense Technology<br  />
+\end{affiliation} \\     %单位信息，这是模板里带的环境<br  />
+\email{\{xinzhao\_remerci, xdwang, wlyu, xmzhou\}@nudt.edu.cn} %email，注意大括号，下划线需要前面加反斜杠才能正常显示<br  />
+}<br  />
+</p>
+
+<p>
+\title{An Efficient Broadcast Authentication Protocol for<br  />
+ Wireless Sensor Networks}  %文章题目<br  />
+&lt;/src&gt;<br  />
+</p>
+</div>
+</div>
+
+<div id="orgheadline9" class="outline-3">
+<h3 id="orgheadline9"><span class="section-number-3">4.2</span> 文章结构</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+这里介绍文章的主要结构<br  />
+</p>
+
+<p>
+&lt;src lang="latex"&gt;<br  />
+</p>
+\begin{document}
+
+\maketitle            %生成标题
+
+\begin{abstract}
+%此处写摘要信息
+\end{abstract}
+
+\section{Introduction} 
+                        %1 节内容
+\subsection{} 
+                        %1.1 节内容
+\subsubsection{} 
+                        %1.1.1 节内容
+\section{}
+
+\section{}
+
+\begin{thebibliography}{99}  %大括号里的 99 表示参考文献数为 2 位数
+%参考文献信息
+\end{thebibliography}
+
+\end{document}
+<p>
+&lt;/src&gt;<br  />
+</p>
+</div>
+</div>
+
+
+<div id="orgheadline10" class="outline-3">
+<h3 id="orgheadline10"><span class="section-number-3">4.3</span> 摘要</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+摘要的写法，一般模板里不带 keywords 环境，需要自己写。<br  />
+&lt;src lang="latex"&gt;<br  />
+</p>
+\begin{abstract}
+%此处写摘要信息
+\noindent
+\emph{\textbf{Keywords:} Broadcast Authentication, $\mu$TESLA, Poisson process}
+%模板中没有 keywords 环境，这是自己写的。\noindent 表示下面一段不缩进，
+%\emph{}改变大括号内内容的字体，\textbf{}粗体。
+\end{abstract}
+<p>
+&lt;/src&gt;<br  />
+</p>
+</div>
+</div>
+
+
+<div id="orgheadline11" class="outline-3">
+<h3 id="orgheadline11"><span class="section-number-3">4.4</span> 插入图形</h3>
+<div class="outline-text-3" id="text-4-4">
+<p>
+我写文章时直接生成了 eps 图形，所以对如何进行图形转换，<a href="../../reference/latex/graphics.pdf">latex 插图指南</a>里有转换工具的介绍，师兄可以查看一下。据我所知，imageMagick 有 linux 和 windows 版本，可以转换。<br  />
+&lt;src lang="latex"&gt;<br  />
+%图形环境<br  />
+b\begin{figure}<br  />
+  \centering                    %居中显示<br  />
+  \scalebox{0.85}{\includegraphics{mtm.1}}  %包含同目录下的图形，缩小图形为原来的 85%<br  />
+  \caption{Various message transmission models in WSNs}  %图注<br  />
+  \label{fig:mtm}               %该图的标签，文章中可用\ref{fig:mtm}来引用<br  />
+\end{figure}<br  />
+&lt;/src&gt;<br  />
+</p>
+</div>
+</div>
+
+<div id="orgheadline12" class="outline-3">
+<h3 id="orgheadline12"><span class="section-number-3">4.5</span> 插入公式</h3>
+<div class="outline-text-3" id="text-4-5">
+<p>
+公式中的特殊符号在 latex 中都是由命令输入，请参考<a href="../../reference/latex/lshort-cn.pdf">lshort-cn</a>公式一章，里面有详细的说明。<br  />
+</p>
+
+<p>
+文章中的公式用两个$包括起来，如$a+b=c$，公式单独一段需要用公式环境，如下<br  />
+</p>
+
+<p>
+&lt;src lang="latex"&gt;<br  />
+</p>
+\begin{displaymath}
+  \frac {t^{\mu TESLA}_{b}} {t^{FAT}_{b}} = \frac {1/\lambda} {d \cdot T} = 50
+\end{displaymath}
+<p>
+%不显示公式号<br  />
+</p>
+
+\begin{equation}
+  \label{eq:auth}
+  \frac{t^{\mu TESLA}_{a}}{t^{GBA}_{a}}  =
+\frac{t_{h} \cdot D^{\mu TESLA}}{t_{h} \cdot D^{GBA}}
+                                      = \lfloor t_{m}/T \rfloor \\
+                                         =\lfloor 1/(\lambda \cdot T) \rfloor
+\end{equation}
+<p>
+%显示公式号，但我发现断行命令这里不起作用，原因不明。<br  />
+</p>
+
+\begin{eqnarray}
+  \label{eq:poisson}
+  \textrm{P}\{t_{m} > t\} & = & e^{-\lambda t}, \qquad t>0     \nonumber\\
+  \textrm{E}[t_{m}] & = & \frac{1}{\lambda}
+\end{eqnarray}
+<p>
+%也显示公式号，实际上是公式列表，一个公式号多个公式可用这种环境，<br  />
+公式中的&amp;用于上下公式的等号对齐。\onnumber 使该行公式不带公式号，\\断行，这里是起作用的。文章中引用同样是用\ref{eq:poisson}<br  />
+&lt;/src&gt;<br  />
+</p>
+</div>
+</div>
+
+
+<div id="orgheadline13" class="outline-3">
+<h3 id="orgheadline13"><span class="section-number-3">4.6</span> 插入参考文献</h3>
+<div class="outline-text-3" id="text-4-6">
+<p>
+简单的方法是利用 thebibliography 环境生成参考文献，如下所示。<br  />
+&lt;src lang="latex"&gt;<br  />
+%参考文献信息<br  />
+</p>
+\begin{thebibliography}{99}  %大括号里的 99 表示参考文献数为 2 位数
+\bibitem{spins} A. Perrig, R. Szewczyk, J. D. Tygar, V. Wen, and D. E. Culler,
+  "SPINS: Security protocols for sensor networks," in \textit{Wireless
+    Networks}, vol. 8, pp. 521-534, Sep 2002.
+%这是一条参考文献，\bibitem{}开头，后面要有一个空格，然后是文献信息。大括号内文献标签，文章中引用使用命令\cite{spins}即可。我参考的文献中文章出处都是斜体，所以写文献时加入了\textit{}命令。
+\end{thebibliography}
+<p>
+&lt;/src&gt;<br  />
+</p>
+
+<p>
+另外可用 bibtex 程序生成参考文献库，一劳永逸，并可灵活的转变成不同的输出格式。<br  />
+</p>
+
+<ol class="org-ol">
+<li>生成 bib 数据库文件：auctex 可以方便的插入一个文献，定位下一个域的输入位置，reformat 去除不需要的域；使用 jabref java 程序可以方便的创建和下载 bibtex 文件；endnote 通过 output filter 可以输出缺少 key 的 bibtex 文件<br  /></li>
+<li>tex 文件加入相应内容：导言区加入命令\bibliographystyle{unsrt}，其他选项包括 plain、alpha、abbrev；引用用\cite{key}；文章最后用\bibliography{broadcast_authentication, key_management}引入一个或多个数据库文件。<br  /></li>
+<li>编译：先 latex，后 bibtex tex 文件名（不带后缀），最后在 latex 1-2 次。<br  /></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+<div id="orgheadline22" class="outline-2">
+<h2 id="orgheadline22"><span class="section-number-2">5</span> 一些问题的解决方法</h2>
+<div class="outline-text-2" id="text-5">
+</div><div id="orgheadline15" class="outline-3">
+<h3 id="orgheadline15"><span class="section-number-3">5.1</span> 公式中的汉字</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+用\mbox{}包含中文即可。<br  />
+</p>
+</div>
+</div>
+
+<div id="orgheadline16" class="outline-3">
+<h3 id="orgheadline16"><span class="section-number-3">5.2</span> 字体和字号的手动调整</h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+有时需要手动调整字体和字号。比如图片缩小后字也跟着缩小，为了在最后的文档中能看清，需要事先在图中用大号字；一些地方需要用到粗体或者斜体。<br  />
+命令如下：<br  />
+<a href="../../reference/latex/font.png">font</a><br  />
+</p>
+</div>
+</div>
+
+
+<div id="orgheadline17" class="outline-3">
+<h3 id="orgheadline17"><span class="section-number-3">5.3</span> 字体嵌入问题</h3>
+<div class="outline-text-3" id="text-5-3">
+<p>
+查看是否所有字体都嵌入 pdf 文件中用命令 pdffonts your.pdf。<br  />
+</p>
+
+<p>
+用 dvipdfmx 编译可以嵌入 tex 文件和 metapost 产生的 eps 图形中的字体。<br  />
+但由 gnuplot 产生的 eps 图形中的字体不可以，这可以由 epstopdf,pdf2ps,ps2eps 转换过后，<br  />
+原来的 type1 字体 Symbol 和 Helvetica 就被转换到别的字体并都被嵌入了。<br  />
+看了下效果，原来勉强可放下的图例说明现在后面的括号似乎丢了，不过还好。<br  />
+</p>
+</div>
+</div>
+
+
+<div id="orgheadline18" class="outline-3">
+<h3 id="orgheadline18"><span class="section-number-3">5.4</span> 文档的编码问题</h3>
+<div class="outline-text-3" id="text-5-4">
+<p>
+linux 世界一般有 gbk 和 utf-8 两种编码，使用不同的编码不仅对应的字体不同，要在 tex 文件中指出编码和字体，tex 文件本身的编码也必须和选择的编码一致。如文件中用 gbk 编码，vim 保存 tex 文件是需要执行 set fileencoding=gbk，然后再保存，否则生成的 pdf 文件会是乱码。<br  />
+</p>
+</div>
+</div>
+
+<div id="orgheadline19" class="outline-3">
+<h3 id="orgheadline19"><span class="section-number-3">5.5</span> pdf 中文书签</h3>
+<div class="outline-text-3" id="text-5-5">
+<p>
+参考 scrapbook 笔记，注意语句顺序和编译次数要完全一致。<br  />
+</p>
+
+<p>
+在 preamble 中加上 \usepackage[pdftex]{hyperref} 则会自动生成包括书签和超级链接的<br  />
+PDF 文件，如果使用 CJK 中文需要不同的选项<br  />
+\usepackage[pdftex,CJKbookmarks=true,colorlinks=true]{hyperref} 其中的 pdftex 选项<br  />
+根据生成 pdf 的方式选择，有 dvips，dvipdfm 等，参考 hyperref 文档。<br  />
+</p>
+
+<p>
+如果 section 之类的命令中有中文，而且又设置了 label，那么 hyperref 会出问题，导致编译<br  />
+进入死循环，总说有 label 改变了，需要再编译。解决办法：<br  />
+</p>
+
+<p>
+&lt;src lang="latex"&gt;<br  />
+\makeatletter<br  />
+\@tempcnta=128<br  />
+\loop \catcode\@tempcnta=13 \ifnum\@tempcnta&lt;255 \advance \@tempcnta \@ne<br  />
+\repeat<br  />
+\makeatother<br  />
+&lt;/src&gt;<br  />
+具体原因参见 TeX@SMTH<br  />
+</p>
+
+<p>
+由于 Acrobat Reader 程序只能正确处理 PDF 文件中使用 unicode 编码的书签，而 cct 或(使用<br  />
+GB/GBK 编码的)CJK 排版文件中通常使用 GBK 编码，因而生成的 PDF 文件可能会在书签中出现乱<br  />
+码。<br  />
+</p>
+
+<p>
+如果用 dvipdfmx 程序生成 PDF 文件，可以在排版文件中加入命令<br  />
+</p>
+
+<p>
+&lt;src lang="latex"&gt;<br  />
+\AtBeginDvi{\special{pdf:tounicode GBK-EUC-UCS2}}<br  />
+&lt;/src&gt;<br  />
+</p>
+
+<p>
+UTF8 编码的：<br  />
+&lt;src lang="latex"&gt;<br  />
+\AtBeginDvi{\special{pdf:tounicode UTF8-UCS2}}<br  />
+&lt;/src&gt;<br  />
+</p>
+
+<p>
+pdftex 无法用这种方法，可用 gbk2uni 解决<br  />
+</p>
+</div>
+</div>
+
+<div id="orgheadline20" class="outline-3">
+<h3 id="orgheadline20"><span class="section-number-3">5.6</span> 图形 caption 中的断行</h3>
+<div class="outline-text-3" id="text-5-6">
+<p>
+&lt;src lang="latex"&gt;<br  />
+\caption{Authentication time for one \protect\\ disclosed key and its related messages}<br  />
+</p>
+
+<p>
+\caption{Authentication time for one \protect\\ \mbox{}\hspace{3em}disclosed key and its related messages}<br  />
+</p>
+
+<p>
+&lt;/src&gt;<br  />
+</p>
+</div>
+</div>
+
+
+<div id="orgheadline21" class="outline-3">
+<h3 id="orgheadline21"><span class="section-number-3">5.7</span> 正文的罗马数字</h3>
+<div class="outline-text-3" id="text-5-7">
+<p>
+几种方法列举如下：<br  />
+</p>
+<ol class="org-ol">
+<li>用 <code>I!I</code> 模拟罗马 2<br  /></li>
+<li>导言区加入 <code>\makeatletter=，然后正文用 =\@Roman 4</code> 得到大写罗马 4, 但只限于 1-9<br  /></li>
+<li>用命令 <code>\romannumeral 2</code> 输出小写罗马 2, 用<br  />
+<code>\uppercase\expandafter{\romannumeral2}</code> 输出大写罗马 2<br  /></li>
+<li>导言区加入下列自定义命令：<br  /></li>
+</ol>
+<p>
+&lt;src lang="latex"&gt;<br  />
+\makeatletter<br  />
+\newcommand{\rmnum}[1]{\romannumeral #1}<br  />
+\newcommand{\Rmnum}[1]{\expandafter\@slowromancap\romannumeral #1@}<br  />
+\makeatother<br  />
+&lt;/src&gt;<br  />
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: remerci</p>
+<p class="date">Created: 2017-01-18 三 23:10</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

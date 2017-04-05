@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2017-01-18 三 23:10 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>gimp 学习笔记</title>
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="remerci" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+ <link rel='stylesheet' href='/windata/notes/publish/org_notes/public_html/Acss/main.css' type='text/css'/> 
+
+    <link rel="stylesheet" type="text/css" href="/windata/notes/publish/org_notes/public_html/Acss/prettify.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="preamble" class="status">
+<div class='nav'>
+<ul>
+<li><a href='http://remerci.com'>博客</a></li>
+<li><a href='/windata/notes/publish/org_notes/public_html/index.html'>Wiki目录</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<h1 class="title">gimp 学习笔记</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgheadline1">1. gimp 对照片的处理</a></li>
+<li><a href="#orgheadline2">2. 生成透明背景</a></li>
+</ul>
+</div>
+</div>
+<p>
+最近感到写文章、作报告时需要的一些图片，在 linux 上没有什么特别好的工具。<br  />
+尤其是 mspaint 这样简单强大的小工具，还有集成很多图库的 ms visio。<br  />
+想到自己可能对 linux 下的画图工具还不熟悉，像 metapost，inkspace，gimp，xfig，<br  />
+dia，imageMagick 等等。<br  />
+就想先好好学习一下，这里是 gimp 的一些学习心得。<br  />
+</p>
+
+<p>
+开始读的是 gimp 自己带的文档，居然还是中文的，不过光讲解工具感觉收获不大。<br  />
+于是网上找到两个资源。<a href="http://www.gimp.org/tutorials/">官方的 tutorial</a>，以及<a href="http://www.gimp-tutorials.com/">这个网站</a>。<br  />
+</p>
+
+<p>
+这两天看完了官方 tutorial 的 for beginner 的部分，列一下主要的收获。<br  />
+</p>
+<ul class="org-ul">
+<li>快速蒙板的使用，配合过滤器，生成各式边框特效。<br  /></li>
+<li>利用通道和选择工具，可以用笔刷画图。<br  /></li>
+<li>通道的点可以操作以作出曲线效果。<br  /></li>
+<li>主要收获：利用多个图层和图层蒙板作出带有阴影效果的文字 logo。<br  /></li>
+</ul>
+
+<p>
+生成的 nudt logo 如下：<br  />
+<a href="../../reference/gimp/nudt.jpg">nudt</a><br  />
+</p>
+
+<div id="orgheadline1" class="outline-2">
+<h2 id="orgheadline1"><span class="section-number-2">1</span> gimp 对照片的处理</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li><p>
+消除红眼<br  />
+</p>
+
+<p>
+选中眼睛区域, 菜单 filter -&gt; enhance -&gt; red eye removal.<br  />
+</p></li>
+
+<li><p>
+照片亮度太暗<br  />
+</p>
+
+<p>
+复制图层, 对该图层操作: 图层对话框的模式中选择 screen.<br  />
+</p></li>
+</ul>
+</div>
+</div>
+
+<div id="orgheadline2" class="outline-2">
+<h2 id="orgheadline2"><span class="section-number-2">2</span> 生成透明背景</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+在背景区域右键选 图层 -&gt; 透明度 -&gt; 将色彩转为透明, 对应英文菜单是<br  />
+layer -&gt; transparency -&gt; color to alpha. 还可进一步设置 transparency 中的<br  />
+threshold alpha.<br  />
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: remerci</p>
+<p class="date">Created: 2017-01-18 三 23:10</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

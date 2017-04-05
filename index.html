@@ -1,41 +1,311 @@
----
-layout: page
-description: "赵鑫"
----
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2017-01-18 三 23:10 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>我的 wiki</title>
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="remerci" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
 
-{% for post in paginator.posts %}
-<div class="post-preview">
-    <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">            
-            {{ post.title }}
-        </h2>
-        {% if post.subtitle %}
-        <h3 class="post-subtitle">
-            {{ post.subtitle }}
-        </h3>
-        {% endif %}
-        <div class="post-content-preview">
-            {{ post.content | strip_html | truncate:150 }}
-        </div>
-    </a>
-    <p class="post-meta">Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}</p>
-</div>
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+ <link rel='stylesheet' href='/windata/notes/publish/org_notes/public_html/Acss/main.css' type='text/css'/> 
 
-<hr>
-{% endfor %}
+    <link rel="stylesheet" type="text/css" href="/windata/notes/publish/org_notes/public_html/Acss/prettify.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
 
-<!-- Pager -->
-{% if paginator.total_pages > 1 %}
-<ul class="pager">
-    {% if paginator.previous_page %}
-    <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
-    </li>
-    {% endif %}
-    {% if paginator.next_page %}
-    <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
-    </li>
-    {% endif %}
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="preamble" class="status">
+<div class='nav'>
+<ul>
+<li><a href='http://remerci.com'>博客</a></li>
+<li><a href='/windata/notes/publish/org_notes/public_html/index.html'>Wiki目录</a></li>
 </ul>
-{% endif %}
+</div>
+</div>
+<div id="content">
+<h1 class="title">我的 wiki</h1>
+<ul class="org-ul">
+<li>life<br  />
+<ul class="org-ul">
+<li><a href="life/maxim.html">有份量的句子</a><br  /></li>
+<li><a href="life/health.html">调养身体</a><br  /></li>
+</ul></li>
+<li>efficient<br  />
+<ul class="org-ul">
+<li><a href="efficient/net_use.html">如何使用网络资源</a><br  /></li>
+<li><a href="efficient/efficient_work.html">高效的工作，恰切的休息</a><br  /></li>
+<li><a href="efficient/Others.html">日常生活</a><br  /></li>
+</ul></li>
+<li>env<br  />
+<ul class="org-ul">
+<li><a href="env/part-resize.html">分区调整</a><br  /></li>
+</ul></li>
+<li>dev<br  />
+<ul class="org-ul">
+<li><a href="dev/pasnew.html">我的 pasnew 2025 电子表使用说明</a><br  /></li>
+<li><a href="dev/e2.html">e2 的一些技巧</a><br  /></li>
+<li><a href="dev/bb.html">黑莓手机使用</a><br  /></li>
+</ul></li>
+<li>ml<br  />
+<ul class="org-ul">
+<li><a href="ml/bayes_freq.html">bayes_freq</a><br  /></li>
+<li><a href="ml/bayes.html">贝叶斯公式与机器学习</a><br  /></li>
+</ul></li>
+<li>emulab<br  />
+<ul class="org-ul">
+<li><a href="emulab/vnode.html">vnode</a><br  /></li>
+<li><a href="emulab/snmpit.html">snmpit script for HuaWei 9306 switchs</a><br  /></li>
+<li><a href="emulab/route.html">route</a><br  /></li>
+<li><a href="emulab/emulab.html">Emulab 相关</a><br  /></li>
+<li><a href="emulab/NewOS.html">NewOS</a><br  /></li>
+</ul></li>
+<li>research<br  />
+<ul class="org-ul">
+<li><a href="research/zigbee.html">zigbee</a><br  /></li>
+<li><a href="research/vanet.html">车载网一些特性和研究现状</a><br  /></li>
+<li><a href="research/trust_computing.html">可信计算 孙言强 4.12</a><br  /></li>
+<li><a href="research/top-journal-conference.html">计算机学会推荐国际学术刊物（计算机网络方向）</a><br  /></li>
+<li><a href="research/tinyos_install.html">tinyos 安装</a><br  /></li>
+<li><a href="research/tinyos_base.html">tinyos 基础</a><br  /></li>
+<li><a href="research/tinyos_apps.html">tinyos apps</a><br  /></li>
+<li><a href="research/tinyAUTH.html">TinyECC 及 muTESLA 的合并</a><br  /></li>
+<li><a href="research/thesis.html">赵鑫的博士学位论文</a><br  /></li>
+<li><a href="research/tesla-init.html">tesla-init</a><br  /></li>
+<li><a href="research/terminology.html">术语</a><br  /></li>
+<li><a href="research/surveyBA.html">综述中的收获</a><br  /></li>
+<li><a href="research/security.html">安全积累</a><br  /></li>
+<li><a href="research/research_status.html">research status</a><br  /></li>
+<li><a href="research/research_idea.html">课题思路</a><br  /></li>
+<li><a href="research/performance_analysis.html">性能分析</a><br  /></li>
+<li><a href="research/pc_mote.html">pc 与 mote 的交互</a><br  /></li>
+<li><a href="research/original_survey.html">notes on survey of BA in WSNs</a><br  /></li>
+<li><a href="research/nesc_dubug.html">tinyos(nesc)程序调试</a><br  /></li>
+<li><a href="research/nesc_coding_tools.html">用 vim、ctags、taglist 查看编写 nesc 程序</a><br  /></li>
+<li><a href="research/micaz.html">micaz</a><br  /></li>
+<li><a href="research/mib600.html">programming with mib600</a><br  /></li>
+<li><a href="research/key_management.html">安全通信系统中的密钥管理体系</a><br  /></li>
+<li><a href="research/howto.html">关于投稿和文章下载的一些体会</a><br  /></li>
+<li><a href="research/expressions.html">useful expressions for paper writing(句子积累)</a><br  /></li>
+<li><a href="research/current_node.html">节点能力及参数总结</a><br  /></li>
+<li><a href="research/cn-paper-list.html">cn-paper-list</a><br  /></li>
+<li><a href="research/cfp-rank.html">cfp list and rank list</a><br  /></li>
+<li><a href="research/base.html">基础积累</a><br  /></li>
+<li><a href="research/arm.html">arm</a><br  /></li>
+<li><a href="research/Research.html">课题研究及工作记录</a><br  /></li>
+<li><a href="research/GBA_tesla.html">GBA and muTESLA</a><br  /></li>
+<li><a href="research/GBA.html">GBA</a><br  /></li>
+<li><a href="research/GBA-cn.html">GBA 中文写作收获</a><br  /></li>
+<li><a href="research/FBAP.html">FBAP</a><br  /></li>
+<li><a href="research/BAforWSNs.html">notes on survey of BA in WSNs</a><br  /></li>
+</ul></li>
+<li>tool<br  />
+<ul class="org-ul">
+<li><a href="tool/xfig.html">xfig</a><br  /></li>
+<li><a href="tool/xetex.html">xetex 使用</a><br  /></li>
+<li><a href="tool/word.html">word 技巧</a><br  /></li>
+<li><a href="tool/wget.html">wget 的使用</a><br  /></li>
+<li><a href="tool/w3m.html">w3m 使用</a><br  /></li>
+<li><a href="tool/vim.html">vim 技巧</a><br  /></li>
+<li><a href="tool/tikz.html">tikz 学习</a><br  /></li>
+<li><a href="tool/sshlogon_nopass.html">ssh 登录不需要密码的方法</a><br  /></li>
+<li><a href="tool/softlist.html">软件列表</a><br  /></li>
+<li><a href="tool/slides.html">贝叶斯公式与机器学习</a><br  /></li>
+<li><a href="tool/python_notes.html">python 学习 (基于 emacs)</a><br  /></li>
+<li><a href="tool/org.html">org</a><br  /></li>
+<li><a href="tool/oracle_note.html">oracle 基础</a><br  /></li>
+<li><a href="tool/mutt.html">mutt 使用技巧</a><br  /></li>
+<li><a href="tool/mocp.html">MOC 的使用</a><br  /></li>
+<li><a href="tool/metapost.html">metapost 学习笔记</a><br  /></li>
+<li><a href="tool/mediawiki_install.html">mediawiki 安装到 windows 2003 server 上</a><br  /></li>
+<li><a href="tool/linux-softlist.html">软件列表</a><br  /></li>
+<li><a href="tool/latex_tools&amp;templates.html">latex 技巧及模版</a><br  /></li>
+<li><a href="tool/latex-table.html">latex 表格使用</a><br  /></li>
+<li><a href="tool/latex-fig.html">latex 图形处理</a><br  /></li>
+<li><a href="tool/jabref.html">JabRef</a><br  /></li>
+<li><a href="tool/inkscape.html">inkscape 学习和使用</a><br  /></li>
+<li><a href="tool/gnuplot.html">使用 gnuplot</a><br  /></li>
+<li><a href="tool/git 使用.html">git 使用技巧</a><br  /></li>
+<li><a href="tool/gimp.html">gimp 学习笔记</a><br  /></li>
+<li><a href="tool/fig.html">绘图工具总结</a><br  /></li>
+<li><a href="tool/festival.html">festival 安装配置使用</a><br  /></li>
+<li><a href="tool/fcitx.html">fcitx 使用</a><br  /></li>
+<li><a href="tool/emacs_win_install.html">emacs 在 windows 上的安装配置</a><br  /></li>
+<li><a href="tool/emacs.html">emacs 快速参考</a><br  /></li>
+<li><a href="tool/emacs-wiki.html">emacs-wiki 的学习</a><br  /></li>
+<li><a href="tool/emacs-muse.html">emacs-muse 安装，配置，使用</a><br  /></li>
+<li><a href="tool/conky.html">conky</a><br  /></li>
+<li><a href="tool/beamer.html">beamer 学习笔记</a><br  /></li>
+<li><a href="tool/autokey.html">autokey 使用</a><br  /></li>
+<li><a href="tool/Soft.html">linux 的使用和学习</a><br  /></li>
+<li><a href="tool/LatexStudy.html">latex 学习笔记</a><br  /></li>
+</ul></li>
+<li>hack<br  />
+<ul class="org-ul">
+<li><a href="hack/shell-13Q.html">shell 十三问</a><br  /></li>
+<li><a href="hack/read.html">介绍一下 shell 编程中的 read</a><br  /></li>
+<li><a href="hack/python_notes.html">python 学习 (基于 emacs)</a><br  /></li>
+<li><a href="hack/patch.html">patch 的制作和使用</a><br  /></li>
+<li><a href="hack/note_on_perl_.html">notes on perl 语言入门</a><br  /></li>
+<li><a href="hack/little-command.html">Linux 平台上的小命令</a><br  /></li>
+<li><a href="hack/flash.html">flash actionScript</a><br  /></li>
+<li><a href="hack/find.html">find 命令使用</a><br  /></li>
+<li><a href="hack/cSharp.html">c#学习</a><br  /></li>
+<li><a href="hack/bash.html">bash 技巧</a><br  /></li>
+<li><a href="hack/Programming.html">programming study</a><br  /></li>
+</ul></li>
+<li><a href="topic.html">topic</a><br  /></li>
+<li><a href="tool.html">tool</a><br  /></li>
+<li><a href="research.html">research</a><br  /></li>
+<li><a href="res.html">res</a><br  /></li>
+<li><a href="ml.html">ml</a><br  /></li>
+<li><a href="memo.html">memo</a><br  /></li>
+<li><a href="life.html">life</a><br  /></li>
+<li><a href="kindle.html">kindle</a><br  /></li>
+<li><a href="hack.html">hack</a><br  /></li>
+<li><a href="geek.html">geek</a><br  /></li>
+<li><a href="env.html">env</a><br  /></li>
+<li><a href="emulab.html">Emulab 相关</a><br  /></li>
+<li><a href="efficient.html">高效的工作，恰切的休息</a><br  /></li>
+<li><a href="dev.html">dev</a><br  /></li>
+<li><a href="booklist.html">booklist</a><br  /></li>
+<li><a href="attack.html">attack</a><br  /></li>
+</ul>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: remerci</p>
+<p class="date">Created: 2017-01-18 三 23:10</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

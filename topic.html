@@ -1,0 +1,823 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2017-01-18 三 23:10 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title></title>
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="remerci" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+ <link rel='stylesheet' href='/windata/notes/publish/org_notes/public_html/Acss/main.css' type='text/css'/> 
+
+    <link rel="stylesheet" type="text/css" href="/windata/notes/publish/org_notes/public_html/Acss/prettify.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="preamble" class="status">
+<div class='nav'>
+<ul>
+<li><a href='http://remerci.com'>博客</a></li>
+<li><a href='/windata/notes/publish/org_notes/public_html/index.html'>Wiki目录</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgheadline27">1. economy 经济</a>
+<ul>
+<li><a href="#orgheadline7">1.1. kindle</a>
+<ul>
+<li><a href="#orgheadline1">1.1.1. 角力中的平衡点: 纳什均衡与经济</a></li>
+<li><a href="#orgheadline2">1.1.2. 为什么明朝嘉靖年间会出现倭患: 海外贸易的禁绝</a></li>
+<li><a href="#orgheadline3">1.1.3. 美元的作用(中美博弈的一篇雄文)</a></li>
+<li><a href="#orgheadline4">1.1.4. 供给侧改革</a></li>
+<li><a href="#orgheadline5">1.1.5. 在中国, 做量化交易一天的工作是怎样的</a></li>
+<li><a href="#orgheadline6">1.1.6. 金融复利 72 法则, 9%复利, 72/9=8 年翻倍</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline26">1.2. 自动股市交易</a>
+<ul>
+<li><a href="#orgheadline10">1.2.1. <span class="done DONE">DONE</span> 程序化交易的技能, 资源</a>
+<ul>
+<li><a href="#orgheadline8">1.2.1.1. 股市量化分析</a></li>
+<li><a href="#orgheadline9">1.2.1.2. 炒股新招:</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline19">1.2.2. 选股</a>
+<ul>
+<li><a href="#orgheadline11">1.2.2.1. 基本面</a></li>
+<li><a href="#orgheadline12">1.2.2.2. 技术</a></li>
+<li><a href="#orgheadline18">1.2.2.3. 参考</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline21">1.2.3. 操作原则</a>
+<ul>
+<li><a href="#orgheadline20">1.2.3.1. 来看高教授</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline25">1.2.4. 理解</a>
+<ul>
+<li><a href="#orgheadline22">1.2.4.1. 概念</a></li>
+<li><a href="#orgheadline23">1.2.4.2. 庄家行为</a></li>
+<li><a href="#orgheadline24">1.2.4.3. 分析研判</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgheadline37">2. electron 电子</a>
+<ul>
+<li><a href="#orgheadline35">2.1. kindle</a>
+<ul>
+<li><a href="#orgheadline28">2.1.1. 直流电与交流电在实际应用中有什么区别</a></li>
+<li><a href="#orgheadline29">2.1.2. 空气开关上的数据都是什么意思</a></li>
+<li><a href="#orgheadline30">2.1.3. 低压电气和低压电器技术之 1, 从什么是开关谈起</a></li>
+<li><a href="#orgheadline31">2.1.4. 低压电气和低压电器技术之 2, 趣谈电器中的导体发热</a></li>
+<li><a href="#orgheadline32">2.1.5. 如何深入理解低压配电网的接地系统</a></li>
+<li><a href="#orgheadline33">2.1.6. 串行口，RS232，RS485，RJ45 口以及 Modbus 协议，这些的区别和共同点是什么？</a></li>
+<li><a href="#orgheadline34">2.1.7. </a></li>
+</ul>
+</li>
+<li><a href="#orgheadline36">2.2. term</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline46">3. astronomy 天文</a>
+<ul>
+<li><a href="#orgheadline38">3.1. 宇宙大爆炸(视频)</a></li>
+<li><a href="#orgheadline45">3.2. kindle</a>
+<ul>
+<li><a href="#orgheadline39">3.2.1. 观测面向太阳那一侧的恒星</a></li>
+<li><a href="#orgheadline40">3.2.2. 宇宙中可见物质为 4%，暗物质和暗能量占 96% 是怎么算出来的？</a></li>
+<li><a href="#orgheadline41">3.2.3. 代表人类出征火星, 只能活 90 天的它撑了 12 年</a></li>
+<li><a href="#orgheadline42">3.2.4. 大数据文摘: 问世间空为何物</a></li>
+<li><a href="#orgheadline43">3.2.5. 科研圈: 时空诞生于四维宇宙</a></li>
+<li><a href="#orgheadline44">3.2.6. 知乎专栏: 距离阶梯，哈勃定律和膨胀的宇宙</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgheadline52">4. quantum 量子</a>
+<ul>
+<li><a href="#orgheadline51">4.1. kindle</a>
+<ul>
+<li><a href="#orgheadline47">4.1.1. 中微子通信</a></li>
+<li><a href="#orgheadline48">4.1.2. 从相对论的诞生, 看我们对科学的最大误会</a></li>
+<li><a href="#orgheadline49">4.1.3. 编织宇宙的三角形</a></li>
+<li><a href="#orgheadline50">4.1.4. 爱因斯坦不会高兴的: 量子纠缠不但真的存在</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgheadline53">5. virtual reality 虚拟现实</a></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline27" class="outline-2">
+<h2 id="orgheadline27"><span class="section-number-2">1</span> economy 经济</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="orgheadline7" class="outline-3">
+<h3 id="orgheadline7"><span class="section-number-3">1.1</span> kindle</h3>
+<div class="outline-text-3" id="text-1-1">
+</div><div id="orgheadline1" class="outline-4">
+<h4 id="orgheadline1"><span class="section-number-4">1.1.1</span> 角力中的平衡点: 纳什均衡与经济</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<ul class="org-ul">
+<li>零和: 比赛, 竞技类游戏<br  /></li>
+<li>解决生活中更普遍的非零和博弈<br  /></li>
+<li>状态稳定的纳什均衡点: 公地悲剧(污染河水, 荒漠化草场, 空气污染, 全球变暖), 原因是代价均摊 -&gt; 解决方法: 代价与使用量挂钩<br  /></li>
+<li>拍卖理论<br  /></li>
+<li>银行挤兑: 不可解释. 无限理性的假设简化了现实.<br  /></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline2" class="outline-4">
+<h4 id="orgheadline2"><span class="section-number-4">1.1.2</span> 为什么明朝嘉靖年间会出现倭患: 海外贸易的禁绝</h4>
+<div class="outline-text-4" id="text-1-1-2">
+</div>
+</div>
+<div id="orgheadline3" class="outline-4">
+<h4 id="orgheadline3"><span class="section-number-4">1.1.3</span> 美元的作用(中美博弈的一篇雄文)</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<ul class="org-ul">
+<li>与黄金脱钩后，通过与欧佩克建立关系，继续掌握国际贸易结算大权<br  /></li>
+<li>制造危机同时加息吸回资本，剪经济发展区的羊毛；重新投资低价购优质资产。10 年 6 年周期。<br  /></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline4" class="outline-4">
+<h4 id="orgheadline4"><span class="section-number-4">1.1.4</span> 供给侧改革</h4>
+<div class="outline-text-4" id="text-1-1-4">
+<ul class="org-ul">
+<li>投资, 消费, 出口 需求侧三驾马车<br  /></li>
+<li>清理落后, 过剩的产能, 发展高端<br  /></li>
+<li>解决海淘, 医疗, 教育等总是供给不足问题<br  /></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline5" class="outline-4">
+<h4 id="orgheadline5"><span class="section-number-4">1.1.5</span> 在中国, 做量化交易一天的工作是怎样的</h4>
+<div class="outline-text-4" id="text-1-1-5">
+<dl class="org-dl">
+<dt>CTA</dt><dd>Commodity Trading Advisors，即"商品交易顾问". 期货投资基金简称期货基金或<br  />
+商品基金,是指广大投资者将资金集中起来,委托给专业的期货投资机构,并通过商品交<br  />
+易顾问(CTA)进行期货投资交易<br  /></dd>
+<dt>(no term)</dt><dd>趋势交易是反人性的, 几乎总在最高点开多, 最低点开空.<br  /></dd>
+<dt>(no term)</dt><dd>实质都是量价时空等历史资料基础上的统计, 分析和计算<br  /></dd>
+<dt>(no term)</dt><dd>CTA 让人怀疑职业生涯, 直到管理对冲产品, 开始股票 alpha 模型的稳定盈利模式<br  /></dd>
+</dl>
+</div>
+</div>
+<div id="orgheadline6" class="outline-4">
+<h4 id="orgheadline6"><span class="section-number-4">1.1.6</span> 金融复利 72 法则, 9%复利, 72/9=8 年翻倍</h4>
+</div>
+</div>
+<div id="orgheadline26" class="outline-3">
+<h3 id="orgheadline26"><span class="section-number-3">1.2</span> 自动股市交易</h3>
+<div class="outline-text-3" id="text-1-2">
+</div><div id="orgheadline10" class="outline-4">
+<h4 id="orgheadline10"><span class="section-number-4">1.2.1</span> <span class="done DONE">DONE</span> 程序化交易的技能, 资源</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<ol class="org-ol">
+<li>编程<br  /></li>
+<li>相关信息获取<br  /></li>
+<li>市场交易策略<br  /></li>
+<li>风险管理<br  />
+<ul class="org-ul">
+<li>场景分析<br  /></li>
+<li>止损机制<br  /></li>
+<li>交易资金<br  /></li>
+</ul></li>
+<li>心理<br  />
+<ul class="org-ul">
+<li>冒险精神<br  /></li>
+<li>接受失败的能力<br  /></li>
+<li>抗压能力<br  /></li>
+<li>长时间工作<br  /></li>
+</ul></li>
+</ol>
+</div>
+<div id="orgheadline8" class="outline-5">
+<h5 id="orgheadline8"><span class="section-number-5">1.2.1.1</span> 股市量化分析</h5>
+<div class="outline-text-5" id="text-1-2-1-1">
+<ul class="org-ul">
+<li>quantlib<br  /></li>
+<li>vnpy <a href="https://github.com/vnpy/vnpy">https://github.com/vnpy/vnpy</a><br  /></li>
+<li><p>
+newQuant (仿 quantlib) <a href="https://github.com/xuruilong100/NewQuant">https://github.com/xuruilong100/NewQuant</a><br  />
+</p>
+
+<p>
+在众多的股票分析理论中，大体可分为两派，即有 <b>价值投资派</b> ，也<br  />
+有 <b>技术投资派</b> 。技术分析又有很多的方法，有 <b>波浪理论，股价形态理<br  />
+论（W 底，圆弧底之类的），K 线理论，缠论，均线</b> 等指标理论。分析时往<br  />
+往需要社会科学知识比如 <b>博弈学</b> 。股票分析的智者太多，给大家推荐的<br  />
+是 <b>徐文明(趋势分析)，王国强（波段理论）</b> 。<br  />
+</p>
+
+<p>
+首先要实现程序化交易你需要有一套能做程序化交易的工具，可以自己开发<br  />
+对接券商或者付费使用成熟的量化软件。当然，前提是你已经有一些功底，<br  />
+如果是初学者可以考虑找一些量化社区学习一下：海洋部落<br  />
+(OceanTribe.org)、恒生量化社区、量化投资|对冲基金自己开发的话相对<br  />
+来说一来对编程有很高的要求，二来券商的接口相对封闭，除非你有很大<br  />
+的资金量券商才会考虑开放给你。如果用既有的软件则可以选择一款适合<br  />
+自己的，像大智慧收购的 DTS，国外的 APAMA，恒生电子的量化赢家等都可<br  />
+以实现这些功能，可以去各家申请账号试用一下。<br  />
+</p></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline9" class="outline-5">
+<h5 id="orgheadline9"><span class="section-number-5">1.2.1.2</span> 炒股新招:</h5>
+<div class="outline-text-5" id="text-1-2-1-2">
+<ul class="org-ul">
+<li>大数据文摘, 股市实战秘籍 用新闻联播情绪指标炒股<br  /></li>
+<li>大数据文摘, 推特和脸书能否预测股票变动<br  /></li>
+<li>投机情绪指数 social sentiment indicators SSI<br  /></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="orgheadline19" class="outline-4">
+<h4 id="orgheadline19"><span class="section-number-4">1.2.2</span> 选股</h4>
+<div class="outline-text-4" id="text-1-2-2">
+</div><div id="orgheadline11" class="outline-5">
+<h5 id="orgheadline11"><span class="section-number-5">1.2.2.1</span> 基本面</h5>
+<div class="outline-text-5" id="text-1-2-2-1">
+<ul class="org-ul">
+<li>净利润, 毛利率<br  /></li>
+<li>浮利<br  /></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline12" class="outline-5">
+<h5 id="orgheadline12"><span class="section-number-5">1.2.2.2</span> 技术</h5>
+<div class="outline-text-5" id="text-1-2-2-2">
+<ul class="org-ul">
+<li>均线多头<br  /></li>
+<li>资金流入<br  /></li>
+<li>已涨不大<br  /></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline18" class="outline-5">
+<h5 id="orgheadline18"><span class="section-number-5">1.2.2.3</span> 参考</h5>
+<div class="outline-text-5" id="text-1-2-2-3">
+</div><ol class="org-ol"><li><a id="orgheadline13"></a>选股程序：<br  /><div class="outline-text-6" id="text-1-2-2-3-1">
+<p>
+1、先通过软件找出毛利率近 3 年来持续在 50%以上的股票；<br  />
+2、接着在其中找出近 3 年来净利润同比增长 30%以上的股票；<br  />
+3、再看看其基本面的其他情况，如总股本变化、主营产品市场占有率、市盈率、行业属性及排名、董事长简历、前十大股东……<br  />
+好股基本上就在这一个“50%”、一个“30%”里面！<br  />
+</p>
+</div></li>
+<li><a id="orgheadline14"></a><a href="http://blog.sina.com.cn/s/blog_69e744a00102efwc.html">论“程序化”选股的重要性</a><br  /><div class="outline-text-6" id="text-1-2-2-3-2">
+<ol class="org-ol">
+<li>成功的选股模式可以自己去建立，我能提供的思路是：<br  />
+5、10、20、30、60 均线必须多头排列，昨天只能是十字星、小阴或缩量阴、已有 3％以上中阳线不看。<br  /></li>
+<li>程序化选股设定(虽然用 5 个指标，但基础是均线多头排列)：<br  />
+<ol class="org-ol">
+<li>放量急升<br  /></li>
+<li>均线多头<br  /></li>
+<li>阳包阴<br  /></li>
+<li>笑脸布林<br  /></li>
+<li>量比选股<br  /></li>
+</ol></li>
+<li>因为上午买股风险大，上午选下午买保险，你就需要能抵制诱惑做到不动如山。<br  />
+因为均线助涨，昨日完美今日上午调整但均线依然完美者持仓。<br  /></li>
+<li>完美未必涨，只有完美被主力大资金相中并大举介入，才可能成为牛股。<br  />
+因此，上午选出来的股，只有当大资金显山露水扫盘拉升时才值得介入！<br  />
+大资金买入的股即使当天留些上影次日还会自救！<br  /></li>
+</ol>
+</div></li>
+<li><a id="orgheadline15"></a><a href="http://blog.eastmoney.com/lixirong168/blog_140217796.html">短线选股</a><br  /><div class="outline-text-6" id="text-1-2-2-3-3">
+<ul class="org-ul">
+<li>主力资金不断的介入，股价滞涨<br  /></li>
+<li>大智慧 DDE 实时策略 DDX 组合<br  />
+<ol class="org-ol">
+<li>盘中主力大单资金流入需在前 100 位，以确保个股有足够的短线上攻动能<br  /></li>
+<li>股价涨幅必须小于 5%，一定程度上降低操作的风险<br  /></li>
+<li>10 日内主力资金超过 3 日是净流入的，证明近期主力筹码是出于收集状态<br  /></li>
+</ol></li>
+<li>注意:<br  />
+<ol class="org-ol">
+<li>热点效应<br  /></li>
+<li>该股整体股价近期的涨幅情况<br  /></li>
+<li>分时图中留意盘口变化. 通常在异动时，量比会超过 1.0，换手率会达<br  />
+到 5%以上，十档卖盘中虚假卖单经常性的会大量出现，但股价上去时，<br  />
+也会快速撤单<br  /></li>
+</ol></li>
+</ul>
+</div></li>
+<li><a id="orgheadline16"></a><a href="http://bbs.money.163.com/bbs/agu/224731949.html">DIY 自己的免费自动化交易系统</a><br  /><div class="outline-text-6" id="text-1-2-2-3-4">
+<ul class="org-ul">
+<li>当一只股票有中长线大资金运作时必定会出现连续拉升的时候，这时候该<br  />
+股所有的筹码都是获利的, 都解套.<br  /></li>
+<li>设定一只股票的 95%的筹码都获利的时候买进，另外只选择股价在平均成<br  />
+本之上.<br  /></li>
+<li>股价距离平均成本的百分比，这个指标叫浮利。用通达信软件的指标排行把<br  />
+浮利指标数值按从高到低排序.<br  /></li>
+<li>特别要关注排序靠前的个股和在平均成本附近的个股。排序靠前的是强势股，<br  />
+在成本附近的是潜力股。<br  /></li>
+</ul>
+</div></li>
+<li><a id="orgheadline17"></a>日 CR 指标站上 MA1,MA2,MA3,MA4 公式<br  /><div class="outline-text-6" id="text-1-2-2-3-5">
+<pre class="example">
+MID:=REF(HIGH+LOW,1)/2;
+CR:=SUM(MAX(0,HIGH-MID),26)/SUM(MAX(0,MID-LOW),26)*100;
+MA1:=REF(MA(CR,10),1+10/2.5);
+MA2:=REF(MA(CR,20),1+20/2.5);
+MA3:=REF(MA(CR,40),1+40/2.5);
+MA4:=REF(MA(CR,62),1+62/2.5);
+A:CR&gt;MA1 AND CR&gt;MA2 AND CR&gt;MA3 AND CR&gt;MA4;
+</pre>
+</div></li></ol>
+</div>
+</div>
+<div id="orgheadline21" class="outline-4">
+<h4 id="orgheadline21"><span class="section-number-4">1.2.3</span> 操作原则</h4>
+<div class="outline-text-4" id="text-1-2-3">
+<ul class="org-ul">
+<li>止损第一<br  /></li>
+<li>不同时间级别的操作, 选用不同的指标参数<br  /></li>
+</ul>
+</div>
+<div id="orgheadline20" class="outline-5">
+<h5 id="orgheadline20"><span class="section-number-5">1.2.3.1</span> 来看高教授</h5>
+<div class="outline-text-5" id="text-1-2-3-1">
+<ol class="org-ol">
+<li>注册制: 波动投机 -&gt; 股息<br  /></li>
+<li>美加息, 经济改革艰难 -&gt; 股市预期下滑<br  /></li>
+<li>石油的潜力, 30 美元已经到底. 页岩油成本 60 美元<br  /></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="orgheadline25" class="outline-4">
+<h4 id="orgheadline25"><span class="section-number-4">1.2.4</span> 理解</h4>
+<div class="outline-text-4" id="text-1-2-4">
+</div><div id="orgheadline22" class="outline-5">
+<h5 id="orgheadline22"><span class="section-number-5">1.2.4.1</span> 概念</h5>
+<div class="outline-text-5" id="text-1-2-4-1">
+<ul class="org-ul">
+<li>量比<br  /></li>
+<li>换手率<br  /></li>
+<li>盘口<br  /></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline23" class="outline-5">
+<h5 id="orgheadline23"><span class="section-number-5">1.2.4.2</span> 庄家行为</h5>
+<div class="outline-text-5" id="text-1-2-4-2">
+<ul class="org-ul">
+<li>较长时间（半年左右）吸筹，反应慢<br  /></li>
+<li>中间制造震荡，排除部分散户<br  /></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline24" class="outline-5">
+<h5 id="orgheadline24"><span class="section-number-5">1.2.4.3</span> 分析研判</h5>
+<div class="outline-text-5" id="text-1-2-4-3">
+<ul class="org-ul">
+<li>量大的底和顶是支撑和压力位<br  /></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="orgheadline37" class="outline-2">
+<h2 id="orgheadline37"><span class="section-number-2">2</span> electron 电子</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="orgheadline35" class="outline-3">
+<h3 id="orgheadline35"><span class="section-number-3">2.1</span> kindle</h3>
+<div class="outline-text-3" id="text-2-1">
+</div><div id="orgheadline28" class="outline-4">
+<h4 id="orgheadline28"><span class="section-number-4">2.1.1</span> 直流电与交流电在实际应用中有什么区别</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<ul class="org-ul">
+<li>交流电易变换电压不能变频, 适合粗大笨重的苦力活<br  /></li>
+<li>直流电不易变换电压可以变频, 适合精密活<br  /></li>
+<li>生活中的普通电器稍加改造或可直接(纯发热, 灯泡电饭煲)交直通用<br  /></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline29" class="outline-4">
+<h4 id="orgheadline29"><span class="section-number-4">2.1.2</span> 空气开关上的数据都是什么意思</h4>
+<div class="outline-text-4" id="text-2-1-2">
+</div>
+</div>
+<div id="orgheadline30" class="outline-4">
+<h4 id="orgheadline30"><span class="section-number-4">2.1.3</span> 低压电气和低压电器技术之 1, 从什么是开关谈起</h4>
+<div class="outline-text-4" id="text-2-1-3">
+<dl class="org-dl">
+<dt>温升</dt><dd>运行温度 - 环境温度<br  /></dd>
+<dt>开距</dt><dd>决定了触头打开时能够隔离的电压等级<br  /></dd>
+<dt>(no term)</dt><dd>短路时 剧烈的发热效应和电动力效应<br  /></dd>
+<dt>峰值系数</dt><dd>短路接通能力与短时耐受电流之比<br  /></dd>
+</dl>
+</div>
+</div>
+<div id="orgheadline31" class="outline-4">
+<h4 id="orgheadline31"><span class="section-number-4">2.1.4</span> 低压电气和低压电器技术之 2, 趣谈电器中的导体发热</h4>
+<div class="outline-text-4" id="text-2-1-4">
+<ul class="org-ul">
+<li>交流下的集肤效应和邻近效应<br  /></li>
+<li>铜的穿透深度为 9.3mm<br  /></li>
+<li>集肤效应的穿透深度与电源频率 f 的 1/2 次方成正比. 频率很高时导体内部没有电流流过<br  /></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline32" class="outline-4">
+<h4 id="orgheadline32"><span class="section-number-4">2.1.5</span> 如何深入理解低压配电网的接地系统</h4>
+<div class="outline-text-4" id="text-2-1-5">
+<ul class="org-ul">
+<li>低压配电 &lt; 1000V (GB14048)<br  /></li>
+<li>间接隔离安全措施<br  />
+<dl class="org-dl">
+<dt>系统接地</dt><dd>降低系统对绝缘水平的要求, 防雷击保护<br  /></dd>
+<dt>保护接地</dt><dd>碰壳时接地电流瞬间放大, 线路保护电器会迅速切断故障线路<br  /></dd>
+</dl></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline33" class="outline-4">
+<h4 id="orgheadline33"><span class="section-number-4">2.1.6</span> <a href="https://www.zhihu.com/question/27707815/answer/68148899?utm_campaign=rss&amp;utm_medium=rss&amp;utm_source=rss&amp;utm_content=title">串行口，RS232，RS485，RJ45 口以及 Modbus 协议，这些的区别和共同点是什么？</a></h4>
+<div class="outline-text-4" id="text-2-1-6">
+<ul class="org-ul">
+<li>电源插头组合在物理层面上的规范性协议<br  />
+<ol class="org-ol">
+<li>插头和插座管脚的形状、大小和插针直径及长度必须一一对应<br  /></li>
+<li>电源的输出电压值必须满足载侧的需求值<br  /></li>
+<li>电源的输出阻抗与负载的输入阻抗必须匹配<br  /></li>
+</ol></li>
+<li>通信接口<br  />
+<ul class="org-ul">
+<li>OSI 模型里，物理层规定了接口的机械外形、接口管脚定义、接口电平和字节格式<br  /></li>
+<li>一般地，一个字节有 8 个数据位，1 个起始位（停止位），和 1 个奇偶校验位。注意：起始位和停止位可以合并<br  /></li>
+</ul></li>
+<li>菊花瓣连接方法，或者链形连接方法<br  />
+<ul class="org-ul">
+<li>从通信主站先引一条线到第一个通信子站，再从第一子站引第二条线到第二子站，如此循环直到最后一个子站<br  /></li>
+</ul></li>
+<li>OSI 模型中，把物理层+数据链路层+网络层合并称为现场总线，其通信接口就是 8 针的 RJ45 水晶头<br  /></li>
+<li>Modbus 用令牌补充轮询规则解决了总线的控制权问题<br  /></li>
+<li>关于 RS232 和 RS485 的区别<br  />
+<ul class="org-ul">
+<li>学过模电和数电的人都知道差分电路。差分电路具有共模抑制比，能够消除共模误差。<br  />
+RS485 接口就具有此特征。因此 RS232 接口的传输距离仅为十几米，而 RS485/RS422 接口的<br  />
+传输距离为 1200 米<br  /></li>
+<li>RS422 接口和 RS232 接口是全双工接口，而 RS485 则是半双工接口. RS485 接口和网络一定具有主站和若干从站，一般地，从站的数量是 32 个<br  /></li>
+</ul></li>
+<li>RS485 网络使用的双绞通信线和接地<br  />
+<ul class="org-ul">
+<li>两条平行的线缆之间会有分布电容，而分布电容会削弱信号的强度。为了消除分布电容，通信线的两条平行线需要按一定长度互相旋转对绞，这种线被称为双绞线<br  /></li>
+<li>双绞线的对绞长度有规范，它与通信速率密切相关<br  /></li>
+<li>双绞线的外层有屏蔽层。屏蔽层必须单点接地，不得在线头线尾同时接地，防止地电流流过引起干扰<br  /></li>
+<li>在实际布线时，采取各线段独立接地，切忌采用所有线段的屏蔽层前后连接统一接地<br  /></li>
+</ul></li>
+<li>用菊花瓣链形接线方法构建的通信网络中，各个节点是接线端子，由接线端子通过双绞线连接到各个子站<br  />
+<ul class="org-ul">
+<li>准星形接线的长度不得超过 70cm<br  /></li>
+</ul></li>
+<li>终端电阻用于吸收反射波，并且可提升最终子站的电平水平<br  />
+<ul class="org-ul">
+<li>100 欧终端电阻在通信速率低时可加可不加，但当通信速率较高时（高于 19.2kbps），建议一定要加<br  /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline34" class="outline-4">
+<h4 id="orgheadline34"><span class="section-number-4">2.1.7</span> <a href="http://ruff.io/zh-cn/">http://ruff.io/zh-cn/</a></h4>
+</div>
+</div>
+<div id="orgheadline36" class="outline-3">
+<h3 id="orgheadline36"><span class="section-number-3">2.2</span> term</h3>
+<div class="outline-text-3" id="text-2-2">
+<dl class="org-dl">
+<dt>MCU</dt><dd>微控制单元(Microcontroller Unit) ，又称单片微型计算机(Single Chip Microcomputer )或者单片机<br  /></dd>
+</dl>
+</div>
+</div>
+</div>
+<div id="orgheadline46" class="outline-2">
+<h2 id="orgheadline46"><span class="section-number-2">3</span> astronomy 天文</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="orgheadline38" class="outline-3">
+<h3 id="orgheadline38"><span class="section-number-3">3.1</span> 宇宙大爆炸(视频)</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>望远镜的构造和原理<br  />
+<ul class="org-ul">
+<li>聚光, 人眼瞳孔 4~8mm, 平均 7mm, 望远镜 100 多 mm, 可看的更清<br  /></li>
+<li>折射: 伽利略式(凸凹), 开普勒式(凸凸). 色差, 长物镜口径 15 倍<br  /></li>
+<li>反射: 不稳定, 遮光, 长物镜口径 8 倍<br  /></li>
+</ul></li>
+<li>三角法测距<br  /></li>
+<li>角秒, 秒差距<br  /></li>
+<li>银河系漫游指南<br  /></li>
+<li>光谱线: 红移, 元素指纹<br  />
+<ul class="org-ul">
+<li>光谱并没有包含人类大脑视觉所能区别的所有颜色，譬如褐色和粉红色<br  /></li>
+<li>各种物质的原子内部电子的运动情况不同，所以它们发射的光波也不同<br  /></li>
+</ul></li>
+<li>亮度测距<br  /></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline45" class="outline-3">
+<h3 id="orgheadline45"><span class="section-number-3">3.2</span> kindle</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>黑洞可用质量, 角动量, 电荷三个量描述<br  /></li>
+</ul>
+</div>
+<div id="orgheadline39" class="outline-4">
+<h4 id="orgheadline39"><span class="section-number-4">3.2.1</span> 观测面向太阳那一侧的恒星</h4>
+<div class="outline-text-4" id="text-3-2-1">
+<ul class="org-ul">
+<li>测量视差需要半年间隔晨昏之际观测<br  /></li>
+<li>可用射电观测<br  /></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline40" class="outline-4">
+<h4 id="orgheadline40"><span class="section-number-4">3.2.2</span> 宇宙中可见物质为 4%，暗物质和暗能量占 96% 是怎么算出来的？</h4>
+<div class="outline-text-4" id="text-3-2-2">
+<ul class="org-ul">
+<li>链接：<a href="http://www.zhihu.com/question/35511154/answer/65133220">http://www.zhihu.com/question/35511154/answer/65133220</a><br  /></li>
+<li>来源：知乎<br  /></li>
+<li>日心说, 27 个参数. 八大行星的长短轴就是 16 个，再加上任意一个行星的轨道周期就是 1 个，<br  />
+再加上某一个时间点上所有行星间的相对位置也就是 7 个，还有最最重要的地球自转与公转<br  />
+面的夹角和你所在的纬度以及你的太阳时这 3 个<br  /></li>
+<li>宇宙刚诞生时从低于普朗克能量开始，此时对称性破缺，引力与大统一场分离，时空出现，<br  />
+然后是暴胀场主导时期，宇宙指数膨胀，能量迅速降下来，对称性进一步破缺，弱电与强<br  />
+力分离，能量更低再破缺，弱力与电磁力分离，Higgs 场被极化，使所有粒子带上质量，暴<br  />
+胀场退耦能量赋予普通物质，然后是辐射主导时期，最初形成的正反物质数量几乎是相同<br  />
+的，故而很快正反物质对消大毁灭都变成了辐射，正物质以极其微弱的优势幸存了一部分<br  />
+形成了我们的可观测宇宙，反物质被团灭；接下来是物质主导时期，夸克-胶子粥因能量降<br  />
+低开始互相配对逐渐形成质子-中子粥，氢核、氦核形成，能量进一步降低，自由电子的能<br  />
+量减弱到不足以支撑它们自由下去了，被质子拉住，合成中性氢原子，光子终于脱离等离<br  />
+子体的樊笼，可以在空间中任性传播了，宇宙开始对光子透明，是为光子最后散射截面，<br  />
+可观测后果就是当前环抱整个地球、太阳系的无指向无衰减弥漫性到处存在的背景电磁波：<br  />
+宇宙微波背景辐射(CMB)，而暗物质由于暴胀场的量子涨落造成的微弱不均匀性，在引力作<br  />
+用下开始塌缩扩大，塌缩的形成原始暗物质晕，被动扩大的形成了今天直径可达数亿光年<br  />
+的一无所有的宇宙大空泡，普通物质被暗物质带动坍缩形成高密度星云星系与原初黑洞，<br  />
+原始恒星点火，核反应开始，序数大于一或二的原子锂碳氮氧硅等按顺序开始生产直到铁<br  />
+原子，序数大于铁的原子在恒星晚年的新星爆发时极大压力作用下偶然生产一些，故而在<br  />
+宇宙中金银铂铅铀这些都是极为稀有的，在新星爆发的尸体中下一代恒星开始孕育，本尊<br  />
+太阳点火，一些铁氧硅的残渣形成地球等行星，这是五十亿年前的事；最后是今天的暗能<br  />
+量主导时期，这种不随空间变大而减弱的密度不变的奇怪能量最终成为宇宙的主宰力量，<br  />
+造成的可观测效应是宇宙加速膨胀，暗能量导致的后果是很严重的，它将使其他的星系彻<br  />
+底远去，永远看不到了，星系之间的将来光锥将永远无法重合，也就是说互相之间一丁点<br  />
+的干系都没有了，一丁丁点都没有，银河系成为彻底的孤岛星系，那时的智慧生命将不知<br  />
+道也完全没有办法证实其他星系的存在，全凭胡思乱想了。<br  /></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline41" class="outline-4">
+<h4 id="orgheadline41"><span class="section-number-4">3.2.3</span> 代表人类出征火星, 只能活 90 天的它撑了 12 年</h4>
+<div class="outline-text-4" id="text-3-2-3">
+<ul class="org-ul">
+<li>机遇号 (Opportunity, 12 年), 勇气号 (Spirit, 5 年)<br  /></li>
+<li>探路者号登陆器携带的旅居者号<br  /></li>
+<li>好奇号<br  /></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline42" class="outline-4">
+<h4 id="orgheadline42"><span class="section-number-4">3.2.4</span> 大数据文摘: 问世间空为何物</h4>
+<div class="outline-text-4" id="text-3-2-4">
+<ul class="org-ul">
+<li>时间箭头 &lt;-&gt; 物理规律与时间无关 -&gt; 过去, 现在和将来是同时发生的<br  /></li>
+<li>弦论: 10 维宇宙, 4 维膜宇宙和基本粒子<br  /></li>
+<li>多重宇宙: 早期宇宙的均匀高热气体 -&gt; 今天混乱<br  /></li>
+<li>黑洞方程, 奇点<br  /></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline43" class="outline-4">
+<h4 id="orgheadline43"><span class="section-number-4">3.2.5</span> 科研圈: 时空诞生于四维宇宙</h4>
+</div>
+<div id="orgheadline44" class="outline-4">
+<h4 id="orgheadline44"><span class="section-number-4">3.2.6</span> 知乎专栏: 距离阶梯，哈勃定律和膨胀的宇宙</h4>
+<div class="outline-text-4" id="text-3-2-6">
+<ul class="org-ul">
+<li>造斧变星: 光变周期与光度的关系(周光关系) -&gt; 结合视差法: 量天尺<br  /></li>
+<li>标准烛光: 造斧变星, La 超新星<br  /></li>
+<li>哈勃常数: 红移速度与距离比值 -&gt; 宇宙在膨胀<br  /></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="orgheadline52" class="outline-2">
+<h2 id="orgheadline52"><span class="section-number-2">4</span> quantum 量子</h2>
+<div class="outline-text-2" id="text-4">
+</div><div id="orgheadline51" class="outline-3">
+<h3 id="orgheadline51"><span class="section-number-3">4.1</span> kindle</h3>
+<div class="outline-text-3" id="text-4-1">
+</div><div id="orgheadline47" class="outline-4">
+<h4 id="orgheadline47"><span class="section-number-4">4.1.1</span> 中微子通信</h4>
+<div class="outline-text-4" id="text-4-1-1">
+<p>
+中微子通信是利用中微子运载信息的一种通信方式。中微子是一种质量极小，又不带电的中<br  />
+性基本微粒。它能以近光速进行直线传播，并极易穿透钢铁、海水，以至整个地球，而本身<br  />
+能量损失很少，因此是一种十分诱人的理想信息载体。<br  />
+</p>
+</div>
+</div>
+<div id="orgheadline48" class="outline-4">
+<h4 id="orgheadline48"><span class="section-number-4">4.1.2</span> 从相对论的诞生, 看我们对科学的最大误会</h4>
+<div class="outline-text-4" id="text-4-1-2">
+<ul class="org-ul">
+<li>狭义相对论 包括引力在内的任何东西运动速度&lt;光速 &lt;&#x2013;&gt; 牛顿 引力没有时滞, 空间不会阻滞引力作用<br  /></li>
+<li>狭义相对论 不同速度的观测者看到的时间流逝和空间大小不同<br  /></li>
+<li>广义相对论 能量和物质会使时空变形<br  /></li>
+<li>水星观测误差 + 牛顿引力 -&gt; 不存在的火神星 -&gt; 狭义相对论<br  /></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline49" class="outline-4">
+<h4 id="orgheadline49"><span class="section-number-4">4.1.3</span> 编织宇宙的三角形</h4>
+<div class="outline-text-4" id="text-4-1-3">
+<ul class="org-ul">
+<li>恒星后期: 坍缩 -&gt; 中子星, 激波 -&gt; 更大重的原子核, 超新星爆发<br  /></li>
+<li>量子场论 完美解释 电磁力, 强相互作用, 弱相互作用<br  /></li>
+<li>广义相对论上前对引力最好的理论, 无法与量子场论融合<br  /></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline50" class="outline-4">
+<h4 id="orgheadline50"><span class="section-number-4">4.1.4</span> 爱因斯坦不会高兴的: 量子纠缠不但真的存在</h4>
+<div class="outline-text-4" id="text-4-1-4">
+<ul class="org-ul">
+<li>Van Raamsdonk 指出，尽管爱因斯坦反对这个概念，但量子纠缠可能是时空几何的基础，因<br  />
+而也有可能是爱因斯坦的几何化引力理论的基础，这真是莫大的讽刺。“时空”，他说，“只<br  />
+是表现量子系统中物质纠缠方式的一幅几何图形”。<br  /></li>
+<li>Maldacena 所述的两种看似截然不同的宇宙模型(体宇宙, 边界)之间的对偶性给了物理学家<br  />
+一个完全不需要考虑传统意义上的引力，就可以探讨体宇宙中的量子引力理论的方法：他<br  />
+们只需要观察边界上的等效量子态。<br  /></li>
+<li>如果两个粒子因为纠缠而联系起来，那么它们实际上是被虫洞联结起来的。反之亦然：被<br  />
+物理学家称为虫洞的时空结构其实和纠缠是等效的。它们只是同一现实的不同描述方式。<br  /></li>
+<li>张量网络是凝聚态物理学家追踪大量亚原子粒子量子态的技术。空间是通过张量由量子纠缠精确构建而成的<br  /></li>
+<li>Maldacena 对偶自己就是一种量子纠错代码<br  /></li>
+<li>黑洞内部的增长就是计算复杂性的增长<br  /></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="orgheadline53" class="outline-2">
+<h2 id="orgheadline53"><span class="section-number-2">5</span> virtual reality 虚拟现实</h2>
+<div class="outline-text-2" id="text-5">
+<dl class="org-dl">
+<dt>zSpace</dt><dd>3d 显示器, 3d 眼镜, 红外笔<br  /></dd>
+<dt>(no term)</dt><dd>gear vr<br  /></dd>
+</dl>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: remerci</p>
+<p class="date">Created: 2017-01-18 三 23:10</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

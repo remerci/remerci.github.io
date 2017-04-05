@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2017-01-18 三 23:11 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>metapost 学习笔记</title>
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="remerci" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+ <link rel='stylesheet' href='/windata/notes/publish/org_notes/public_html/Acss/main.css' type='text/css'/> 
+
+    <link rel="stylesheet" type="text/css" href="/windata/notes/publish/org_notes/public_html/Acss/prettify.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="preamble" class="status">
+<div class='nav'>
+<ul>
+<li><a href='http://remerci.com'>博客</a></li>
+<li><a href='/windata/notes/publish/org_notes/public_html/index.html'>Wiki目录</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<h1 class="title">metapost 学习笔记</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgheadline1">1. emacs 预览支持</a></li>
+<li><a href="#orgheadline4">2. 基础</a>
+<ul>
+<li><a href="#orgheadline2">2.1. quickref</a></li>
+<li><a href="#orgheadline3">2.2. wangyin metapost examples</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline11">3. 画图技巧</a>
+<ul>
+<li><a href="#orgheadline5">3.1. 用 beamer 作动画</a></li>
+<li><a href="#orgheadline6">3.2. 重复利用刚画的图（平移等）</a></li>
+<li><a href="#orgheadline7">3.3. 累进画图(fig.2 包含 fig.1)</a></li>
+<li><a href="#orgheadline8">3.4. 循环 label</a></li>
+<li><a href="#orgheadline9">3.5. draw 中循环画正多边形</a></li>
+<li><a href="#orgheadline10">3.6. 一些语句</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline14">4. GBA-cn 文章画图收获和未解决问题</a>
+<ul>
+<li><a href="#orgheadline12">4.1. gnuplot,metapost 中文图字显示问题：</a></li>
+<li><a href="#orgheadline13">4.2. winedt 和 metapost，gnuplot 使用上的一些细节</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+<a href="../../reference/fig-test">实验文档</a><br  />
+</p>
+
+<div id="orgheadline1" class="outline-2">
+<h2 id="orgheadline1"><span class="section-number-2">1</span> emacs 预览支持</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+两种方法：<br  />
+</p>
+<ol class="org-ol">
+<li>来自<a href="http://piprim.tuxfamily.org/emacs/pi-meta/index.html">Ivaldi</a>，将<a href="../../reference/metapost/meta-mode.el">meta-mode.el</a>和<a href="../../reference/metapost/pi-meta.el">pi-meta.el</a>放到 emacs 的 load path，将<a href="../../reference/metapost/pi-anime-meta.sh">pi-anime-meta.sh</a>放到~/bin 目录。在.emacs 文件中加入配置：<br  /></li>
+</ol>
+<p>
+&lt;src lang="elisp"&gt;<br  />
+;; &#x2014;&#x2014;&#x2014;&#x2014;<br  />
+;; * Metapost *<br  />
+(load "pi-meta")<br  />
+&lt;/src&gt;<br  />
+</p>
+
+<p>
+使用：<br  />
+</p>
+<ul class="org-ul">
+<li>C-c C-c 编译预览<br  /></li>
+<li>C-c C-p 用 beamer 生成动画<br  /></li>
+<li>M-x customize group &lt;RET&gt; pi-meta &lt;RET&gt; 配置 pi-meta<br  /></li>
+
+<li>最新方案，在 mp 文件中加入下列代码，用 mpost 编译。可将字体嵌入，并可将名字后缀加入 eps。<br  /></li>
+</ul>
+<p>
+&lt;example&gt;<br  />
+prologues:=3;<br  />
+filenametemplate "%j-%c.eps";<br  />
+&lt;/example&gt;<br  />
+</p>
+
+<p>
+来自<a href="http://bbs.ctex.org/viewthread.php?tid=39777&amp;extra=&amp;page=1">ctex</a>，将 perl 脚本<a href="../../reference/metapost/my_metapost">my_metapost</a>放到~/bin 目录。.emacs 中如下配置：<br  />
+&lt;src lang="elisp"&gt;<br  />
+(defun mpost-compile () (interactive)<br  />
+       (save-buffer)<br  />
+       (shell-command (format mpost-compile-command buffer-file-name))<br  />
+)<br  />
+(defvar mpost-compile-command "my_metapost %s")<br  />
+(add-hook 'metapost-mode-hook<br  />
+          '(lambda nil<br  />
+             (define-key meta-mode-map "\C-c\C-c" 'mpost-compile)<br  />
+             )<br  />
+          )<br  />
+&lt;/src&gt;<br  />
+</p>
+
+<p>
+该脚本的大概原理是在文件头自动加上 prologues:=3; 在用 mpost 编译 filename.mp 后就会生成 filename.1，filename.2，等 eps 文件，把这些文件依次改名为 filename-1.eps，filename-2.eps，再自动调用 eps 的阅读器一个一个地预览（在脚本中要把预览改为 yes，再把浏览器改成了 gv 等等）。<br  />
+</p>
+
+<p>
+总的来说，pi-meta.el 和 pi-anime-meta.sh 的功能齐全，扩展了原来的 metapost-mode 编辑功能（如自动补全()，[]，""，{}等)，完全不依赖 perl 和其他脚本，无须用到 metapost 的新版本中的 prologues:=3;的功能，也没有以前的一些限制，特别是对于那些 beginfig(*);*处并非标准数字（比如为了生成一系列图形调用 for 循环用了 beginfig{i+10}等不太标准的形式），仍然可以正确生成预览（关于这方面请参见 /usr/local/texlive/2007/texmf-dist/doc/metapost/mp3d/examples/目录下的例子，还有 Anthony Phan 的 m3D 宏包中的例子等等）。但它们的不足之处是预览比起 instanton 写的 perl 脚本要慢，因为多了 latex，dvips 或 latex,dvips,ps2pdf 的过程，有鉴于此，我们可以改动 pi-meta.el 的第 202 和 203 行，比如我们可以把 203 行的[(control c) (control c)]第二个 c 改为 v，则以后 C-c C-v 才调用 pi-meta.el 预览，平常还是用 C-c C-c 调用 instanton 的 perl 脚本编译和预览。<br  />
+</p>
+</div>
+</div>
+
+<div id="orgheadline4" class="outline-2">
+<h2 id="orgheadline4"><span class="section-number-2">2</span> 基础</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>path:<br  /></li>
+</ul>
+<p>
+&lt;src lang="metapost"&gt;<br  />
+(1cm,1cm) .. controls (.5cm,2cm) and (2.5cm,2cm) .. (2cm,.5cm)<br  />
+&lt;/src&gt;<br  />
+</p>
+
+<ul class="org-ul">
+<li>transformations:<br  /></li>
+</ul>
+
+<p>
+transformations using macros rotatedaround and reflectedabout:<br  />
+</p>
+
+<p>
+&lt;src lang="metapost"&gt;<br  />
+path p; p:= (1cm,1cm)..(1.5cm,2cm)..(2cm,0);<br  />
+p rotatedaround(center p, 15) shifted (4cm,0cm)<br  />
+p reflectedabout((2.4cm,-.5),(2.6cm,3cm))<br  />
+</p>
+
+<p>
+transform t; t:= identity scaled 2cm shifted (4cm,1cm);<br  />
+p transformed t<br  />
+&lt;/src&gt;<br  />
+</p>
+
+<p>
+The most important primitive transformations that metapost supports:<br  />
+</p>
+
+<p>
+<a href="../../reference/metapost/transformation.png">the most important primitive transformations that metapost supports</a><br  />
+</p>
+
+<ul class="org-ul">
+<li>transform 的定义方法<br  /></li>
+</ul>
+
+<p>
+以上平移，旋转，缩放等变换的通用表达式为(fx+ fxx*x + fxy*y, fy+ fyx*x + fyy*y)<br  />
+</p>
+<ol class="org-ol">
+<li>A transformed T = 1/5[A,B]; 3 个表达式组成线性方程可解出 fx,fxx,fxy,fy,fyx,fyy<br  />
+等参数。<br  /></li>
+<li>xpart T = ypart T = 0; xxpart T = 1; yxpart T = 2; xypart T = 3; yypart T = 4;<br  /></li>
+</ol>
+</div>
+
+<div id="orgheadline2" class="outline-3">
+<h3 id="orgheadline2"><span class="section-number-3">2.1</span> quickref</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+<a href="../../reference/metapost/box-point.png">boxit and point</a><br  />
+</p>
+</div>
+</div>
+<div id="orgheadline3" class="outline-3">
+<h3 id="orgheadline3"><span class="section-number-3">2.2</span> wangyin metapost examples</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>点的表示方法：1/2[A,B], 1/3 A, 1cm * dir 0。<br  /></li>
+<li>曲线的控制：control point, curl, tension.<br  /></li>
+<li>利用 whatever 找交点。<br  /></li>
+<li>利用 buildcircle 找交集。例子如下：<br  /></li>
+</ul>
+<p>
+&lt;src lang="metapost"&gt;<br  />
+draw 1/2[B,C] &#x2013; A dashed evenly;<br  />
+draw 1/3 A + 1/3 B + 1/3 C;<br  />
+draw 1cm * dir 0 {dir 90} .. 1cm * dir alpha {dir(90+alpha)};<br  />
+draw (0,0){dir 90} .. (2cm,0){dir 0};<br  />
+draw (0,0){up} .. (2cm,0){up};<br  />
+draw (0,0){(0,1)} .. (2cm,0){(1,0)};<br  />
+M = whatever [C,D];<br  />
+O - 1/2[B,C] = whatever * (B-C) rotated 90;<br  />
+draw p intersectionpoint q withpen pencircle scaled 4bp; %path p, q 交点<br  />
+fill buildcycle(a,b,c,d) withcolor .8white;<br  />
+&lt;/src&gt;<br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="orgheadline11" class="outline-2">
+<h2 id="orgheadline11"><span class="section-number-2">3</span> 画图技巧</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="orgheadline5" class="outline-3">
+<h3 id="orgheadline5"><span class="section-number-3">3.1</span> 用 beamer 作动画</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+用 mutliinclude 可以将一个 mp 文件中的多个 fig 用多个页面逐步显示。第一页显示 fig0，第二页显示 fig0 和 fig1，以此类推。metapost 文件中 fig0 里定义的点间关系后面的 fig 也可以用，因此将一个 fig 中的画图动作分到几个 fig 就可方便的实现动画效果。但实际 beamer 显示结果可能多个 fig 重叠而不是象在同一 fig 中时错落开，为此宜在每个 fig 中先定义整个大图的框（相当于画布）。象这样：<br  />
+&lt;src lang="metapost"&gt;<br  />
+pickup pencircle scaled 0.0;<br  />
+draw (-5.0u,-5.0u); draw (5.0u,1.0u);%外外框<br  />
+pickup pencircle scaled .5bp; %内格子<br  />
+&lt;/src&gt;<br  />
+</p>
+</div>
+</div>
+
+<div id="orgheadline6" class="outline-3">
+<h3 id="orgheadline6"><span class="section-number-3">3.2</span> 重复利用刚画的图（平移等）</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+用 currentpicture 这个变量，如<br  />
+&lt;src lang="metapost"&gt;<br  />
+draw currentpicture shifted (0,-2u);<br  />
+&lt;/src&gt;<br  />
+</p>
+</div>
+</div>
+
+<div id="orgheadline7" class="outline-3">
+<h3 id="orgheadline7"><span class="section-number-3">3.3</span> 累进画图(fig.2 包含 fig.1)</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+&lt;src lang="metapost"&gt;<br  />
+shipout currentpicture;<br  />
+charcode:=2;<br  />
+&lt;/src&gt;<br  />
+</p>
+</div>
+</div>
+
+<div id="orgheadline8" class="outline-3">
+<h3 id="orgheadline8"><span class="section-number-3">3.4</span> 循环 label</h3>
+<div class="outline-text-3" id="text-3-4">
+<p>
+&lt;src lang="metapost"&gt;<br  />
+extrasep:=-3pt;<br  />
+</p>
+
+<p>
+for i=1 upto m-1:<br  />
+    label.bot(char (i+ ASCII "1"), (i*u, extrasep));<br  />
+    label.lft(char (i+ ASCII "1"), (0, i*u));<br  />
+endfor;<br  />
+&lt;/src&gt;<br  />
+</p>
+</div>
+</div>
+
+<div id="orgheadline9" class="outline-3">
+<h3 id="orgheadline9"><span class="section-number-3">3.5</span> draw 中循环画正多边形</h3>
+<div class="outline-text-3" id="text-3-5">
+<p>
+&lt;src lang="metapost"&gt;<br  />
+  n:=5;<br  />
+  draw for i=0 step 1 until n-1:<br  />
+      1cm*up rotated (i*360/n) &#x2013;<br  />
+    endfor cycle;<br  />
+&lt;/src&gt;<br  />
+</p>
+</div>
+</div>
+
+<div id="orgheadline10" class="outline-3">
+<h3 id="orgheadline10"><span class="section-number-3">3.6</span> 一些语句</h3>
+<div class="outline-text-3" id="text-3-6">
+<p>
+关于 quartercircle, halfcircle, buildcycle(), abs(), angle(), decimal(),<br  />
+unitvector, subpath,intersecttimes 等等。<br  />
+&lt;src lang="metapost"&gt;<br  />
+path d; d = quartercircle scaled 2r rotated -90 &amp;<br  />
+            halfcircle scaled 2r;<br  />
+path bluepart; bluepart = buildcycle(lambda.top, d, lambda.rt);<br  />
+drawarrow z.pi rotated 8 .. z.pi rotated 80 ..<br  />
+          z.pi rotated 178;<br  />
+draw fullcircle scaled 2abs(O-A) shifted O;<br  />
+drawarrow (origin&#x2013;A) rotated -1/3 angle(A);<br  />
+label.llft(decimal(angle(C-A)-angle(B-A)), A);<br  />
+B := A + 1cm*unitvector(direction 0  of p);<br  />
+draw subpath(0,1) of p withcolor red;<br  />
+</p>
+
+<p>
+path p, q;<br  />
+numeric a,b;<br  />
+(a,whatever) = p intersectiontimes q;<br  />
+draw point a of p withpen pencircle scaled 4bp;<br  />
+</p>
+
+<p>
+for i=0 step length(p)/n until length(p):<br  />
+    drawarrow (point i of p) &#x2013;<br  />
+              1cm * unitvector(direction i of p)<br  />
+              shifted point i of p;<br  />
+endfor;<br  />
+&lt;/src&gt;<br  />
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="orgheadline14" class="outline-2">
+<h2 id="orgheadline14"><span class="section-number-2">4</span> GBA-cn 文章画图收获和未解决问题</h2>
+<div class="outline-text-2" id="text-4">
+</div><div id="orgheadline12" class="outline-3">
+<h3 id="orgheadline12"><span class="section-number-3">4.1</span> gnuplot,metapost 中文图字显示问题：</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+最新的 metapost 可在文件头加 <b>prologues:=3;</b> 语句, 生成嵌入字体的 eps 文件而不是原来<br  />
+的 mps 文件. 可以用在 xelatex 中, 只是其字体是 CJK 汉字, 而非 xelatex 中用的<br  />
+truetype 字体.<br  />
+</p>
+
+<p>
+mp 文件在开头加入：<br  />
+&lt;src lang="latex"&gt;<br  />
+verbatimtex<br  />
+%&amp;latex<br  />
+\documentclass{article}<br  />
+\usepackage{CJK}       <br  />
+</p>
+\begin{CJK}{GBK}{song}
+\begin{document}      
+etex  
+</src>
+
+在文件结尾加入：
+<src lang="latex">
+verbatimtex
+\end{CJK}  
+<p>
+\end{document}<br  />
+etex<br  />
+&lt;/src&gt;<br  />
+</p>
+
+<p>
+&lt;example&gt;<br  />
+这是老问题了<br  />
+</p>
+
+<p>
+可以显示中文，但文章编译时，应该先用 dvips 编译再用 ps2pdf 转换成 pdf。<br  />
+直接用 dvipdfmx 生成 pdf 文件会出现下面的错误：<br  />
+</p>
+
+<p>
+ERROR CMap: Premature end of input string.<br  />
+</p>
+
+<p>
+原因不明，网上也找不到，似乎和 CMap 字体有关，但.texlive 中是有的。<br  />
+&lt;/example&gt;<br  />
+</p>
+
+<p>
+<a href="gnuplot.html">gnuplot.html</a> 现在可用 epslatex term 很好的处理中文和 latex 公式, 下面的问题和解决方法<br  />
+略有些过时了<br  />
+</p>
+
+<p>
+&lt;example&gt;<br  />
+这是老问题了<br  />
+</p>
+
+<p>
+gnuplot 指定 font 选项也无法在 eps 中显示正确的中文，png 图形可以。<br  />
+折衷办法是生产 mp 文件，然后再按上面的办法处理。<br  />
+&lt;/example&gt;<br  />
+</p>
+</div>
+</div>
+
+<div id="orgheadline13" class="outline-3">
+<h3 id="orgheadline13"><span class="section-number-3">4.2</span> winedt 和 metapost，gnuplot 使用上的一些细节</h3>
+<div class="outline-text-3" id="text-4-2">
+<ul class="org-ul">
+<li>gnuplot 写$&mu;$TESLA 生成 mp 文件时，应该写成$\&mu;$TESLA<br  /></li>
+<li>gnuplot 中 set size 选项需要小心设定，以确保图文的大小比例合适<br  /></li>
+<li>winedt 的 mp 图形预览生成的 eps 图会加上如 buff.00 的图题，为此我还是用命令行方式生成<br  /></li>
+</ul>
+<p>
+的 eps 图<br  />
+</p>
+<ul class="org-ul">
+<li>winedt 的 tex 文件中插入图形如为 buff.1 而不是 buff.eps，编译出的文档没有图形，原因<br  /></li>
+</ul>
+<p>
+来自后缀判断图形类别的功能。<br  />
+</p>
+
+<p>
+<a href="../../reference/metapost/myfile">我的图形文件</a><br  />
+</p>
+
+<p>
+<a href="../../reference/metapost/myfile/luk.mp">../../reference/metapost/myfile/luk.png</a><br  />
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: remerci</p>
+<p class="date">Created: 2017-01-18 三 23:11</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

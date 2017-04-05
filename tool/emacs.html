@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2017-01-18 三 23:10 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>emacs 快速参考</title>
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="remerci" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+ <link rel='stylesheet' href='/windata/notes/publish/org_notes/public_html/Acss/main.css' type='text/css'/> 
+
+    <link rel="stylesheet" type="text/css" href="/windata/notes/publish/org_notes/public_html/Acss/prettify.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="preamble" class="status">
+<div class='nav'>
+<ul>
+<li><a href='http://remerci.com'>博客</a></li>
+<li><a href='/windata/notes/publish/org_notes/public_html/index.html'>Wiki目录</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<h1 class="title">emacs 快速参考</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgheadline1">1. 其它</a></li>
+<li><a href="#orgheadline2">2. GDB 调试</a></li>
+</ul>
+</div>
+</div>
+<p>
+部分来自 scrapbook: Emacs 小技巧<br  />
+</p>
+<ul class="org-ul">
+<li>M-u M-l M-c        word uppercase, lowercase; character uppercase<br  /></li>
+<li>C-x 8 (some symbol)    输入特殊符号<br  /></li>
+<li>C-q (key stroke)    输入按键字符<br  /></li>
+<li>C-x =        显示字符信息<br  /></li>
+<li>M-x hl-line-mode    高亮当前行<br  /></li>
+<li>Esc TAB        补全输入<br  /></li>
+
+<li>C-x (        开始宏<br  /></li>
+<li>C-x )        结束宏<br  /></li>
+<li>C-x e        执行宏<br  /></li>
+</ul>
+
+<p>
+矩形操作<br  />
+</p>
+<ul class="org-ul">
+<li>C-x r o                打开一个矩形, 将文本移动至右边<br  /></li>
+<li>C-x r t                为矩形中每一行加上一个字符串前缀<br  /></li>
+<li>C-x r c                清空矩形<br  /></li>
+<li>C-x r k                Kill 矩形<br  /></li>
+<li>C-x r y                拉回矩形<br  /></li>
+<li>C-x r r                拷贝一个矩形到寄存器<br  /></li>
+</ul>
+
+<p>
+寄存器操作<br  />
+</p>
+<ul class="org-ul">
+<li>C-x r s                Copy region into register r (copy-to-register)<br  /></li>
+<li>C-x r i                Insert text from register r (insert-register)<br  /></li>
+<li>C-x r SPC              Save position of point in register r (point-to-register)<br  /></li>
+<li>C-x r j                Jump to the position saved in register r (jump-to-register)<br  /></li>
+</ul>
+
+<p>
+narrow 功能：用于隐藏文本，在进行 string replace 时十分有用。选中要保留的文本，然<br  />
+后 C-x n n 或 M-x narrow-to-region，要展开文本：C-x n w 或 M-x widen<br  />
+</p>
+
+<p>
+当前 buffer 与命令和文件的交互<br  />
+</p>
+<ul class="org-ul">
+<li>M-!                    执行一个 shell 命令<br  /></li>
+<li>C-u M-! ls             捕捉程序的输出<br  /></li>
+<li>M-|                    在一个区域上执行 shell 命令<br  /></li>
+<li>C-u M-|                通过 shell 命令过滤区域<br  /></li>
+<li>C-x ESC ESC           重复执行上一条命令<br  /></li>
+<li>C-x i 插入其它文件的内容到当前缓冲<br  /></li>
+<li>C-x C-v 用将要读取的文件替换当前文件<br  /></li>
+<li>C-x C-w 将当前缓冲写入指定的文件<br  /></li>
+
+<li>C-s 查找时，M-p, M-n 选择上一个、下一个查找串<br  /></li>
+<li>M-%交互替换时，SPE 替换并到下一处；,替换不移动；L 不替换移动；!替换所以剩余<br  /></li>
+<li>M-r                    用规则表达式在命令历史记录中向后搜寻<br  /></li>
+<li>M-s                    用规则表达式在命令历史记录中向前搜寻<br  /></li>
+
+<li>M-q                    emacs 的自动排版<br  /></li>
+<li>C-M-\                  Re-indent all lines in the region (indent-region)<br  /></li>
+
+<li>C-x RET f        指定文件的编码方式 unix,dos<br  /></li>
+<li>C-x RET r        以指定编码重读文件 gbk<br  /></li>
+
+<li>C-u C-space move cursor to previous mark<br  /></li>
+<li>C-x C-x exchange mark and point, and select region<br  /></li>
+<li>C-@ or C-space 做标记<br  /></li>
+
+<li>C-u C-x C-e evaluate lisp, print result after the list<br  /></li>
+<li>C-x C-e evaluate lisp, print result in minibuffer<br  /></li>
+
+<li>C-o                在光标后面插入空行<br  /></li>
+<li>C-x C-o            将光标附近的空行去掉，多行的时候，第一次只剩一行，第二次全部删除<br  /></li>
+<li>C-backspace        删除一个单词<br  /></li>
+<li>C-x backspace    删除一个句子<br  /></li>
+<li>M-k 删除从光标所在到“句尾”间的字符<br  /></li>
+<li>M-0 C-k 向前 delete 到行首<br  /></li>
+<li>C-M-k 向后 delete 到表达式尾部<br  /></li>
+<li>M&#x2013; C-M-k 向前 delete 到表达式首部<br  /></li>
+<li>M-z &lt;char&gt; Kill 到下一个给定字符出现的位置<br  /></li>
+<li>M-y 复制早先删除掉的内容（循环替换 kill-chain 的头部）<br  /></li>
+<li>C-_ or C-x u 取消前一个动作效果<br  /></li>
+
+<li>M-t                    字置换<br  /></li>
+<li>C-x C-t                行置换<br  /></li>
+<li>C-M-t                  表达式置换<br  /></li>
+</ul>
+
+<div id="orgheadline1" class="outline-2">
+<h2 id="orgheadline1"><span class="section-number-2">1</span> 其它</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>C-u 数字(C 数字，M 数字) 加数字参数，可以用 0 和负数作参数<br  /></li>
+
+<li>C-x 0 关闭当前窗口<br  /></li>
+<li>C-x 1 关闭其它窗口<br  /></li>
+<li>C-x 2 水平分割窗口<br  /></li>
+<li>C-x 3 垂直分割窗口<br  /></li>
+<li>C-x 4 C-f 后面跟著您的其中一个文件的名称，在新窗格上开文件。<br  /></li>
+<li>C-M-v 卷动下方的窗格。<br  /></li>
+<li>C-x o 将光标移动到下方的窗格。<br  /></li>
+
+<li>C-x C-b 列出缓冲区<br  /></li>
+<li>C-x b 缓冲区名 切换到某个缓冲区<br  /></li>
+<li>C-x s 存储缓冲区内容<br  /></li>
+
+<li>C-h c 非常简短的有关这个命令的解释<br  /></li>
+<li>C-h k 更多有关一个命令的信息<br  /></li>
+<li>C-h a 命令相关查找（Command Apropos）。键入一个关键字然后 Emacs 会列出所有“在其名称中含有此关键字”的全部命令。<br  /></li>
+</ul>
+<p>
+-&#x2014;<br  />
+</p>
+
+<ul class="org-ul">
+<li>C-x C-q 清除一个窗口的只读属性<br  /></li>
+
+<li>C-M-f         到表达式首部<br  /></li>
+<li>C-M-b         到表达式尾部<br  /></li>
+<li>C-M-a                  到函数首部<br  /></li>
+<li>C-M-e                  到函数尾部<br  /></li>
+<li>C-M-n         移到结尾的)、}或]<br  /></li>
+<li>C-M-p         移到开始的)、}或]<br  /></li>
+<li>C-M-u         向上移到父结构开始<br  /></li>
+<li>C-M-d         向下移到父结构开始<br  /></li>
+
+<li>C-M-@                  标记一个表达式<br  /></li>
+<li>C-M-h                  标记一个函数<br  /></li>
+<li>M-h                    标记一段<br  /></li>
+<li>C-x C-p                标记一页<br  /></li>
+<li>C-x h                  标记整个缓冲区<br  /></li>
+</ul>
+</div>
+</div>
+
+<div id="orgheadline2" class="outline-2">
+<h2 id="orgheadline2"><span class="section-number-2">2</span> GDB 调试</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+.启动 gdb<br  />
+ gdb bayonne<br  />
+ gdb &#x2013;args bayonne -vvv script.scr<br  />
+</p>
+
+<p>
+.利用帮助<br  />
+ help 命令类别名<br  />
+ help 命令名<br  />
+</p>
+
+<p>
+.调试指定程序<br  />
+ file  /home/cnscn/a.out<br  />
+</p>
+
+<p>
+.运行程序<br  />
+ r[un]<br  />
+ r[un] -vvv script.scr<br  />
+</p>
+
+<p>
+.设置断点<br  />
+ 按照函数名设置断点<br  />
+ b[reak] main<br  />
+ b[reak] 'namespace::Class::func()'<br  />
+</p>
+
+<p>
+.按照文件名和行数设置断点<br  />
+ b[reak] methods.cpp:523<br  />
+</p>
+
+<p>
+.检查状态<br  />
+ 检查堆栈<br  />
+ b[ack]t[race]<br  />
+ up<br  />
+ down<br  />
+</p>
+
+<p>
+检查当前函数的源代码<br  />
+l[ist]<br  />
+</p>
+
+<p>
+检查/改变变量值<br  />
+p[rint] var<br  />
+p[rint] ptr-&gt;mem<br  />
+p[rint] *ptr<br  />
+p[rint] ('namespace::Class') *this<br  />
+p[rint] (('namespace::Class') *this)-&gt;a.b.c<br  />
+</p>
+
+<p>
+p[rint] var=value<br  />
+</p>
+
+<p>
+检查类<br  />
+ptype ptr<br  />
+</p>
+
+<p>
+set print object on<br  />
+whatis ptr<br  />
+</p>
+
+<p>
+检查并启用/禁用断点<br  />
+set breakpoint pending on<br  />
+info b[reakpoints]<br  />
+enable [N]<br  />
+disable [N]<br  />
+</p>
+
+<p>
+检查并切换线程<br  />
+info th[reads]<br  />
+thread N<br  />
+</p>
+
+<p>
+检查寄存器<br  />
+info reg<br  />
+info reg esp<br  />
+</p>
+
+<p>
+检查内存<br  />
+x/10s *0xaabbccdd<br  />
+x/5x var<br  />
+</p>
+
+<p>
+.继续运行<br  />
+ 运行到某一行即停止，当前函数返回时也停止<br  />
+ advance source.cpp:123<br  />
+</p>
+
+<p>
+运行到当前函数返回为止<br  />
+fin[ish]<br  />
+</p>
+
+<p>
+继续运行直到程序结束或下一个断点<br  />
+c[ontinue]<br  />
+</p>
+
+
+<p>
+.信号<br  />
+ 检查当前的信号处理策略<br  />
+ info signals<br  />
+</p>
+
+<p>
+改变信号处理策略<br  />
+handle SIGINT pass<br  />
+handle SIGINT nostop<br  />
+</p>
+
+
+<p>
+.与 Emacs 配合使用<br  />
+ 建议使用 Emacs-23。设定别名<br  />
+  alias emacs='emacs &#x2013;enable-font-backend -fn "Dejavu Sans Mono-12"'<br  />
+</p>
+
+<p>
+修改~/.emacs，把下面这一行加入<br  />
+(defvar gdb-many-windows t)<br  />
+</p>
+
+<p>
+在 Emacs 里启动 gdb<br  />
+M-x gdb<br  />
+</p>
+
+<p>
+开启多窗口模式<br  />
+M-x gdb-many-windows<br  />
+</p>
+
+<p>
+进入 gud-tooltip-mode<br  />
+M-x gud-tooltip-mode<br  />
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: remerci</p>
+<p class="date">Created: 2017-01-18 三 23:10</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

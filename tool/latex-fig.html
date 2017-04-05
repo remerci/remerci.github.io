@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2017-01-18 三 23:11 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>latex 图形处理</title>
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="remerci" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+ <link rel='stylesheet' href='/windata/notes/publish/org_notes/public_html/Acss/main.css' type='text/css'/> 
+
+    <link rel="stylesheet" type="text/css" href="/windata/notes/publish/org_notes/public_html/Acss/prettify.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="preamble" class="status">
+<div class='nav'>
+<ul>
+<li><a href='http://remerci.com'>博客</a></li>
+<li><a href='/windata/notes/publish/org_notes/public_html/index.html'>Wiki目录</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<h1 class="title">latex 图形处理</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgheadline1">1. latex test</a></li>
+<li><a href="#orgheadline2">2. 图形 caption 中的断行</a></li>
+<li><a href="#orgheadline3">3. 字体和字号的手动调整</a></li>
+<li><a href="#orgheadline4">4. 字体嵌入问题</a></li>
+<li><a href="#orgheadline5">5. 图形处理规则和搜索路径</a></li>
+<li><a href="#orgheadline6">6. dvipdfmx 添加 jpg 等格式</a></li>
+<li><a href="#orgheadline7">7. 图形中特殊字符生成</a></li>
+<li><a href="#orgheadline8">8. 较好的图形浮动</a></li>
+</ul>
+</div>
+</div>
+
+<div id="orgheadline1" class="outline-2">
+<h2 id="orgheadline1"><span class="section-number-2">1</span> latex test</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+<a href="../../reference/latex-test/g-e.tex">latex en</a><br  />
+<a href="../../reference/latex-test/ca.tex">ca</a><br  />
+<a href="../../reference/latex-test/fig/">fig</a> <br  />
+</p>
+</div>
+</div>
+
+<div id="orgheadline2" class="outline-2">
+<h2 id="orgheadline2"><span class="section-number-2">2</span> 图形 caption 中的断行</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+&lt;example&gt;<br  />
+\caption{Authentication time for one \protect\\ disclosed key and its related messages}<br  />
+</p>
+
+<p>
+\caption{Authentication time for one \protect\\ \mbox{}\hspace{3em}disclosed key and its related messages}<br  />
+</p>
+
+<p>
+&lt;/example&gt;<br  />
+</p>
+</div>
+</div>
+
+
+<div id="orgheadline3" class="outline-2">
+<h2 id="orgheadline3"><span class="section-number-2">3</span> 字体和字号的手动调整</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+有时需要手动调整字体和字号。比如图片缩小后字也跟着缩小，为了在最后的文档中能看清，需要事先在图中用大号字；一些地方需要用到粗体或者斜体。<br  />
+命令如下：<br  />
+<a href="../../reference/latex/font.png">font</a><br  />
+</p>
+</div>
+</div>
+
+<div id="orgheadline4" class="outline-2">
+<h2 id="orgheadline4"><span class="section-number-2">4</span> 字体嵌入问题</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+查看是否所有字体都嵌入 pdf 文件中用命令 pdffonts your.pdf。<br  />
+</p>
+
+<p>
+用 dvipdfmx 编译可以嵌入 tex 文件和 metapost 产生的 eps 图形中的字体。<br  />
+但由 gnuplot 产生的 eps 图形中的字体不可以，这可以由 epstopdf,pdf2ps,ps2eps 转换过后，<br  />
+原来的 type1 字体 Symbol 和 Helvetica 就被转换到别的字体并都被嵌入了。<br  />
+看了下效果，原来勉强可放下的图例说明现在后面的括号似乎丢了，不过还好。<br  />
+</p>
+</div>
+</div>
+
+
+<div id="orgheadline5" class="outline-2">
+<h2 id="orgheadline5"><span class="section-number-2">5</span> 图形处理规则和搜索路径</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+默认图形后缀<br  />
+&lt;src lang="latex"&gt;<br  />
+\DeclareGraphicsExtensions{.eps,.eps.gz,{}}<br  />
+&lt;/src&gt;<br  />
+</p>
+
+<p>
+不同图形类型的处理规则<br  />
+&lt;src lang="latex"&gt;<br  />
+\DeclareGraphicsRule{.eps.gz}{eps}{.eps.bb}{‘gunzip -c #1}<br  />
+\DeclareGraphicsRule{.jpg}{eps}{.bb}{}<br  />
+\DeclareGraphicsRule{*}{eps}{*}{}<br  />
+&lt;/src&gt;<br  />
+</p>
+
+<p>
+图形搜索路径<br  />
+</p>
+<ul class="org-ul">
+<li>TEXINPUTS 环境变量<br  /></li>
+<li>\graphicspath{{fig/},{data/}}<br  /></li>
+</ul>
+</div>
+</div>
+
+<div id="orgheadline6" class="outline-2">
+<h2 id="orgheadline6"><span class="section-number-2">6</span> dvipdfmx 添加 jpg 等格式</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+用 ebb 生成图片的 boundingbox,而后用<br  />
+&lt;src lang="latex"&gt;<br  />
+\includegraphics[bb=0 0 144 144]{badge.jpg}<br  />
+&lt;/src&gt;<br  />
+引入 jpg 图形。<br  />
+</p>
+
+<p>
+或者用规则<br  />
+&lt;src lang="latex"&gt;<br  />
+\DeclareGraphicsRule{.jpg}{eps}{.bb}{}<br  />
+%boundingbox 文件放好，则不用再加 bb 选项<br  />
+\includegraphics{badge.jpg}<br  />
+&lt;/src&gt;<br  />
+</p>
+</div>
+</div>
+
+<div id="orgheadline7" class="outline-2">
+<h2 id="orgheadline7"><span class="section-number-2">7</span> 图形中特殊字符生成</h2>
+<div class="outline-text-2" id="text-7">
+<ol class="org-ol">
+<li>gnuplot 用 epslatex term：文字有点大，图例方框不好处理。<br  /></li>
+<li>gnuplot 用{\Symbol m}：图例方框不好处理。<br  /></li>
+<li>用 psfrag：需要用 dvips，ps2pdf 生成 pdf 文件。这样生成的 pdf 文件不能用 jpg 等格式文<br  />
+件，只能将 jpg 转化成 eps，图片质量将受损。<br  /></li>
+<li>用 overpic：覆盖方式，不够精确。<br  /></li>
+</ol>
+
+<p>
+<b><b>注意 psfrag 替换的文字不能用 width 选项缩放，只能用\resizebox 缩放。</b></b><br  />
+目前来说，根据情况适当选择 3 或者 4 比较好。<br  />
+</p>
+</div>
+</div>
+
+<div id="orgheadline8" class="outline-2">
+<h2 id="orgheadline8"><span class="section-number-2">8</span> 较好的图形浮动</h2>
+<div class="outline-text-2" id="text-8">
+<ol class="org-ol">
+<li>多用选项 htbp<br  /></li>
+<li>将浮动参数设置宽松<br  /></li>
+</ol>
+<p>
+&lt;src lang="latex"&gt;<br  />
+\renewcommand{\textfraction}{0.15}<br  />
+\renewcommand{\topfraction}{0.85}<br  />
+\renewcommand{\bottomfraction}{0.65}<br  />
+\renewcommand{\floatpagefraction}{0.60}<br  />
+&lt;/src&gt;<br  />
+</p>
+<ol class="org-ol">
+<li>用\usepackage{flafter}确保图形在引用的文本之后出现<br  /></li>
+<li>浮动计数器: topnumber,bottomnumber,totalnumber<br  /></li>
+</ol>
+<p>
+&lt;src lang="latex"&gt;<br  />
+\setcounter{totalnumber}{2}<br  />
+&lt;/src&gt;<br  />
+</p>
+
+<p>
+-&#x2014;<br  />
+利用小页环境对齐旋转图形的技巧见 48 页。<br  />
+</p>
+
+<p>
+还有以下内容见相应章节：<br  />
+</p>
+<ul class="org-ul">
+<li>图形之间，图形文字间距调整<br  /></li>
+<li>图题样式<br  /></li>
+<li>将图放到方框盒子里<br  /></li>
+<li>并列图形<br  /></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: remerci</p>
+<p class="date">Created: 2017-01-18 三 23:11</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

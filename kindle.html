@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2017-01-18 三 23:10 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title></title>
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="remerci" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+ <link rel='stylesheet' href='/windata/notes/publish/org_notes/public_html/Acss/main.css' type='text/css'/> 
+
+    <link rel="stylesheet" type="text/css" href="/windata/notes/publish/org_notes/public_html/Acss/prettify.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="preamble" class="status">
+<div class='nav'>
+<ul>
+<li><a href='http://remerci.com'>博客</a></li>
+<li><a href='/windata/notes/publish/org_notes/public_html/index.html'>Wiki目录</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgheadline41">1. read kindle</a>
+<ul>
+<li><a href="#orgheadline2">1.1. res</a>
+<ul>
+<li><a href="#orgheadline1">1.1.1. 推荐几个国内可以上的比较好的英文网站：</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline8">1.2. heart 心</a>
+<ul>
+<li><a href="#orgheadline3">1.2.1. 这不是斯德哥尔摩综合症，而是米兰昆德拉描述的“媚俗”</a></li>
+<li><a href="#orgheadline4">1.2.2. 忍受简单的能力</a></li>
+<li><a href="#orgheadline5">1.2.3. 为什么把一个两块钱的冰淇淋不小心掉在地上所产生的痛苦远比丢了同样金额的钱大呢?</a></li>
+<li><a href="#orgheadline6">1.2.4. <span class="done DONE">DONE</span> 曾国藩智慧</a></li>
+<li><a href="#orgheadline7">1.2.5. 我们有没有自我思维(知乎)</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline21">1.3. nature 博</a>
+<ul>
+<li><a href="#orgheadline9">1.3.1. 这位低调的英雄穷尽一生: 克莱尔. 帕特森</a></li>
+<li><a href="#orgheadline10">1.3.2. 聪明人的对策及纳什均衡</a></li>
+<li><a href="#orgheadline11">1.3.3. 逝后的生命: 免疫, 自溶, 菌落</a></li>
+<li><a href="#orgheadline12">1.3.4. 人的行为决策过程是如何实施的: 决策中枢 vs. 多个独立行动博弈</a></li>
+<li><a href="#orgheadline13">1.3.5. 关于海洋科学有哪些有趣的研究和结论: 水下组网</a></li>
+<li><a href="#orgheadline14">1.3.6. 揭秘:石墨烯是这样被首次实现的!全球科学家跪了</a></li>
+<li><a href="#orgheadline15">1.3.7. 麻省理工学院（MIT）打造可食用性电子设备</a></li>
+<li><a href="#orgheadline16">1.3.8. 点滴什么时候配(0.9%)生理盐水, 什么时候配(5%)葡萄糖: 根据药物化学反应和病人状况决定咸甜</a></li>
+<li><a href="#orgheadline17">1.3.9. 癌症是不是一种进化?</a></li>
+<li><a href="#orgheadline18">1.3.10. 不存在日报, 我们是怎么开始时间旅行的</a></li>
+<li><a href="#orgheadline19">1.3.11. 认真用脑的人请举手</a></li>
+<li><a href="#orgheadline20">1.3.12. zhihu: 为什么春秋战国时期有些人的名字很古怪, 像是外文音译</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline22">1.4. slient 悠 冥</a></li>
+<li><a href="#orgheadline37">1.5. TechDirection</a>
+<ul>
+<li><a href="#orgheadline23">1.5.1. 全球化连接(无人机, 计算中心), 自然化交互(过滤, 助手), 沉浸式体验(VR)</a></li>
+<li><a href="#orgheadline24">1.5.2. "感官世界有多大" : 传感, 超人</a></li>
+<li><a href="#orgheadline25">1.5.3. 中国在"互联网夹"</a></li>
+<li><a href="#orgheadline26">1.5.4. 用树莓派 diy 手机 : python 开发操作系统, 3D 打印出机壳</a></li>
+<li><a href="#orgheadline27">1.5.5. "日立 CMOS 退火" : 面向优化问题, Natural computing, 神经芯片, 量子计算</a></li>
+<li><a href="#orgheadline28">1.5.6. 施浩德 Computex2015 现场解释重金收购 Altera 的三个原因</a></li>
+<li><a href="#orgheadline29">1.5.7. AI 奇点</a></li>
+<li><a href="#orgheadline30">1.5.8. C2B, Fab Lab, Living Lab 等概念和实践: 需求-&gt;个性化制造, 个人创新.</a></li>
+<li><a href="#orgheadline31">1.5.9. 爱范 你的 1 小时在这里可以这么值钱: 共享经济的大潮</a></li>
+<li><a href="#orgheadline32">1.5.10. 爱范 微软 Hololens 全息头盔  现实增强和虚拟现实</a></li>
+<li><a href="#orgheadline33">1.5.11. 加个无线接收器，手表就能知道你摸的是什么: EM-Sense (电磁感知)</a></li>
+<li><a href="#orgheadline34">1.5.12. MIT 神奇的蛇形机器人 LineFrom: 机器人世界柔性制造的机器人辅助</a></li>
+<li><a href="#orgheadline35">1.5.13. N3XT 芯片: 碳纳米晶体管, 富资源单层布局 -&gt; 摩天大楼布局; 传输效率高, 能耗低, 叠放制造.</a></li>
+<li><a href="#orgheadline36">1.5.14. <span class="done DONE">DONE</span> 不耗电的新 wifi 技术</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline40">1.6. Efficient</a>
+<ul>
+<li><a href="#orgheadline38">1.6.1. 善用佳软的两个软件</a></li>
+<li><a href="#orgheadline39">1.6.2. Amazon</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="orgheadline41" class="outline-2">
+<h2 id="orgheadline41"><span class="section-number-2">1</span> read kindle</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>read kindle 太杂, 与集中精力办 1~2 件事的原则相违背, 且如何复习?<br  />
+<ul class="org-ul">
+<li>不一定每天看, 不能太长时间不看 -&gt; 在集中精力的间隙看<br  /></li>
+<li>思考-&gt;行动反馈-&gt;形成意识行动回路完结<br  /></li>
+<li>隔一段时间回顾后 archive, 不增加负担<br  /></li>
+</ul></li>
+</ul>
+</div>
+<div id="orgheadline2" class="outline-3">
+<h3 id="orgheadline2"><span class="section-number-3">1.1</span> res</h3>
+<div class="outline-text-3" id="text-1-1">
+</div><div id="orgheadline1" class="outline-4">
+<h4 id="orgheadline1"><span class="section-number-4">1.1.1</span> 推荐几个国内可以上的比较好的英文网站：</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<ul class="org-ul">
+<li>quora：我能说知乎相对于它，就是人人相对于 fb，微博相对于 twitter 么？<br  /></li>
+<li>China Daily：虽然很多人说它 chinglish，但比 time，NY TIME 等有更多的中国报导，也能学到中国特色词语的标准英文译法。<br  /></li>
+<li>economist：经济学人，最地道的英式英语了，很多大学英语老师都推荐过。最近常看的就是这个，里面有专门的中国专栏。<br  /></li>
+<li>BBC/CNN/NPR：可以看看新闻。<br  /></li>
+<li>普特：专业的英文学习网站，资源很多。<br  /></li>
+<li>time: 大名鼎鼎的时代周刊。能上它封面的都是大人物，胡总，习总，普总，奥观海，春哥。。。<br  /></li>
+<li>HBR：哈佛商业评论。专业高端知名的管理杂志，但枯燥的内容我实在读不下去。<br  /></li>
+<li>the onion： 一个专门编假新闻的网站，很搞笑。<br  /></li>
+<li>Newyorker： 文艺小资范。<br  /></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="orgheadline8" class="outline-3">
+<h3 id="orgheadline8"><span class="section-number-3">1.2</span> heart 心</h3>
+<div class="outline-text-3" id="text-1-2">
+</div><div id="orgheadline3" class="outline-4">
+<h4 id="orgheadline3"><span class="section-number-4">1.2.1</span> 这不是斯德哥尔摩综合症，而是米兰昆德拉描述的“媚俗”</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+米兰昆德拉反对的是大众中高度符号化的情感反应, 其遮蔽甚至扭曲了人的真正情感. 廉价的眼泪和易得的感动只是弱者证明自己活过的安慰剂.<br  />
+</p>
+<ul class="org-ul">
+<li>针对事例: 军训, 升旗, 婚礼<br  /></li>
+<li>习惯之力???<br  /></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline4" class="outline-4">
+<h4 id="orgheadline4"><span class="section-number-4">1.2.2</span> 忍受简单的能力</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<p>
+来自知乎专栏，李松蔚<br  />
+</p>
+<ul class="org-ul">
+<li>思维上的变化多端, 造成行动层面的进步迟缓<br  /></li>
+<li>智商, 努力. 还是踏实<br  /></li>
+<li id="思考">简单的事简单应之, 恰当应对的艺术. 恰当的自我提醒 vs. 反复提醒怕忘记<br  />
+<ul class="org-ul">
+<li>讲课前睡不好<br  /></li>
+<li>重要场合手出汗<br  /></li>
+<li>面对领导变低幼<br  /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline5" class="outline-4">
+<h4 id="orgheadline5"><span class="section-number-4">1.2.3</span> 为什么把一个两块钱的冰淇淋不小心掉在地上所产生的痛苦远比丢了同样金额的钱大呢?</h4>
+<div class="outline-text-4" id="text-1-2-3">
+<dl class="org-dl">
+<dt>禀赋效应</dt><dd>一旦人们得到可供自己消费的某物品, 会对该物赋予的价值显著增长.<br  /></dd>
+</dl>
+</div>
+</div>
+<div id="orgheadline6" class="outline-4">
+<h4 id="orgheadline6"><span class="section-number-4">1.2.4</span> <span class="done DONE">DONE</span> 曾国藩智慧</h4>
+<div class="outline-text-4" id="text-1-2-4">
+<ul class="org-ul">
+<li>久利之事勿为，众争之地勿往<br  /></li>
+<li>勿以小恶弃人大美，勿以小怨忘人大恩<br  /></li>
+<li>说人之短乃护己之短，存心不厚，识量太狭<br  /></li>
+<li>利可共不可独，谋可寡不可众<br  /></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline7" class="outline-4">
+<h4 id="orgheadline7"><span class="section-number-4">1.2.5</span> 我们有没有自我思维(知乎)</h4>
+<div class="outline-text-4" id="text-1-2-5">
+<ul class="org-ul">
+<li>左右脑, 右脑通过 corpus callosum 沟通左脑, 割断联系-&gt;2 个脑?<br  /></li>
+<li>左思维是自我感知的一部分 -&gt; 冥想<br  /></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="orgheadline21" class="outline-3">
+<h3 id="orgheadline21"><span class="section-number-3">1.3</span> nature 博</h3>
+<div class="outline-text-3" id="text-1-3">
+</div><div id="orgheadline9" class="outline-4">
+<h4 id="orgheadline9"><span class="section-number-4">1.3.1</span> 这位低调的英雄穷尽一生: 克莱尔. 帕特森</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<ul class="org-ul">
+<li>同位素测地球年龄<br  />
+<ul class="org-ul">
+<li>铀 -&gt; Db -&gt; Pa 镤 -&gt; &#x2026; -&gt; 铅<br  /></li>
+<li>找和地球同岁的陨石<br  /></li>
+</ul></li>
+<li>超级洁净室<br  /></li>
+<li>南极 200 公尺下冰心百万年前气泡<br  /></li>
+<li>铅的危害<br  />
+<ul class="org-ul">
+<li>古罗马: 器皿, 化装品, plumb, 土星名字<br  /></li>
+<li>便宜, 好用, 延展性好, 制造简单<br  /></li>
+<li>石油抗暴剂<br  /></li>
+<li>神经毒素<br  /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline10" class="outline-4">
+<h4 id="orgheadline10"><span class="section-number-4">1.3.2</span> 聪明人的对策及纳什均衡</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<ul class="org-ul">
+<li>华罗庚帽子: 3 白 2 黑<br  /></li>
+<li>海盗分金: 老大出方案, 半数通过, 否则扔海 -&gt; 最简单情形 逆向递归 最优方案<br  /></li>
+<li>约会: 0 点到 1 点, 只等 10 分 -&gt; 0:30 纳什均衡点 最佳选择. 任何参与者单独改变策略不最优, 稳定的<br  /></li>
+<li>囚徒困境: 非全局最优的纳什均衡<br  /></li>
+<li>低价竞争: 两败俱伤的纳什均衡 -&gt; 市场经济看不见的手, 从利己目的出发利他. 有时损人不利己<br  /></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline11" class="outline-4">
+<h4 id="orgheadline11"><span class="section-number-4">1.3.3</span> 逝后的生命: 免疫, 自溶, 菌落</h4>
+<div class="outline-text-4" id="text-1-3-3">
+</div>
+</div>
+<div id="orgheadline12" class="outline-4">
+<h4 id="orgheadline12"><span class="section-number-4">1.3.4</span> 人的行为决策过程是如何实施的: 决策中枢 vs. 多个独立行动博弈</h4>
+<div class="outline-text-4" id="text-1-3-4">
+</div>
+</div>
+<div id="orgheadline13" class="outline-4">
+<h4 id="orgheadline13"><span class="section-number-4">1.3.5</span> 关于海洋科学有哪些有趣的研究和结论: 水下组网</h4>
+<div class="outline-text-4" id="text-1-3-5">
+<ul class="org-ul">
+<li>声波在海面附近的典型传播速率为 1500m/s 左右<br  /></li>
+<li>水下的通信带宽只有 40KHZ 左右,可能还不到这个带宽<br  /></li>
+<li>做的好的数据传输速度只有 40kbps 左右，而这只是单纯的点对点通信，实验室水池水平，通信距离 5 公里上下<br  /></li>
+</ul>
+<p>
+:FROM:     知乎<br  />
+:DATE:     2015-11-15<br  />
+</p>
+</div>
+</div>
+<div id="orgheadline14" class="outline-4">
+<h4 id="orgheadline14"><span class="section-number-4">1.3.6</span> 揭秘:石墨烯是这样被首次实现的!全球科学家跪了</h4>
+<div class="outline-text-4" id="text-1-3-6">
+<ul class="org-ul">
+<li>羽落术, 抗磁性<br  /></li>
+<li>范德华力 -&gt; 壁虎面板, 仿生材料<br  /></li>
+<li>范德华力 -&gt; 石墨烯: 导电性极好(快速充电), 几乎透明, 强度极高.<br  /></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline15" class="outline-4">
+<h4 id="orgheadline15"><span class="section-number-4">1.3.7</span> 麻省理工学院（MIT）打造可食用性电子设备</h4>
+<div class="outline-text-4" id="text-1-3-7">
+<p>
+它不但可以传输高清视频用来最清楚的显示病人的肠胃情况，还可以通过其它方面的传感功<br  />
+能，计算心率和呼吸频率，以更好的检测心脏和肺部功能。同时，在这个设备当中电子处理<br  />
+音频的收集功能，可以有效的区分心率和肺率，从而使医生能够更加清楚的获取信息。<br  />
+</p>
+
+<p>
+该胶囊会在消化道里面停留 1-2 天，如果需要对病人长期监控，必须在有效期过去，吞入新的<br  />
+胶囊。<br  />
+</p>
+</div>
+</div>
+<div id="orgheadline16" class="outline-4">
+<h4 id="orgheadline16"><span class="section-number-4">1.3.8</span> 点滴什么时候配(0.9%)生理盐水, 什么时候配(5%)葡萄糖: 根据药物化学反应和病人状况决定咸甜</h4>
+</div>
+<div id="orgheadline17" class="outline-4">
+<h4 id="orgheadline17"><span class="section-number-4">1.3.9</span> 癌症是不是一种进化?</h4>
+<div class="outline-text-4" id="text-1-3-9">
+<ul class="org-ul">
+<li>极其古老的防御机制?<br  /></li>
+<li>原因是谜: 微环境变化, 突变, 免疫, 端粒, 肿瘤干细胞???<br  /></li>
+<li>无法彻底根治.<br  /></li>
+<li>裸鼹鼠不会得癌症. 群居, 无痛感, 寿命为普通鼠的 10 倍(30 年), 死前可一直繁殖, 不衰老.<br  /></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline18" class="outline-4">
+<h4 id="orgheadline18"><span class="section-number-4">1.3.10</span> 不存在日报, 我们是怎么开始时间旅行的</h4>
+<div class="outline-text-4" id="text-1-3-10">
+<ul class="org-ul">
+<li>时间在历史中的概念变化<br  />
+<ul class="org-ul">
+<li>日月四季, 自然周期节律的体现<br  /></li>
+<li>时空四维中的小小角落<br  /></li>
+<li>时间机器<br  /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline19" class="outline-4">
+<h4 id="orgheadline19"><span class="section-number-4">1.3.11</span> 认真用脑的人请举手</h4>
+<div class="outline-text-4" id="text-1-3-11">
+<ul class="org-ul">
+<li>谢林顿爵士 (charles sherrington): 感觉神经-大脑脊髓-运动神经, 反射弧<br  /></li>
+<li>爱德华 陶布 (Edward Taub): 绑住好手, 双手切断<br  /></li>
+<li>习得性废用 (learned nouse)<br  /></li>
+<li>限制-诱导 (constraint-induced, CI) 疗法<br  /></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline20" class="outline-4">
+<h4 id="orgheadline20"><span class="section-number-4">1.3.12</span> zhihu: 为什么春秋战国时期有些人的名字很古怪, 像是外文音译</h4>
+<div class="outline-text-4" id="text-1-3-12">
+<ul class="org-ul">
+<li>男子称"氏名" 孔丘, 女子称"名姓" 南子<br  /></li>
+<li>成汤姓子, 后人居宋国, 孔, 转至鲁国<br  /></li>
+<li>越人歌, 南方百越<br  /></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="orgheadline22" class="outline-3">
+<h3 id="orgheadline22"><span class="section-number-3">1.4</span> slient 悠 冥</h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li>张双南：从中科大的掌声谈起，什么才是科学<br  />
+<ul class="org-ul">
+<li>科学的目的：为什么？why<br  /></li>
+<li>科学的精神：质疑，独立，唯一<br  /></li>
+<li>科学方法论：逻辑，定量，实证<br  /></li>
+<li>科学与哲学，数学的关系<br  /></li>
+</ul></li>
+<li>麦肯锡报告将各行业创新分为 4 类, 科学研究, 工程技术, 客户中心, 效率驱动.<br  /></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline37" class="outline-3">
+<h3 id="orgheadline37"><span class="section-number-3">1.5</span> TechDirection</h3>
+<div class="outline-text-3" id="text-1-5">
+</div><div id="orgheadline23" class="outline-4">
+<h4 id="orgheadline23"><span class="section-number-4">1.5.1</span> 全球化连接(无人机, 计算中心), 自然化交互(过滤, 助手), 沉浸式体验(VR)</h4>
+<div class="outline-text-4" id="text-1-5-1">
+</div>
+</div>
+<div id="orgheadline24" class="outline-4">
+<h4 id="orgheadline24"><span class="section-number-4">1.5.2</span> "感官世界有多大" : 传感, 超人</h4>
+<div class="outline-text-4" id="text-1-5-2">
+</div>
+</div>
+<div id="orgheadline25" class="outline-4">
+<h4 id="orgheadline25"><span class="section-number-4">1.5.3</span> 中国在"互联网夹"</h4>
+<div class="outline-text-4" id="text-1-5-3">
+<ul class="org-ul">
+<li>互联网+, O2O, 大数据智能, 信息推送<br  /></li>
+<li>智能硬件, 下一代<br  /></li>
+<li>geek maker 1/3 在大学, 1/3 在车库, 1/3 在孵化器(北京, 深圳)<br  /></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline26" class="outline-4">
+<h4 id="orgheadline26"><span class="section-number-4">1.5.4</span> 用树莓派 diy 手机 : python 开发操作系统, 3D 打印出机壳</h4>
+<div class="outline-text-4" id="text-1-5-4">
+</div>
+</div>
+<div id="orgheadline27" class="outline-4">
+<h4 id="orgheadline27"><span class="section-number-4">1.5.5</span> "日立 CMOS 退火" : 面向优化问题, Natural computing, 神经芯片, 量子计算</h4>
+<div class="outline-text-4" id="text-1-5-5">
+</div>
+</div>
+<div id="orgheadline28" class="outline-4">
+<h4 id="orgheadline28"><span class="section-number-4">1.5.6</span> 施浩德 Computex2015 现场解释重金收购 Altera 的三个原因</h4>
+<div class="outline-text-4" id="text-1-5-6">
+<ul class="org-ul">
+<li>FPGA 设计时间仅 ASIC 的一半, x86 与 FPGA 结合创造新的异构处理器, 可继续实现摩尔定律<br  /></li>
+<li>CPU 和 GPU 都遇到了单位功耗性能的瓶颈, FPGA 单位功耗性能提升 25 倍, 时延缩短了 50~75 倍<br  /></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline29" class="outline-4">
+<h4 id="orgheadline29"><span class="section-number-4">1.5.7</span> AI 奇点</h4>
+<div class="outline-text-4" id="text-1-5-7">
+<ul class="org-ul">
+<li>互联 -&gt; 智能 的发展趋势<br  /></li>
+<li>4 大技术支撑<br  />
+<ul class="org-ul">
+<li>云计算 -&gt; 并行计算, GPU, 区别于冯式串行计算机架构<br  /></li>
+<li>大数据<br  /></li>
+<li>深度学习<br  />
+<ul class="org-ul">
+<li>语音识别: 替换声学模型中的混合高斯模型（GMM，Gaussian Mixture Model），30%错误降低率<br  /></li>
+<li>图像识别: 深度卷积神经网络（CNN），错误率 26% -&gt; 15%<br  /></li>
+<li>NLP: 免去繁琐的特征提取步骤<br  /></li>
+</ul></li>
+<li>人脑芯片<br  /></li>
+</ul></li>
+<li>专用智能<br  />
+<ul class="org-ul">
+<li>Skype Translator 实时传译<br  /></li>
+<li>face++ 人脸识别云服务<br  /></li>
+<li>知识表示, 规划和决策: palantir, watson<br  /></li>
+<li>科大讯飞, 格灵深瞳, 小 i 机器人<br  /></li>
+<li>小米, 360, 海康威视, 大疆, 海尔, 美的, 百度<br  /></li>
+</ul></li>
+<li>突破点<br  />
+<ul class="org-ul">
+<li>人脑芯片<br  /></li>
+<li>量子计算<br  /></li>
+<li>仿生计算机<br  />
+<ul class="org-ul">
+<li>陈云霁 寒武纪神经网络计算机<br  /></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline30" class="outline-4">
+<h4 id="orgheadline30"><span class="section-number-4">1.5.8</span> C2B, Fab Lab, Living Lab 等概念和实践: 需求-&gt;个性化制造, 个人创新.</h4>
+</div>
+<div id="orgheadline31" class="outline-4">
+<h4 id="orgheadline31"><span class="section-number-4">1.5.9</span> 爱范 你的 1 小时在这里可以这么值钱: 共享经济的大潮</h4>
+</div>
+<div id="orgheadline32" class="outline-4">
+<h4 id="orgheadline32"><span class="section-number-4">1.5.10</span> 爱范 微软 Hololens 全息头盔  现实增强和虚拟现实</h4>
+</div>
+<div id="orgheadline33" class="outline-4">
+<h4 id="orgheadline33"><span class="section-number-4">1.5.11</span> 加个无线接收器，手表就能知道你摸的是什么: EM-Sense (电磁感知)</h4>
+<div class="outline-text-4" id="text-1-5-11">
+<ul class="org-ul">
+<li>便宜而且更高精度的用户定位<br  /></li>
+<li>但大量的物体并不具有明显的电磁特征<br  /></li>
+</ul>
+<p>
+:DATE:     2015-11-12<br  />
+:FROM:     爱范<br  />
+</p>
+</div>
+</div>
+<div id="orgheadline34" class="outline-4">
+<h4 id="orgheadline34"><span class="section-number-4">1.5.12</span> MIT 神奇的蛇形机器人 LineFrom: 机器人世界柔性制造的机器人辅助</h4>
+</div>
+<div id="orgheadline35" class="outline-4">
+<h4 id="orgheadline35"><span class="section-number-4">1.5.13</span> N3XT 芯片: 碳纳米晶体管, 富资源单层布局 -&gt; 摩天大楼布局; 传输效率高, 能耗低, 叠放制造.</h4>
+</div>
+<div id="orgheadline36" class="outline-4">
+<h4 id="orgheadline36"><span class="section-number-4">1.5.14</span> <span class="done DONE">DONE</span> 不耗电的新 wifi 技术</h4>
+<div class="outline-text-4" id="text-1-5-14">
+<ul class="org-ul">
+<li>passive wifi<br  />
+<dl class="org-dl">
+<dt>powerover Wi-Fi</dt><dd>软件改造路由，发数据同时传输电能<br  /></dd>
+<dt>Wi-Fi backscatter</dt><dd>反射或不反射无线信号而进行数据编码，能耗极低<br  /></dd>
+</dl></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="orgheadline40" class="outline-3">
+<h3 id="orgheadline40"><span class="section-number-3">1.6</span> Efficient</h3>
+<div class="outline-text-3" id="text-1-6">
+</div><div id="orgheadline38" class="outline-4">
+<h4 id="orgheadline38"><span class="section-number-4">1.6.1</span> 善用佳软的两个软件</h4>
+<div class="outline-text-4" id="text-1-6-1">
+<ul class="org-ul">
+<li>IDM: 结合 host 文件使用 IDM.<br  /></li>
+<li>云端: 重定向机制安装, 便于监控, 管理, 分享, 备份恢复, 使用.<br  /></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline39" class="outline-4">
+<h4 id="orgheadline39"><span class="section-number-4">1.6.2</span> Amazon</h4>
+<div class="outline-text-4" id="text-1-6-2">
+<ul class="org-ul">
+<li>第八代仓储中心 机器人<br  /></li>
+<li>无人机 Prime Air<br  /></li>
+<li>AWS<br  /></li>
+<li id="Cloud Formation">自动软件部署<br  /></li>
+<li id="Elastic Beanstalk">源配置, 基础设施扩展, 管理和配置应用堆栈<br  /></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: remerci</p>
+<p class="date">Created: 2017-01-18 三 23:10</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

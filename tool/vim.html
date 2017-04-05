@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2017-01-18 三 23:11 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>vim 技巧</title>
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="remerci" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+ <link rel='stylesheet' href='/windata/notes/publish/org_notes/public_html/Acss/main.css' type='text/css'/> 
+
+    <link rel="stylesheet" type="text/css" href="/windata/notes/publish/org_notes/public_html/Acss/prettify.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="preamble" class="status">
+<div class='nav'>
+<ul>
+<li><a href='http://remerci.com'>博客</a></li>
+<li><a href='/windata/notes/publish/org_notes/public_html/index.html'>Wiki目录</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<h1 class="title">vim 技巧</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgheadline3">1. 我的 plugins</a>
+<ul>
+<li><a href="#orgheadline1">1.1. latex-suite</a></li>
+<li><a href="#orgheadline2">1.2. project</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline4">2. 积少成多</a></li>
+<li><a href="#orgheadline5">3. 技巧汇总</a></li>
+<li><a href="#orgheadline6">4. g 命令</a></li>
+</ul>
+</div>
+</div>
+<p>
+#author 赵鑫<br  />
+#desc vim 使用笔记<br  />
+&lt;contents&gt;<br  />
+</p>
+
+<div id="orgheadline3" class="outline-2">
+<h2 id="orgheadline3"><span class="section-number-2">1</span> 我的 plugins</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+包括：<br  />
+</p>
+<ul class="org-ul">
+<li>常用: calendar,<br  /></li>
+<li>编程相关: a, cppcomplete, gtags,<br  /></li>
+<li>viki 相关: genutils, tSkeleton (template), tlib<br  /></li>
+<li>vim_ide 相关: taglist, winmanager, winfileexplorer<br  /></li>
+<li>sketch: 鼠标画方框等<br  /></li>
+<li>vimtips: totd<br  /></li>
+<li>其它: EncodeURL, multvals, project,<br  /></li>
+</ul>
+</div>
+
+<div id="orgheadline1" class="outline-3">
+<h3 id="orgheadline1"><span class="section-number-3">1.1</span> latex-suite</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+方便 latex 文件的输入，编译。<br  />
+</p>
+
+<p>
+&lt;example&gt;<br  />
+ftplugin/latex-suite/    templates: 模板文件<br  />
+                    dictionaries: 字典文件，用于&lt;C-X C-K&gt;补<br  />
+                    全关键字<br  />
+&lt;F5&gt; &lt;S-F5&gt;        导言区插入宏包，文档区插入环境；Shift 改变宏包或环境<br  />
+&lt;F7&gt; &lt;S-F7&gt;        插入命令；Shift 改变命令<br  />
+&lt;F9&gt;                搜索匹配 cite, ref 等<br  />
+&lt;S-F1&gt;&#x2026;&lt;S-F4&gt;        快捷插入最常用环境<br  />
+                    Tex_HotKeyMappings<br  />
+E、F、S、B            插入模式下 3 大写字母快速输入“环境、图、章节、参考<br  />
+                    文献”。需要插入三个大写字母时，用 EF&lt;C-v&gt;I<br  />
+`a                    对应希腊字母<br  />
+,ce                    逗号命令对应选择模式，将选区居中<br  />
+</p>
+
+<p>
+公式环境中快捷输入<br  />
+e^^                e<sup>nil</sup>&lt;++&gt;<br  />
+==                    &amp; = &amp;<br  />
+$$,""等                插入点自动变到中间<br  />
+&lt;/example&gt;<br  />
+</p>
+</div>
+</div>
+
+<div id="orgheadline2" class="outline-3">
+<h3 id="orgheadline2"><span class="section-number-3">1.2</span> project</h3>
+</div>
+</div>
+
+<div id="orgheadline4" class="outline-2">
+<h2 id="orgheadline4"><span class="section-number-2">2</span> 积少成多</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>插入模式下<br  />
+<ul class="org-ul">
+<li>C-R C-O a: 在当前行上一行插入寄存器 a 的内容<br  /></li>
+<li>C-M：到下一行，命令模式下同样。<br  /></li>
+</ul></li>
+<li>vim tip 32: 关于 vim functions<br  /></li>
+<li>vim tip 76, 77: 将编译错误，搜索以外的内容折叠起来<br  /></li>
+<li>不区分大小写搜索： /\ckun<br  /></li>
+
+<li>改变文件格式，编码等<br  /></li>
+</ul>
+<p>
+&lt;example&gt;<br  />
+set fileformat=dos, unix<br  />
+set fileencoding=gbk, utf8<br  />
+&lt;/example&gt;<br  />
+</p>
+
+<ul class="org-ul">
+<li><code>VIMTIP</code> 255: 利用 tag 在非同一目录的大量文件中快速切换，（arbitrary tags for<br  /></li>
+</ul>
+<p>
+file names）<br  />
+</p>
+
+<p>
+来自 <a href="http://vim.sf.net/tip_view.php?tip_id=255">http://vim.sf.net/tip_view.php?tip_id=255</a><br  />
+</p>
+
+<p>
+This definitely work on linux and there is probably some windows equivalent.<br  />
+I've started working with tomcat and many many .jsp files.  I find this trick to be very helpful.<br  />
+&lt;example&gt;<br  />
+find -name '*.jsp' -printf '%f\t%P\t1\n' |sort &gt; jsp.tags<br  />
+&lt;/example&gt;<br  />
+This will create a file called jsp.tags with tag entries for each .jsp file.  Within Vim I use<br  />
+&lt;example&gt;<br  />
+:set tags+=jsp.tags<br  />
+&lt;/example&gt;<br  />
+Now I can to simple :tag file.jsp to quickly switch b/w the many, many .jsp files.<br  />
+</p>
+
+<p>
+One important note.  The utility sort will use the value of LC_COLLATE to sort according to your<br  />
+locale.  This will give Vim issues.  So try "LC_COLLATE=C sort" instead of plain "sort"<br  />
+</p>
+
+<ul class="org-ul">
+<li>利用 <b>\%[]</b> 匹配部分单词<br  /></li>
+</ul>
+<p>
+&lt;example&gt;<br  />
+For instance, "\\&lt;re\\%[tur]\\&gt;" will match "re", "ret", "retu" or "retur"<br  />
+&lt;/example&gt;<br  />
+</p>
+
+
+<ul class="org-ul">
+<li><b>\_</b> 在正则表达式中的作用：匹配所有项，如 <b>\_s</b> 匹配文中所有空格。<br  /></li>
+</ul>
+</div>
+</div>
+
+<div id="orgheadline5" class="outline-2">
+<h2 id="orgheadline5"><span class="section-number-2">3</span> 技巧汇总</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+&lt;example&gt;<br  />
+/.*fred\&amp;.*joe ;: 搜索同时包括 fred 跟 joe 的行<br  />
+/^\n\{3} ;: 匹配三连续的空行<br  />
+%s= *$== ;: 删除行尾空白<br  />
+:s/fred/&lt;c-r&gt;a/g ;: 将 fred 替换为寄存器 a 里的内容 #&lt;c-r&gt;为按下 Ctrl 与 r<br  />
+/&lt;C-R&gt;&lt;C-W&gt; ;: 把单个&lt;cword&gt;单词放入搜索或者命令行<br  />
+@: ;: 重复上次的命令<br  />
+:lcd %:p:h ;: 改变路径到当前编辑的文件<br  />
+zz,zt,zb: respectively move cursor to middle, top, bottom of the window<br  />
+g~~,gUU,guu: switch case of current line, upper case, lower case<br  />
+guaw: make current word lowercase<br  />
+</p>
+
+<p>
+]p        被粘贴的文本自动调整缩紧位置<br  />
+命令行        ctrl-d, ctrl-a 列出补全的内容<br  />
+&lt;/example&gt;<br  />
+</p>
+</div>
+</div>
+
+<div id="orgheadline6" class="outline-2">
+<h2 id="orgheadline6"><span class="section-number-2">4</span> g 命令</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+&lt;example&gt;<br  />
+Some examples<br  />
+</p>
+<hr  />
+<p>
+Display context (5 lines) for all occurences of a pattern<br  />
+    :g/&lt;pattern&gt;/z#.5<br  />
+    :g/&lt;pattern&gt;/z#.5|echo "<code>========</code>"<br  />
+    &lt;&lt; same as first, but with some beautification &gt;&gt;<br  />
+Delete all lines matching a pattern<br  />
+    :g/&lt;pattern&gt;/d<br  />
+Delete all blank lines (just an example for above)<br  />
+    :g/^\s*\(/d
+Double space the file
+    :g/^/pu =\"\n\"
+    :g/^/pu _
+    << the above one also works >>
+Copy all lines matching a pattern to end of file
+    :g/<pattern>/t\)<br  />
+Yank all lines matching a pattern to register 'a'<br  />
+    0"ay0:g/&lt;pattern&gt;/y A<br  />
+Increment the number items from current line to end-of-document by one<br  />
+    :.,$g/^\d/exe "normal! \&lt;c-a&gt;"<br  />
+Comment (C) lines containing "DEBUG" statements<br  />
+    g/^\s*DEBUG/exe "norm! I/* \&lt;Esc&gt;A */\&lt;Esc&gt;"<br  />
+A Reverse lookup for records<br  />
+(eg: An address book, with Name on start-of-line and fields after a space)<br  />
+    :g/&lt;patern&gt;?^\w?p               "if only name is interested<br  />
+    :g/&lt;patern&gt;/ka|?^\w?p|'ap       "if name and the lookup-line is interested<br  />
+    :g/&lt;patern&gt;/?^\w?|+,/^[^ ]/-1p  "if entire record is interested<br  />
+Reverse a file (just to show the power of 'g')<br  />
+    :g/^/m0<br  />
+</p>
+
+<p>
+Foot note 1: use :v to negate the search pattern<br  />
+Foot note 2: Some explanation of commonly used commands with :g<br  />
+ :2,8co15 <code>&gt; Copy lines 2 through 8 after line 15
+ :4,15t$  =&gt; Copy linesa 4 through 15 towards end of document (t =</code> co)<br  />
+    :-t$  =&gt; Copy previous line to end of document<br  />
+     :m0  =&gt; Move current line to the top of the document<br  />
+:.,+3m$-1 =&gt; Move current line through cur-line+3 to the last but one line<br  />
+             of the document<br  />
+Foot note 3: Commands used with :g are ex commands, so a help search should<br  />
+             be,<br  />
+                :help :&lt;help-topic&gt;<br  />
+                eg. :help :k<br  />
+&lt;/example&gt;<br  />
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: remerci</p>
+<p class="date">Created: 2017-01-18 三 23:11</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2017-01-18 三 23:11 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>latex 技巧及模版</title>
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="remerci" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+ <link rel='stylesheet' href='/windata/notes/publish/org_notes/public_html/Acss/main.css' type='text/css'/> 
+
+    <link rel="stylesheet" type="text/css" href="/windata/notes/publish/org_notes/public_html/Acss/prettify.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="preamble" class="status">
+<div class='nav'>
+<ul>
+<li><a href='http://remerci.com'>博客</a></li>
+<li><a href='/windata/notes/publish/org_notes/public_html/index.html'>Wiki目录</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<h1 class="title">latex 技巧及模版</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgheadline1">1. latex 和 metapost 实验平台</a></li>
+<li><a href="#orgheadline2">2. 我的辅助编译和反向查询文件</a></li>
+<li><a href="#orgheadline5">3. auctex 的辅助功能</a>
+<ul>
+<li><a href="#orgheadline3">3.1. C-c C-c 找不到 latex 命令</a></li>
+<li><a href="#orgheadline4">3.2. 部分编译 CJK</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline6">4. auctex 文件末尾的 local 变量</a></li>
+<li><a href="#orgheadline7">5. latex-suite 与 vim</a></li>
+<li><a href="#orgheadline11">6. latex 模版</a>
+<ul>
+<li><a href="#orgheadline10">6.1. 旧的中文 latex 模版：</a>
+<ul>
+<li><a href="#orgheadline8">6.1.1. 通用</a></li>
+<li><a href="#orgheadline9">6.1.2. 中文设置</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgheadline14">7. texlive</a>
+<ul>
+<li><a href="#orgheadline12">7.1. install</a></li>
+<li><a href="#orgheadline13">7.2. 管理</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="orgheadline1" class="outline-2">
+<h2 id="orgheadline1"><span class="section-number-2">1</span> latex 和 metapost 实验平台</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+<a href="../../reference/latex-test/g-e.tex">latex en</a><br  />
+<a href="../../reference/latex-test/ca.tex">ca</a><br  />
+<a href="../../reference/latex-test/fig/">fig</a> <br  />
+</p>
+</div>
+</div>
+
+<div id="orgheadline2" class="outline-2">
+<h2 id="orgheadline2"><span class="section-number-2">2</span> 我的辅助编译和反向查询文件</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+<a href="../../reference/latex/Makefile">Makefile</a>  <a href="../../reference/latex/gvim-latex">gvim 反向编译查询</a><br  />
+</p>
+</div>
+</div>
+
+<div id="orgheadline5" class="outline-2">
+<h2 id="orgheadline5"><span class="section-number-2">3</span> auctex 的辅助功能</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+auctex 具有辅助编译、编辑的功能，很方便和强大。<br  />
+编译功能包括 xdvi 反向定位（ctrl＋鼠标左键），比较简单。<br  />
+</p>
+
+<p>
+常用辅助编辑的功能：<br  />
+</p>
+<ul class="org-ul">
+<li>C-c C-m: 输入 latex 命令<br  /></li>
+<li>C-c C-e: 输入 latex 环境<br  /></li>
+<li>M-return: 输入 item<br  /></li>
+<li>C-c C-f C-b: 输入\textbf{}<br  /></li>
+<li>C-c {: 一对大括号<br  /></li>
+<li>C-c ]: 关闭当前环境<br  /></li>
+<li>C-c C-q C-r: 排列当前区域<br  /></li>
+<li>C-c =  生成目录<br  /></li>
+<li>C-c ;: 注释当前区域，前面加 C-u 取消注释<br  /></li>
+<li>C-c %: 注释一段<br  /></li>
+<li>C-c &amp;: 跳到交叉索引处<br  /></li>
+<li>C-c ~: 进入数学模式；`加字母希腊字母<br  /></li>
+<li>C-c C-r: 区域编译，加快测试速度<br  /></li>
+<li>M-C-a M-C-e: 跳到当前环境头和尾<br  /></li>
+</ul>
+</div>
+
+<div id="orgheadline3" class="outline-3">
+<h3 id="orgheadline3"><span class="section-number-3">3.1</span> C-c C-c 找不到 latex 命令</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+在文件/etc/environment 的 PATH 环境变量里添加 latex 的 bin 路径。<br  />
+</p>
+</div>
+</div>
+
+<div id="orgheadline4" class="outline-3">
+<h3 id="orgheadline4"><span class="section-number-3">3.2</span> 部分编译 CJK</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+默认部分编译时的_region.tex 文件不会自动添加 cjk 支持，需要手动添加才能进行编译。<br  />
+自动编译的方法网上找到，改动有.emacs 文件（我的在.emacs.d/conf/auctex.el）中一些<br  />
+设置，及 auctex/tex-buf.el 文件中两处修改。<br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="orgheadline6" class="outline-2">
+<h2 id="orgheadline6"><span class="section-number-2">4</span> auctex 文件末尾的 local 变量</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+用来设定主文件，文件编码等<br  />
+&lt;example&gt;<br  />
+Local Variables:<br  />
+mode: latex<br  />
+TeX-master: "open"<br  />
+coding: gbk<br  />
+TeX-header-end: "% End-Of-Header\("
+Tex-trailer-start: "% Start-Of-Trailer\)"<br  />
+End:<br  />
+</p>
+
+<p>
+Local Variables:<br  />
+mode: latex<br  />
+TeX-master: t<br  />
+End:<br  />
+&lt;/example&gt;<br  />
+其它见 security-level.tex<br  />
+</p>
+</div>
+</div>
+
+<div id="orgheadline7" class="outline-2">
+<h2 id="orgheadline7"><span class="section-number-2">5</span> latex-suite 与 vim</h2>
+<div class="outline-text-2" id="text-5">
+<ol class="org-ol">
+<li>修改 ftpplugin/latex-suite/texrc 文件，如 defaultTargetFormat 改成 pdf.<br  /></li>
+<li>F5 可加入\begin{} \end{}, F7 可加入命令和相应参数<br  /></li>
+<li>([{"自动转换成\left, ``等并匹配<br  /></li>
+<li>三字母快捷键，如 EMA 自动替换为 math 环境<br  /></li>
+<li>自动完成添加&lt;++&gt;定位符<br  /></li>
+</ol>
+</div>
+</div>
+
+<div id="orgheadline11" class="outline-2">
+<h2 id="orgheadline11"><span class="section-number-2">6</span> latex 模版</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+最新的<a href="../../reference/latex/template-C.html">中文模版</a>及<a href="../../reference/latex/template-C.tex">tex 源文件</a>，<a href="../../reference/latex/template-E.html">英文模版</a>及<a href="../../reference/latex/template-E.tex">tex 源文件</a><br  />
+</p>
+</div>
+
+<div id="orgheadline10" class="outline-3">
+<h3 id="orgheadline10"><span class="section-number-3">6.1</span> 旧的中文 latex 模版：</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+<a href="../../reference/latex/ca.tex">通用 CJK 主文档模板</a>，<a href="../../reference/latex/gba.tex">文档模版</a>：<br  />
+</p>
+</div>
+
+
+<div id="orgheadline8" class="outline-4">
+<h4 id="orgheadline8"><span class="section-number-4">6.1.1</span> 通用</h4>
+<div class="outline-text-4" id="text-6-1-1">
+<p>
+纸张大小和页边距<br  />
+\documentclass[a4paper,11pt]{article}<br  />
+\usepackage[top=1.2in,bottom=1.2in,left=1.2in,right=1in]{geometry}<br  />
+</p>
+
+<p>
+中文缩进，间距设置<br  />
+&lt;example&gt;<br  />
+\usepackage{CJK,indentfirst} %CJK 宏包<br  />
+</p>
+
+<p>
+\CJKindent %段首缩进<br  />
+\setlength\parindent{2em}%首行缩进 2 字<br  />
+</p>
+
+<p>
+\CJKtilde  %中英文间空格<br  />
+</p>
+
+<p>
+\setlength\parskip{5pt}%段间距离设为 5pt<br  />
+\renewcommand\baselinestretch{1.2}\normalsize%设置行距为 1.2 倍<br  />
+\showthe\baselineskip %编译时得到\baselineskip 值<br  />
+&lt;/example&gt;<br  />
+</p>
+
+<p>
+中文标点问题<br  />
+\usepackage{CJKpunct}<br  />
+</p>
+</div>
+</div>
+
+
+<div id="orgheadline9" class="outline-4">
+<h4 id="orgheadline9"><span class="section-number-4">6.1.2</span> 中文设置</h4>
+<div class="outline-text-4" id="text-6-1-2">
+<p>
+CJK 字体<br  />
+&lt;example&gt;<br  />
+%===========================================================================<br  />
+% redefine font name and size<br  />
+%===========================================================================<br  />
+\newcommand{\song}{\CJKfamily{song}}    % 宋体   (Windows 自带 simsun.ttf)<br  />
+\newcommand{\fs}{\CJKfamily{fs}}        % 仿宋体 (Windows 自带 simfs.ttf)<br  />
+\newcommand{\kai}{\CJKfamily{kai}}      % 楷体   (Windows 自带 simkai.ttf)<br  />
+\newcommand{\hei}{\CJKfamily{hei}}      % 黑体   (Windows 自带 simhei.ttf)<br  />
+\newcommand{\li}{\CJKfamily{li}}        % 隶书   (Windows 自带 simli.ttf)<br  />
+\newcommand{\you}{\CJKfamily{you}}      % 幼圆   (Windows 自带 simyou.ttf)<br  />
+&lt;/example&gt;<br  />
+</p>
+
+<p>
+中文字号<br  />
+&lt;example&gt;<br  />
+\newcommand{\chuhao}{\fontsize{42pt}{\baselineskip}\selectfont}     % 字号设置<br  />
+\newcommand{\xiaochuhao}{\fontsize{36pt}{\baselineskip}\selectfont} % 字号设置<br  />
+\newcommand{\yichu}{\fontsize{32pt}{\baselineskip}\selectfont}      % 字号设置<br  />
+\newcommand{\yihao}{\fontsize{28pt}{\baselineskip}\selectfont}      % 字号设置<br  />
+\newcommand{\erhao}{\fontsize{21pt}{\baselineskip}\selectfont}      % 字号设置<br  />
+\newcommand{\xiaoerhao}{\fontsize{18pt}{\baselineskip}\selectfont}  % 字号设置<br  />
+\newcommand{\sanhao}{\fontsize{15.75pt}{\baselineskip}\selectfont}  % 字号设置<br  />
+\newcommand{\sihao}{\fontsize{14pt}{\baselineskip}\selectfont}      % 字号设置<br  />
+\newcommand{\xiaosihao}{\fontsize{12pt}{\baselineskip}\selectfont}  % 字号设置<br  />
+\newcommand{\wuhao}{\fontsize{10.5pt}{\baselineskip}\selectfont}    % 字号设置<br  />
+\newcommand{\xiaowuhao}{\fontsize{9pt}{\baselineskip}\selectfont}   % 字号设置<br  />
+\newcommand{\liuhao}{\fontsize{7.875pt}{\baselineskip}\selectfont}  % 字号设置<br  />
+\newcommand{\qihao}{\fontsize{5.25pt}{\baselineskip}\selectfont}    % 字号设置<br  />
+&lt;/example&gt;<br  />
+</p>
+
+<p>
+中文数字，章节名，定理<br  />
+&lt;example&gt;<br  />
+\renewcommand\contentsname{目录}<br  />
+\renewcommand\listfigurename{插图目录}<br  />
+\renewcommand\listtablename{表格目录}<br  />
+\renewcommand\refname{参考文献}<br  />
+\renewcommand\indexname{索引}<br  />
+\renewcommand\figurename{图}<br  />
+\renewcommand\tablename{表}<br  />
+\renewcommand\abstractname{摘要}<br  />
+\renewcommand\partname{部分}<br  />
+\renewcommand\appendixname{附录}<br  />
+</p>
+
+<p>
+\renewcommand\today{\number\year 年\number\month 月\number\day 日}<br  />
+\providecommand{\CJKnumber}[1]{\ifcase#1\or{一}\or{二}\or{三}%<br  />
+\or{四}\or{五}\or{六}\or{七}\or{八}\or{九}\or{十}\fi}<br  />
+</p>
+
+<p>
+\newtheorem{thm}{定理~}<br  />
+\newtheorem{lem}{引理~}<br  />
+\newtheorem{prop}{命题~}<br  />
+\newtheorem{cor}{推论~}<br  />
+\newtheorem{defn}{定义~}<br  />
+\newtheorem{conj}{猜想~}<br  />
+\newtheorem{exmp}{例~}<br  />
+\newtheorem{rem}{注~}<br  />
+&lt;/example&gt;<br  />
+</p>
+
+<p>
+tips<br  />
+&lt;example&gt;<br  />
+\newcommand{\upcite}[1]{\textsuperscript{\cite{#1}}}  %自定义命令\upcite, 使参考文献引用以上标出现<br  />
+&lt;/example&gt;<br  />
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="orgheadline14" class="outline-2">
+<h2 id="orgheadline14"><span class="section-number-2">7</span> texlive</h2>
+<div class="outline-text-2" id="text-7">
+</div><div id="orgheadline12" class="outline-3">
+<h3 id="orgheadline12"><span class="section-number-3">7.1</span> install</h3>
+<div class="outline-text-3" id="text-7-1">
+<p>
+参考<a href="http://www.cnblogs.com/wenbosheng/p/5725834.html">cnblog</a>, (wiz)<br  />
+</p>
+<ul class="org-ul">
+<li>download &amp; run install-tl<br  /></li>
+<li>可以用&#x2013;profile 指定之前安装成功后生成的安装选项文件, 可静默安装<br  /></li>
+</ul>
+</div>
+</div>
+<div id="orgheadline13" class="outline-3">
+<h3 id="orgheadline13"><span class="section-number-3">7.2</span> 管理</h3>
+<div class="outline-text-3" id="text-7-2">
+<p>
+参考<a href="https://tug.org/texlive/doc/tlmgr.html#EXAMPLES">tug</a><br  />
+</p>
+<ul class="org-ul">
+<li>改用国内源(似乎安装时就自动选择国内源) tlmgr option repository <a href="http://mirrors.aliyun.com/CTAN/systems/texlive/tlnet">http://mirrors.aliyun.com/CTAN/systems/texlive/tlnet</a><br  /></li>
+<li>tlmgr install 宏包<br  /></li>
+<li>tlmgr update &#x2013;self 更新 tlmgr<br  /></li>
+<li>tlmgr update &#x2013;all 更新宏包<br  /></li>
+<li>sudo tlmgr &#x2013;gui &#x2013;gui-lang zh_CN 图形界面<br  /></li>
+<li>texhash 更新宏包索引<br  /></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: remerci</p>
+<p class="date">Created: 2017-01-18 三 23:11</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
