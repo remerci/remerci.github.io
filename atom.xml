@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[赵鑫（remerci）的博客]]></title>
+  <link href="http://remerci.github.io/atom.xml" rel="self"/>
+  <link href="http://remerci.github.io/"/>
+  <updated>2017-04-10T18:12:02+08:00</updated>
+  <id>http://remerci.github.io/</id>
+  <author>
+    <name><![CDATA[赵鑫（ZHAO Xin）]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[test]]></title>
+    <link href="http://remerci.github.io/blog/2017/04/10/test/"/>
+    <updated>2017-04-10T14:45:57+08:00</updated>
+    <id>http://remerci.github.io/blog/2017/04/10/test</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+</feed>

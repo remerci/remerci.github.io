@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://remerci.github.io/sitemap.xml 
