@@ -4,7 +4,7 @@
   <title><![CDATA[赵鑫（remerci）的博客]]></title>
   <link href="http://remerci.github.io/atom.xml" rel="self"/>
   <link href="http://remerci.github.io/"/>
-  <updated>2017-04-10T18:12:02+08:00</updated>
+  <updated>2017-04-10T18:52:01+08:00</updated>
   <id>http://remerci.github.io/</id>
   <author>
     <name><![CDATA[赵鑫（ZHAO Xin）]]></name>
@@ -18,7 +18,1274 @@
     <link href="http://remerci.github.io/blog/2017/04/10/test/"/>
     <updated>2017-04-10T14:45:57+08:00</updated>
     <id>http://remerci.github.io/blog/2017/04/10/test</id>
-    <content type="html"><![CDATA[
+    <content type="html"><![CDATA[<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgheadline9">1. Programing</a>
+<ul>
+<li><a href="#orgheadline1">1.1. c#学习书籍</a></li>
+<li><a href="#orgheadline2">1.2. linux 内核情景分析&#xa0;&#xa0;&#xa0;<span class="tag"><span class="kernel">kernel</span></span></a></li>
+<li><a href="#orgheadline3">1.3. wxpython 总结</a></li>
+<li><a href="#orgheadline5">1.4. bash&#xa0;&#xa0;&#xa0;<span class="tag"><span class="shell">shell</span>&#xa0;<span class="bash">bash</span></span></a>
+<ul>
+<li><a href="#orgheadline4">1.4.1. <span class="timestamp-wrapper"><span class="timestamp">&lt;2010-09-04 六 15:25&gt;</span></span></a></li>
+</ul>
+</li>
+<li><a href="#orgheadline7">1.5. ahk</a>
+<ul>
+<li><a href="#orgheadline6">1.5.1. 修改 AutoHotKey 默认代码编辑器为 Gvim</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline8">1.6. cmd</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline79">2. Tools</a>
+<ul>
+<li><a href="#orgheadline15">2.1. tool command&#xa0;&#xa0;&#xa0;<span class="tag"><span class="memo">memo</span>&#xa0;<span class="command">command</span></span></a>
+<ul>
+<li><a href="#orgheadline10">2.1.1. info command&#xa0;&#xa0;&#xa0;<span class="tag"><span class="info">info</span></span></a></li>
+<li><a href="#orgheadline11">2.1.2. xrandr&#xa0;&#xa0;&#xa0;<span class="tag"><span class="xrandr">xrandr</span></span></a></li>
+<li><a href="#orgheadline12">2.1.3. muse&#xa0;&#xa0;&#xa0;<span class="tag"><span class="muse">muse</span></span></a></li>
+<li><a href="#orgheadline13">2.1.4. fdisk &amp; mkfs&#xa0;&#xa0;&#xa0;<span class="tag"><span class="fdisk">fdisk</span></span></a></li>
+<li><a href="#orgheadline14">2.1.5. Archive&#xa0;&#xa0;&#xa0;<span class="tag"><span class="ARCHIVE">ARCHIVE</span></span></a></li>
+</ul>
+</li>
+<li><a href="#orgheadline16">2.2. cli tools</a></li>
+<li><a href="#orgheadline60">2.3. emacs</a>
+<ul>
+<li><a href="#orgheadline17">2.3.1. <span class="done DONE">DONE</span> dired 使用&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_pMyth">#pMyth</span></span></a></li>
+<li><a href="#orgheadline18">2.3.2. <span class="done DONE">DONE</span> multi select in emacs&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_pMyth">#pMyth</span></span></a></li>
+<li><a href="#orgheadline19">2.3.3. elisp tutorial&#xa0;&#xa0;&#xa0;<span class="tag"><span class="elisp">elisp</span></span></a></li>
+<li><a href="#orgheadline20">2.3.4. <span class="done DONE">DONE</span> tabbar</a></li>
+<li><a href="#orgheadline21">2.3.5. <span class="done DONE">DONE</span> tabbar like awesome, move tab left&#xa0;&#xa0;&#xa0;<span class="tag"><span class="tabbar">tabbar</span>&#xa0;<span class="emacs">emacs</span></span></a></li>
+<li><a href="#orgheadline22">2.3.6. <span class="done DONE">DONE</span> emacs chinese input&#xa0;&#xa0;&#xa0;<span class="tag"><span class="emacs">emacs</span>&#xa0;<span class="eim">eim</span>&#xa0;<span class="input">input</span></span></a></li>
+<li><a href="#orgheadline36">2.3.7. org note 整理&#xa0;&#xa0;&#xa0;<span class="tag"><span class="emacs">emacs</span>&#xa0;<span class="org">org</span></span></a></li>
+<li><a href="#orgheadline37">2.3.8. <span class="done DONE">DONE</span> org 表格, keison.el&#xa0;&#xa0;&#xa0;<span class="tag"><span class="tab">tab</span>&#xa0;<span class="org">org</span>&#xa0;<span class="emacs">emacs</span>&#xa0;<span class="keison">keison</span></span></a></li>
+<li><a href="#orgheadline38">2.3.9. <span class="done DONE">DONE</span> emacs sdcv&#xa0;&#xa0;&#xa0;<span class="tag"><span class="sdcv">sdcv</span></span></a></li>
+<li><a href="#orgheadline39">2.3.10. org agenda view&#xa0;&#xa0;&#xa0;<span class="tag"><span class="agenda">agenda</span></span></a></li>
+<li><a href="#orgheadline42">2.3.11. 常见任务</a></li>
+<li><a href="#orgheadline43">2.3.12. emacs 和 vim 编辑远程文件</a></li>
+<li><a href="#orgheadline44">2.3.13. M-x command</a></li>
+<li><a href="#orgheadline56">2.3.14. spacemacs</a></li>
+<li><a href="#orgheadline59">2.3.15. spacemacs rocks</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline62">2.4. octopress + github + orgmode = blog</a>
+<ul>
+<li><a href="#orgheadline61">2.4.1. 参考</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline63">2.5. at 命令&#xa0;&#xa0;&#xa0;<span class="tag"><span class="at">at</span></span></a></li>
+<li><a href="#orgheadline66">2.6. crontab 注意</a>
+<ul>
+<li><a href="#orgheadline64">2.6.1. 环境变量和配置文件</a></li>
+<li><a href="#orgheadline65">2.6.2. 注意事项</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline67">2.7. Warcycling</a></li>
+<li><a href="#orgheadline68">2.8. <span class="done DONE">DONE</span> mencoder 转换&#xa0;&#xa0;&#xa0;<span class="tag"><span class="mencoder">mencoder</span></span></a></li>
+<li><a href="#orgheadline72">2.9. <span class="done DONE">DONE</span> rime 定制&#xa0;&#xa0;&#xa0;<span class="tag"><span class="rime">rime</span>&#xa0;<span class="wubi">wubi</span></span></a>
+<ul>
+<li><a href="#orgheadline69">2.9.1. 词库导入的方法</a></li>
+<li><a href="#orgheadline70">2.9.2. 五笔功能激活</a></li>
+<li><a href="#orgheadline71">2.9.3. rime 同步配置</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline73">2.10. sublime skills</a></li>
+<li><a href="#orgheadline74">2.11. <span class="done DONE">DONE</span> 封装工具使用&#xa0;&#xa0;&#xa0;<span class="tag"><span class="jys">jys</span></span></a></li>
+<li><a href="#orgheadline75">2.12. tmux 使用&#xa0;&#xa0;&#xa0;<span class="tag"><span class="tmux">tmux</span></span></a></li>
+<li><a href="#orgheadline78">2.13. mednafen (nes 游戏模拟器的使用)</a>
+<ul>
+<li><a href="#orgheadline76">2.13.1. 还有些功能 /usr/share/doc/mednafen/mednafen.html 自行查询</a></li>
+<li><a href="#orgheadline77">2.13.2. 一些问题的解决</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgheadline88">3. task with tools</a>
+<ul>
+<li><a href="#orgheadline80">3.1. <span class="done DONE">DONE</span> emacs 语音输入&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_pMyth">#pMyth</span>&#xa0;<span class="_aNotes">#aNotes</span></span></a></li>
+<li><a href="#orgheadline81">3.2. 简历</a></li>
+<li><a href="#orgheadline85">3.3. emacs vim 等宽字体配置</a>
+<ul>
+<li><a href="#orgheadline84">3.3.1. vim font @winXP</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline86">3.4. python 自动安装模块</a></li>
+<li><a href="#orgheadline87">3.5. ps 制作多张图片合成具有融入感的 PPT 背景图片</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+<h1>Programing<a id="orgheadline9"></a></h1>
+
+<h2>c#学习书籍<a id="orgheadline1"></a></h2>
+
+<p>C#入门经典
+C#本质论
+C#高级编程（第六版）清华大学出版社
+C#框架设计
+CLR via C#</p>
+
+<p>.NET 学习：
+asp.net 技术内幕
+《你必须知道的.net》
+programming in ASP.NET3.5（此书讲解.NET 控件比较详细）；ASP.NET 入门经典（毕竟是红皮书系列，很多我们忽略的知识点里面都有所讲到，陪着前者一起阅读）</p>
+
+<h2>linux 内核情景分析     :kernel:<a id="orgheadline2"></a></h2>
+
+<ul>
+<li><p>微内核：仅提供进程间通信功能，其它内核功能用进程实现。</p></li>
+<li><p>宏内核：文件系统，内存管理，进程管理等。</p></li>
+</ul>
+
+
+<h2>wxpython 总结<a id="orgheadline3"></a></h2>
+
+<p>问题包括：</p>
+
+<ol>
+<li>调试方法</li>
+<li>splash 全屏</li>
+<li>splash 时空格键直接对后端程序起作用</li>
+<li>调用系统字体</li>
+<li>好看的 button</li>
+<li>html 显示文字块</li>
+<li>button 与 notebook 的布局处理</li>
+<li>notebook 内部 btn_back 关闭当前窗口</li>
+<li>notebook tab 大小调整</li>
+<li>notebook 中的字体调整</li>
+<li>staticboxsizer 的 label 居中，字号调整</li>
+</ol>
+
+
+<p>解决：</p>
+
+<ol>
+<li>app 调用时输出重定向到终端</li>
+</ol>
+
+
+<p>app = MyApp(redirect=False)
+app.MainLoop()</p>
+
+<ol>
+<li>用 ScreenDC 和 Image.Scale 方法缩放图片，</li>
+</ol>
+
+
+<p>直接用 splashScreen 不用加了 gauge 的个性化 splash</p>
+
+<p>img1 = wx.Image(&lsquo;splash.jpg&rsquo;, wx.BITMAP_TYPE_ANY)
+dc = wx.ScreenDC()
+dw, dh = dc.GetSize()
+img2 = img1.Scale(dw, dh)
+bmp = wx.BitmapFromImage(img2)</p>
+
+<p>self.splash = wx.SplashScreen(bmp, wx.SPLASH_CENTRE_ON_SCREEN|\
+                                   wx.SPLASH_TIMEOUT, 5000, self)
+wx.Yield()</p>
+
+<ol>
+<li><p>后端用一个看不见的 button，或者将 splashscreen 和窗口写一起
+self.btn_hide=buttons.GenButton(self,-1,&ldquo;&rdquo;)
+self.btn_hide.SetBackgroundColour(wx.Colour(236,233,216))
+self.btn_hide.SetSize((1,1))</p></li>
+<li><ol>
+<li></li>
+</ol>
+</li>
+</ol>
+
+
+<p>import wx.lib.agw.aquabutton as AB
+        face = &ldquo;SimHei&rdquo;
+        prog_font = wx.TheFontList.FindOrCreateFont(20, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, face)
+        bmp_on = wx.Bitmap(&lsquo;online32.png&rsquo;, wx.BITMAP_TYPE_PNG)
+        self.btn_online = AB.AquaButton(self, -1, bmp_on, u"在线监测")
+        self.btn_online.SetFont(prog_font)</p>
+
+<ol>
+<li>colorimpact 调颜色，SetFonts 字体区别一般字体和<pre>里面字体。<font face="simhei">不起作用。
+self.html.SetFonts(&ldquo;simhei&rdquo;,&ldquo;simkai&rdquo;)
+self.html.SetPage( html_text2)</li>
+</ol>
+
+
+<p><body bgcolor="#066985"></p>
+
+<center>
+<font size=+3 color="#F5FB9F">在线监测</font>
+</center>
+
+
+<pre>
+<font size=+1 color="#FFFFFF">
+&nbsp;1、用网线连接上装工况分析仪主机与监测计算机；<br>
+</font>
+</pre>
+
+
+<ol>
+<li><p>GridBagSizer
+gsizer= wx.GridBagSizer(2, 2)
+gsizer.Add(hsizer, (1,0), flag=wx.EXPAND)
+gsizer.Add(self.btn_back, (2,1))</p></li>
+<li><p>self.statusBar=self.CreateStatusBar()
+self.Name = &ldquo;monitor&rdquo;
+on_frame = wx.FindWindowByName(&ldquo;monitor&rdquo;)
+on_frame.Close()</p></li>
+<li>self.SetTabSize((1500,30))</li>
+<li>font = wx.Font(12, wx.FONTFAMILY_DEFAULT,wx.FONTSTYLE_NORMAL,wx.NORMAL)
+self.label.SetFont(font)</li>
+</ol>
+
+
+<h2>bash     :shell:bash:<a id="orgheadline5"></a></h2>
+
+<p>shell 脚本中对空格有严格的规定。如变量赋值，在=前后不能有空格。而 test 命令 [] 必须有空格隔开操作符。
+<a href="file:///data/doc/program/shell/guide-bash-beginners-cn/ch07.html">第 7 章 条件语句</a></p>
+
+<pre><code>sort -k2n                                 # 按照第二域数字排序
+basename file.png .png                    # 获得基本文件名
+glxgears                                  # 查询显卡性能
+sudo dpkg-reconfigure xserver-xorg -phigh # 自动搜索配置 xorg.conf
+screen -dmS session_name command
+mkdir -pv $LFS/{proc,sys}
+ssh-keygen -f "/home/myth/.ssh/known_hosts" -R 192.168.1.1
+</code></pre>
+
+<h3><span class="timestamp-wrapper"><span class="timestamp">&lt;2010-09-04 六 15:25&gt;</span></span><a id="orgheadline4"></a></h3>
+
+<pre><code>history |awk '{print $2}' | sort | uniq -c | sort -rn| head -10 # 最常用命令
+cal 1 2008  # "此命令显示一年中特定月份的日历"
+date -d fri # "显示本周或下周星期五的日期"
+date --date='25 Dec' +%A # "告诉你今年圣诞节是星期几"
+du -s * | sort -k1,1rn | head # "显示当然目录占用空间排名"
+</code></pre>
+
+<p><a href="file:///data/scrapbook/data/20080115190305/index.html">2008 年 Linux10 个热点提示 - 译言翻译</a></p>
+
+<pre><code>^foo^bar          # 将上一条命令中的 foo 替换为 bar，并执行。（参考 bashcook 18 章详细解释）
+cp filename{,.bak}    # 快速备份或复制文件。
+</code></pre>
+
+<p><a href="file:///data/doc/cli/10%20%E4%B8%AA%E6%9C%80%E9%85%B7%E7%9A%84%E5%91%BD%E4%BB%A4.txt">&lt;file:///data/doc/cli/10> 个最酷的命令.txt</a></p>
+
+<h2>ahk<a id="orgheadline7"></a></h2>
+
+<h3>修改 AutoHotKey 默认代码编辑器为 Gvim<a id="orgheadline6"></a></h3>
+
+<p><code>HKEY_CLASSES_ROOT\AutoHotkeyScript\Shell\Edit\Command</code></p>
+
+<p><code>C:\Program Files (x86)\Vim\vim73\gvim.exe %1</code></p>
+
+<h2>cmd<a id="orgheadline8"></a></h2>
+
+<ul>
+<li>F7, Alt-Enter</li>
+<li>dir /a:-hrsda /o:sned</li>
+<li>ntsd -c q -p PID</li>
+<li>sfc</li>
+<li>tasklist /svc</li>
+</ul>
+
+
+<h1>Tools<a id="orgheadline79"></a></h1>
+
+<h2>tool command     :memo:command:<a id="orgheadline15"></a></h2>
+
+<h3>info command     :info:<a id="orgheadline10"></a></h3>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">n,p</td>
+<td class="org-left">next/previous same level</td>
+</tr>
+
+
+<tr>
+<td class="org-left">u</td>
+<td class="org-left">upper level</td>
+</tr>
+
+
+<tr>
+<td class="org-left">[,]</td>
+<td class="org-left">next/previous level</td>
+</tr>
+
+
+<tr>
+<td class="org-left">m</td>
+<td class="org-left">menu in this level</td>
+</tr>
+
+
+<tr>
+<td class="org-left">L</td>
+<td class="org-left">history</td>
+</tr>
+
+
+<tr>
+<td class="org-left">r</td>
+<td class="org-left">forword</td>
+</tr>
+
+
+<tr>
+<td class="org-left">d</td>
+<td class="org-left">directory</td>
+</tr>
+
+
+<tr>
+<td class="org-left">t</td>
+<td class="org-left">top</td>
+</tr>
+
+
+<tr>
+<td class="org-left">i</td>
+<td class="org-left">index</td>
+</tr>
+
+
+<tr>
+<td class="org-left">f</td>
+<td class="org-left">cross ref</td>
+</tr>
+
+
+<tr>
+<td class="org-left">l</td>
+<td class="org-left">last level</td>
+</tr>
+</tbody>
+</table>
+
+
+<h3>xrandr     :xrandr:<a id="orgheadline11"></a></h3>
+
+<pre><code>xrandr -q
+xrandr --output LVDS --auto --output VGA-0 --mode 800x600 --same-as LVDS
+xrandr --output VGA-0 --off
+</code></pre>
+
+<h3>muse     :muse:<a id="orgheadline12"></a></h3>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">C-c ! a</td>
+<td class="org-left">add footnotes</td>
+</tr>
+
+
+<tr>
+<td class="org-left">C-c C-b</td>
+<td class="org-left">Find all pages that link to this page</td>
+</tr>
+
+
+<tr>
+<td class="org-left">C-<</td>
+<td class="org-left">Decrease the indentation of the list item at point</td>
+</tr>
+</tbody>
+</table>
+
+
+<h3>fdisk &amp; mkfs     :fdisk:<a id="orgheadline13"></a></h3>
+
+<pre><code>fdisk /dev/sdb np1,a1,t6,np2,+13M,w(q)
+mkfs.vfat -F 16 -n liveusb /dev/sdb1
+sudo mkfs.ext2 -b 4096 -L casper-rw /dev/sdb2
+</code></pre>
+
+<h3>Archive     :ARCHIVE:<a id="orgheadline14"></a></h3>
+
+<h2>cli tools<a id="orgheadline16"></a></h2>
+
+<ul>
+<li>fbterm/tmux/screen</li>
+<li><strong>download:</strong> wget/curl/axel/aira2/rtorrent</li>
+<li>make</li>
+<li>imagemagik</li>
+<li>cal</li>
+<li>bc</li>
+<li>ranger/mc</li>
+<li>moc/mpd+ncmpcpp</li>
+<li>vim</li>
+<li>htop</li>
+<li>mutt</li>
+<li><p>shownews/raggle/newsbeuter</p></li>
+<li><p>ibus-fbterm(framebuffer)</p></li>
+<li><p>expect</p></li>
+<li>fbgrab</li>
+<li>fbida/feh/zgv</li>
+<li>finch/centerICQ/freetalk/naim</li>
+<li><p>irssi</p></li>
+<li><p>fbdev</p></li>
+</ul>
+
+
+<p>我以前被人误导，也一直认为在 tty 终端下只能以字符方式看视频，但是直到有一天，我无意中了解到了有 framebuffer 这个东东！！！！
+无意中看到 mplayer 的视频输出里有 fbdev！！！！
+于是在开启了 framebuffer 的 tty 下。mplayer -vo fbdev2 &ldquo;我要看的视频&rdquo; 我看到了神马？！</p>
+
+<h2>emacs<a id="orgheadline60"></a></h2>
+
+<p><a href="./org.md">Org-mode</a></p>
+
+<h3>DONE dired 使用     :#pMyth:<a id="orgheadline17"></a></h3>
+
+<p>参考<a href="http://lifegoo.pluskid.org/wiki/EmacsAsFileManger.html">lifegoo (wiz)</a></p>
+
+<ul>
+<li>* 标记, % g REGEXP <RET> 标记所有文件 内容 匹配到给定的正则表达式的文件。</li>
+<li># ~ &amp;, 标记 D.  % d REGEXP <RET> 正则标记</li>
+<li>* c D t 把当前所有 D 标签换为 t 标签</li>
+<li>M-( 或 * ( dired-mark-sexp</li>
+<li>% R \.[^.]*$ <RET> .1\&amp; <RET> 正则重命名, \&amp;代替匹配部分</li>
+<li>k 过滤</li>
+<li>w 复制文件名，如果通过 C-u 传递一个前缀参数 0，则复制决定路径名， 如果只是 C-u 则复制相对于 dired 当前目录的相对路径。</li>
+<li>= diff</li>
+<li>I 把当前文件以 info 文档的格式打开。</li>
+<li>N 把当前文件以 man 格式打开(使用 WoMan)。</li>
+<li>Y 为所有标记的文件创建一个到指定目录的相对符号连接(即使用相对路径进行引用，而不是绝对路径)。</li>
+<li>B 对 Elisp 文件进行 Byte compile。</li>
+<li>A 对文件内容进行正则表达式搜索，搜索会在第一个匹配的地方停下，然后 可以使用 M-, 搜索下一个匹配。</li>
+<li>Z 压缩或解压文件。</li>
+</ul>
+
+
+<p><span class="timestamp-wrapper"><span class="timestamp">[2017-01-10 二 09:41]</span></span></p>
+
+<h3>DONE multi select in emacs     :#pMyth:<a id="orgheadline18"></a></h3>
+
+<p>希望实现多次复制，一次粘贴的效果。可用 M-y 作为折中方案。</p>
+
+<p><span class="timestamp-wrapper"><span class="timestamp">[2017-01-10 二 10:31]</span></span></p>
+
+<h3>elisp tutorial     :elisp:<a id="orgheadline19"></a></h3>
+
+<p>(set &lsquo;num 7)    ;给变量 num 赋值 7
+(set 'num (+ num 1))    ;num=num+1</p>
+
+<p>defun 定义函数，最多可有 5 个参数。有可选的 interactive 参数才能 M-x 或设置快捷键。</p>
+
+<p>defun 中常用到的其它 special form: if, let, save-excursion</p>
+
+<p>&lt;eintr:append-to-buffer></p>
+
+<h3>DONE tabbar<a id="orgheadline20"></a></h3>
+
+<ul>
+<li><p>State &ldquo;DONE&rdquo;       from &ldquo;DOING&rdquo;      <span class="timestamp-wrapper"><span class="timestamp">[2011-08-06 六 21:56]</span></span></p>
+
+<p>:ARCHIVE_TIME: 2011-08-06 六 21:57</p></li>
+</ul>
+
+
+<p>for tabbar
+(global-set-key [(super O)] &lsquo;zx-other-buffer)
+(global-set-key [(super K)] 'kill-this-buffer)
+(global-set-key [(super N)] 'zx-buffer-move-right)
+(global-set-key [(super P)] 'zx-buffer-move-left)</p>
+
+<p>(defun zx-other-buffer ()
+(interactive)
+(switch-to-buffer (other-buffer (current-buffer) t)))
+(defun zx-buffer-move-right ()
+(interactive)
+(tabbar-move (tabbar-current-tabset) 1))
+(defun zx-buffer-move-left ()
+(interactive)
+(tabbar-move (tabbar-current-tabset) -1))</p>
+
+<h3>DONE tabbar like awesome, move tab left     :tabbar:emacs:<a id="orgheadline21"></a></h3>
+
+<ul>
+<li>State &ldquo;DONE&rdquo;       <span class="timestamp-wrapper"><span class="timestamp">[2010-11-01 一 10:09] </span></span>
+阅读 tabbar.el 的开始文档，找到相应的函数，再自定义可设快捷键函数</li>
+</ul>
+
+
+<p>:ARCHIVE_TIME: 2010-12-11 六 20:06</p>
+
+<h3>DONE emacs chinese input     :emacs:eim:input:<a id="orgheadline22"></a></h3>
+
+<ul>
+<li>State &ldquo;DONE&rdquo;       from &ldquo;DOING&rdquo;      <span class="timestamp-wrapper"><span class="timestamp">[2015-04-05 日 22:37]</span></span></li>
+<li>State &ldquo;DOING&rdquo;      from &ldquo;TODO&rdquo;       <span class="timestamp-wrapper"><span class="timestamp">[2015-04-05 日 19:33]</span></span></li>
+<li><p>use fcitx-rime</p>
+
+<pre><code>/etc/environment, LC_CTYPE="zh_CN.utf-8"
+</code></pre></li>
+<li><p>use ibus-rime without set LC_CTYPE
+        use ibus.el, have some bugs, not verified</p>
+
+<pre><code>(require 'ibus)
+(add hook 'after-init-hook 'ibus-mode-on)
+</code></pre></li>
+<li>use eim
+按主页提示, 修改原有设置, 效果不错.
+功能包括添加自定义词 <code>~/.eim/mywb.txt</code>, 临时输入英文, 以及 gtk 下 tooltip.</li>
+</ul>
+
+
+<h3>org note 整理     :emacs:org:<a id="orgheadline36"></a></h3>
+
+<ol>
+<li><p>org 提升</p>
+
+<ol>
+<li><p>project conf, one click publish all     :publish:</p></li>
+<li><p>refile, classified notes in multi files     :refile:</p></li>
+<li><p>DONE s5 slide     :slide:</p>
+
+<ul>
+<li>State &ldquo;DONE&rdquo;       from &ldquo;DOING&rdquo;      <span class="timestamp-wrapper"><span class="timestamp">[2015-04-01 三 23:34]</span></span></li>
+</ul>
+</li>
+<li><p>directly input latex fomula</p></li>
+<li><p>fig table, caption label ref</p></li>
+<li><p>DONE see fig directly</p>
+
+<ul>
+<li>State &ldquo;DONE&rdquo;       from &ldquo;DOING&rdquo;      <span class="timestamp-wrapper"><span class="timestamp">[2015-04-01 三 23:36]</span></span></li>
+</ul>
+
+
+<p><code>org-toggle-inline-images</code></p></li>
+<li><p>CANCLE export to markdown</p>
+
+<ul>
+<li><p>State &ldquo;CANCLE&rdquo;     from &ldquo;DOING&rdquo;      <span class="timestamp-wrapper"><span class="timestamp">[2015-04-01 三 23:40] </span></span>
+this is a feature supported by 24.4, and now ubuntu only supports to 24.3.</p>
+
+<p>C-c C-e m m
+M-x org-md-export-as-markdown</p>
+
+<h1>Org-mode version 8.0 or later</h1>
+
+<p>(eval-after-load &ldquo;org&rdquo;
+&lsquo;(require 'ox-md nil t))</p></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>跨平台</p>
+
+<ol>
+<li><p>DONE 网盘同步</p>
+
+<ul>
+<li>State &ldquo;DONE&rdquo;       from &ldquo;DOING&rdquo;      <span class="timestamp-wrapper"><span class="timestamp">[2015-04-02 四 01:23]</span></span></li>
+</ul>
+</li>
+<li><p>DONE github     :github:ssh:</p>
+
+<ul>
+<li><p>State &ldquo;DONE&rdquo;       from &ldquo;TODO&rdquo;       <span class="timestamp-wrapper"><span class="timestamp">[2015-04-02 四 01:23]</span></span></p>
+
+<pre><code>ssh-keygen -t rsa -C "heihe_yellow@163.com"
+ssh -T git@github.com
+git config --global user.name "remerci"
+git config --global user.email "heihe_yellow@163.com"
+git init
+git add .
+git remote add zxorg git@github.com:remerci/zx-org-notes.git
+git push -u zxorg master
+git remote remove zxorg
+ls .gitignore
+git remote add zxorg git@github.com:remerci/zx-org-notes.git
+git push zxorg master
+</code></pre></li>
+</ul>
+</li>
+<li><p>wiz html</p></li>
+<li><p>办公同结构空内容, 便于增加</p></li>
+</ol>
+</li>
+</ol>
+
+
+<h3>DONE org 表格, keison.el     :tab:org:emacs:keison:<a id="orgheadline37"></a></h3>
+
+<ul>
+<li>State &ldquo;DONE&rdquo;       from &ldquo;TODO&rdquo;       <span class="timestamp-wrapper"><span class="timestamp">[2015-04-06 一 00:27]</span></span></li>
+<li>按网上配置, 中英文对齐问题已经解决.</li>
+<li><p>keison 是据说比 table.el 好用的表格生成扩展, 日本人开发, 设置如下:</p>
+
+<pre><code>   (if window-system
+  (autoload 'keisen-mode "keisen-mouse" "MULE table" t)
+(autoload 'keisen-mode "keisen-mule" "MULE table" t))
+</code></pre>
+
+<p>但提示无法加载 keison-mule, 应该是有问题, 弃用.</p></li>
+</ul>
+
+
+<h3>DONE emacs sdcv     :sdcv:<a id="orgheadline38"></a></h3>
+
+<ul>
+<li>State &ldquo;DONE&rdquo;       from &ldquo;TODO&rdquo;       <span class="timestamp-wrapper"><span class="timestamp">[2015-04-06 一 21:02]</span></span></li>
+</ul>
+
+
+<p>可以查询, 但查不到结果. 而命令行界面的 sdcv 可以正常查词. 原因可能是:</p>
+
+<ol>
+<li>emacs 里的 sdcv 找不到词典</li>
+<li>emacs 里的 sdcv 与命令行界面的 sdcv 不同.</li>
+</ol>
+
+
+<p>打开 eshell 验证, 2 是相同的, 但 <code>sdcv -l</code> 结果不同, 命令行参数增加 <code>--data-dir</code> 后可以查词, 在 sdcv.el 相应修改, 搞定.</p>
+
+<h3>org agenda view     :agenda:<a id="orgheadline39"></a></h3>
+
+<ul>
+<li>s save all</li>
+<li>[0-9]r selective todo key word view</li>
+<li>F toggle follow</li>
+<li>o close other window</li>
+<li>A another view</li>
+<li>/\ filter</li>
+</ul>
+
+
+<h3>常见任务<a id="orgheadline42"></a></h3>
+
+<ol>
+<li><p>byte-compile</p>
+
+<ol>
+<li>Call byte-compile-file, it&rsquo;ll prompt for a file name.</li>
+<li>In dired, call dired-mark-files-regexp 【% m】 on “.el” files, then call dired-do-byte-compile 【B】.</li>
+</ol>
+</li>
+<li><p>change coding system</p>
+
+<ol>
+<li>查看当前 buffer 的编码：M-x describe-coding-system</li>
+<li>列出所有编码：C-x <RET> r <TAB></li>
+<li>以指定编码重读当前 buffer：C-x <RET> r utf-8，（revert-buffer-with-coding-system）</li>
+<li>改变当前 buffer 的编码：C-x <RET> f utf-8，（set-buffer-file-coding-system）</li>
+<li>设定下一步操作的编码格式：C-x <RET> c，（universal-coding-system-argument）</li>
+</ol>
+</li>
+</ol>
+
+
+<h3>emacs 和 vim 编辑远程文件<a id="orgheadline43"></a></h3>
+
+<p>emacs 用 tramp, vim 用 netrw, spacemacs 和 spacevim 都已经默认支持, 写法略有不同</p>
+
+<ul>
+<li><strong>emacs:</strong> <code>/scp:root@hiwifi:.emacs</code></li>
+<li><strong>vim:</strong> <code>scp://root@192.168.199.1//etc/config/dropbear</code></li>
+</ul>
+
+
+<h3>M-x command<a id="orgheadline44"></a></h3>
+
+<ul>
+<li>org-toggle-inline-images</li>
+<li>revert-buffer-with-coding-system</li>
+<li>org-toggle-heading</li>
+<li>delete-trailing-whitespace</li>
+<li>ag, helm-imenu</li>
+<li>package-list, package-install</li>
+</ul>
+
+
+<h3>spacemacs<a id="orgheadline56"></a></h3>
+
+<ol>
+<li><p>DONE 中文输入，标点，自造词</p>
+
+<p>CLOSED: <span class="timestamp-wrapper"><span class="timestamp">[2016-04-03 日 20:59]</span></span></p>
+
+<ol>
+<li><p>old</p>
+
+<ul>
+<li>Q1: 自动英文标点</li>
+<li>Q2: 造词无法使用</li>
+<li>Ref: <a href="https://github.com/viogus/eim">eim</a>, <a href="https://www.emacswiki.org/emacs/EimForChinese">eim_wiki</a>, <a href="http://tumashu.github.io/chinese-pyim/">chinese-pyim</a>
+
+<ul>
+<li>eim wubi feature
+
+<ol>
+<li>能导入输入历史</li>
+<li>提供造词的命令</li>
+<li>提供候选的单字</li>
+<li>拼音输入，提示五笔字根</li>
+<li>处理标点</li>
+<li>使用 ; &lsquo; 快速选择</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>R12: chinese-wbim 本身问题，主要是对 eim 拼音改进，五笔功能丢失</li>
+<li>A12
+
+<ul>
+<li>LC_ALL fcitx
+
+<ul>
+<li><p>添加词组</p>
+
+<ul>
+<li>编写 mb 文件：</li>
+</ul>
+
+
+<p>ks 快速
+放入个人用户文件夹内：
+~/.config/fcitx/data/mywb.mb
+也可以放进 share 文件夹，供所有用户使用：
+/usr/share/fcitx/data/mywb.mb</p>
+
+<ul>
+<li>左 ctrl+8 添加新词;左 ctrl+7 删除词;左 ctrl+6 调整顺序</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>chinese layer 中用 eim 代替 chinese-wbim，需要改配置，local 文件夹导入 eim</li>
+</ul>
+</li>
+<li>R2: eim 在 emacs 重起后自造词不可用</li>
+</ul>
+</li>
+<li><p>new</p>
+
+<ul>
+<li><strong>chinese-wbim-punc-translate-toggle:</strong> 改标点</li>
+<li><strong>chinese-wbim-table-add-word:</strong> 添加词
+
+<ul>
+<li>修改<a href="file:///home/myth/.emacs.d/elpa/chinese-wbim-20150623.2050/chinese-wbim-wb.el">chinese-wbim-wb.el</a>, 将 mywb.txt 和 wbx-history 文件位置设置好</li>
+</ul>
+</li>
+<li>修改<a href="file:///home/myth/.emacs.d/layers/+intl/chinese/packages.el">packages.el</a>  (setq chinese-wbim-use-tooltip t)</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>myconf -> spacemacs</p>
+
+<ul>
+<li>.spacemacs -> add exist layer (python org) to <code>dotspacemacs-configuration-layers</code></li>
+<li>.spacemacs -> add conf to <code>dotspacemacs/config</code></li>
+<li><code>&lt;space&gt;: configuration-layer/create-layer</code> &amp; put conf to my layer</li>
+</ul>
+</li>
+<li><p>Q: org-agenda not fuc</p>
+
+<p>delete org/*.elc</p></li>
+<li><p>update</p>
+
+<ul>
+<li>boot gui, update</li>
+<li><code>git pull --rebase; git submodule sync; git submodule update</code></li>
+</ul>
+</li>
+<li><p>输入法，字体，字典</p>
+
+<ol>
+<li><p>已经有 spacemacs contrib 中的 chinese 包较好解决了 输入，字典，字体等问题。还在 dev 分支中，下载到 private 中调用。</p>
+
+<ul>
+<li>中文输入已经集成了 eim 的后续 chinese-wbim 和 chinese-pyim，设置了默认 wb，注意翻页用 C-n 和 C-p</li>
+<li>目前 youdao 字典的 search at point 命令无法使用，可能和 eim 一样需要 popup 包的支持，但未安装; 但直接 search 是可以用的。</li>
+<li><p>中文字体效果，参考其配置，在 dotspacemacs/config 中设置</p>
+
+<pre><code>(spacemacs//set-monospaced-font   "Source Code Pro" "WenQuanYi Micro Hei" 14 14)
+</code></pre></li>
+</ul>
+</li>
+<li><p>另有关于 emacs 中文设置的一些项目值得参考</p>
+
+<ul>
+<li><a href="https://github.com/hick/emacs-chinese">https://github.com/hick/emacs-chinese</a></li>
+<li><a href="https://github.com/tumashu/chinese-fonts-setup">https://github.com/tumashu/chinese-fonts-setup</a></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>refs:</p>
+
+<ul>
+<li>rock: <a href="http://spacemacs.brianthicks.com/">http://spacemacs.brianthicks.com/</a></li>
+</ul>
+</li>
+<li><p>DONE spacemacs update     :note:</p>
+
+<ul>
+<li>Q1: 0.13 -> 0.15, 手动更新, 有一个包不支持 24.3</li>
+<li>A: ppa 安装了 daily 版本的 emacs, 减少源码安装的麻烦</li>
+</ul>
+</li>
+</ol>
+
+
+<h3>spacemacs rocks<a id="orgheadline59"></a></h3>
+
+<ol>
+<li><p>DONE space f f 不指定自动选择的已存在文件</p>
+
+<p>  C-l
+<span class="timestamp-wrapper"><span class="timestamp">[2017-02-08 三 23:44]</span></span></p></li>
+<li><p>常用包的使用</p>
+
+<ul>
+<li>搜索: ivy, swiper, counsel
+
+<ul>
+<li>C-&lsquo;: 选择</li>
+<li>M-i: 选择项填写在 minibuffer 上</li>
+<li>M-n, M-p: 改目录历史</li>
+<li>S-spc: 迭代搜索</li>
+<li>C-o: vim 式功能选择</li>
+<li>M-o: action 功能选择</li>
+</ul>
+</li>
+<li>occur: [spc o w] 搜索, e 直接编辑</li>
+<li>imenu: [spc s j] 本文档结构菜单</li>
+<li>ag: [spc s a a], C-c C-e 直接编辑</li>
+<li>补全: company, hippie(s-/), auto-yasnippet(~, aya-create, aya-expand)</li>
+<li>缩写: global-abbrev-table, 8 开头</li>
+<li>hungry-delete: 一次删除连续空白</li>
+<li>C-=: expand region, 区域扩展</li>
+<li>evil-surround: virtual mode 区域加() <code>s(</code>, noraml mode 改括号为引号 cs("</li>
+<li>smartparens: 自动加, 去, 改括号</li>
+<li>iedit-mode: 词的多位置同时修改</li>
+<li>更好的缩进: C-M-\\ indent-region-or-buffer</li>
+<li>dired: C-x C-j 打开文件所在目录, C-x C-q 编辑</li>
+<li>which-key: 快捷键提示</li>
+</ul>
+</li>
+</ol>
+
+
+<h2>octopress + github + orgmode = blog<a id="orgheadline62"></a></h2>
+
+<h3>参考<a id="orgheadline61"></a></h3>
+
+<ul>
+<li><a href="http://www.iamlbk.com/blog/20160108/octopress-add-tag-cloud/">标签云的添加和设置</a></li>
+<li><a href="http://fwhyy.com/2013/05/octopress-blog-setting/">octopress 设置</a></li>
+</ul>
+
+
+<h2>at 命令     :at:<a id="orgheadline63"></a></h2>
+
+<p>以前 at 命令始终无法生效，昨天终于知道原因了。</p>
+
+<p>先是发现 touch 一个新文件是可以成功的，可见 at 命令的机制是成功的，执行 gedit 等不成功感觉与可视窗口有关。
+后发现在 10.04 上 at 命令的出错发信机制是成功的，看到 mail 后进一步明确这点。
+尝试在 gedit 或 zenity 前加上 export DISPLAY=:0.0, 终于可以成功了。</p>
+
+<p>另外，at 命令所使用的 <em>bin/sh 与终端 bash 环境变量不同. 如 alias 无法使用, 应
+使用 =. ~</em>.bash_aliases= 后再使用 notify (不需要 export DISPLAY)等.</p>
+
+<h2>crontab 注意<a id="orgheadline66"></a></h2>
+
+<h3>环境变量和配置文件<a id="orgheadline64"></a></h3>
+
+<ul>
+<li><code>/etc/profile</code> 和 <code>~/.bash_profile</code> 是登录 shell 时仅执行一次</li>
+<li><code>~/.bashrc</code> 是每打开 shell 时都执行一次</li>
+<li>可以尝试在 crontab 中直接引入环境变量解决问题: <code>. /etc/profile</code></li>
+</ul>
+
+
+<h3>注意事项<a id="orgheadline65"></a></h3>
+
+<ul>
+<li>当 crontab 突然失效时，可以尝试/etc/init.d/crond restart 解决问题。</li>
+<li>每条 JOB 执行完毕之后，系统会自动将输出发送邮件给当前系统用户。日积月累，非常的多，甚至会撑爆整个系统。所以每条 JOB 命令后面进行重定向处理是非常必要的： >/dev/null 2>&amp;1</li>
+<li>在 crontab 中%是有特殊含义的，表示换行的意思。如果要用的话必须进行转义\%，如经常用的 date ‘+%Y%m%d’在 crontab 里是不会执行的，应该换成 date ‘+\%Y\%m\%d’`</li>
+</ul>
+
+
+<h2>Warcycling<a id="orgheadline67"></a></h2>
+
+<p>目前较为流行的 Warcycling 软件有，NetStumbler（Windows）、Kismet（Linux）、KisMac（Mac OS/X）、Wigle WiFi（Android）等等。</p>
+
+<h2>DONE mencoder 转换     :mencoder:<a id="orgheadline68"></a></h2>
+
+<ul>
+<li><p>State &ldquo;DONE&rdquo;       <span class="timestamp-wrapper"><span class="timestamp">[2011-01-01 六 20:30] </span></span></p>
+
+<ul>
+<li>add srt subtitle to movie</li>
+</ul>
+
+
+<p>avisrt.sh:</p>
+
+<p>mencoder -o a.avi
+-oac copy -ovc lavc -vf scale=720:480
+-sub file.srt -subfont-text-scale 2 -subfont-outline 2
+-subpos 100 -subcp cp936 -font &ldquo;Microsoft YaHei&rdquo; file.avi</p>
+
+<ul>
+<li>for mkv file</li>
+</ul>
+
+
+<p>mkvmerge -i file.mkv</p>
+
+<p>mkvextract tracks file.mkv 4:file.srt</p>
+
+<p>mencoder -o a.avi
+-oac mp3lame -lameopts cbr=128
+-ovc lavc -vf scale=720:480
+-sub file.srt -subfont-text-scale 2 -subfont-outline 2
+-subpos 100 -subcp cp936 -font &ldquo;Microsoft YaHei&rdquo;
+file.mkv</p></li>
+</ul>
+
+
+<p>:ARCHIVE_TIME: 2011-07-24 日 17:37</p>
+
+<h2>DONE rime 定制     :rime:wubi:<a id="orgheadline72"></a></h2>
+
+<ul>
+<li>State &ldquo;DONE&rdquo;       from &ldquo;DOING&rdquo;      <span class="timestamp-wrapper"><span class="timestamp">[2015-04-05 日 08:23]</span></span></li>
+<li>State &ldquo;DOING&rdquo;      from &ldquo;TODO&rdquo;       <span class="timestamp-wrapper"><span class="timestamp">[2015-04-03 五 06:46]</span></span></li>
+</ul>
+
+
+<p>参考：wiz 笔记上 Rime 五笔设置 - 晶晶的日志 - 网易博客
+rimeNewBie 针对 win 上拼音输入的方案， 解压到配置文件夹后部署即可。</p>
+
+<h3>词库导入的方法<a id="orgheadline69"></a></h3>
+
+<ul>
+<li>深蓝词库转换</li>
+<li><code>rime_dict_manager -i wubi86 ~/Downloads/QQ 五笔系统词库</code></li>
+<li>效率问题在 docx 教程中链接有详述</li>
+</ul>
+
+
+<h3>五笔功能激活<a id="orgheadline70"></a></h3>
+
+<p>默认中州韵安装不带五笔</p>
+
+<ul>
+<li><code>apt-get install librime-data-wubi</code></li>
+<li>修改配置, 在 docx 教程的坚果云配置基础上修改.</li>
+<li>配置文件不在 .config/rime, 而在 .config/fcitx/rime</li>
+</ul>
+
+
+<h3>rime 同步配置<a id="orgheadline71"></a></h3>
+
+<p>具体在 docx 教程中详细说明.</p>
+
+<ul>
+<li>利用坚果云网盘, 设置同步文件夹</li>
+<li>在 installation.yaml 中, 设置 sync_dir 到同步文件夹</li>
+<li>同步过程, .config/fcitx/rime -> sync_dir 词库, 配置, &lt;- 词库</li>
+</ul>
+
+
+<h2>sublime skills<a id="orgheadline73"></a></h2>
+
+<ul>
+<li>shift+right mouse || middle mouse: column select</li>
+<li>Ctrl+p, Ctrl+Shift+p: recent files, cmd line (support abbrev)</li>
+<li>Ctrl+d, Ctrl+k Ctrl+d, Alt+F3: choose/kill  another/all examples</li>
+<li>convert indentation to tabs</li>
+<li>括号前后移动光标：ctrl + m</li>
+<li>Goto 一共有四种 Goto：
+
+<ul>
+<li>cmd+p 文件定位</li>
+<li>cmd+; 词语定位 #</li>
+<li>cmd+r 函数定位 @</li>
+<li>cmd+g 行号定位 :</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>DONE 封装工具使用     :jys:<a id="orgheadline74"></a></h2>
+
+<p><span class="timestamp-wrapper"><span class="timestamp">[2016-05-03 二 09:32]</span></span></p>
+
+<ul>
+<li>流程
+
+<ul>
+<li>减肥 -> 应答文件 -> 卸载驱动(有 2 个不能删) -> 定制系统 -> dllcache -> ghost
+
+<ol>
+<li>计算机: Standard PC</li>
+<li>IDE 驱动器: 标准双通道</li>
+</ol>
+</li>
+<li>正常安装 -> 软件, 补丁,优化系统 -> 定制准备 -> 定制系统(2 个驱动修改) -> dllcache -> ghost
+
+<ol>
+<li>定制准备
+
+<ol>
+<li>d 盘程序, 我的文档 -> 7zip 自解压 -> c:\sysprep</li>
+<li>驱动包 -> c:\sysprep</li>
+<li>C 盘程序 program files 文件夹压缩包</li>
+<li>部署背景图 -> c:\windows\system32</li>
+<li>dllcache -> c:\windows\system32</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>工具:
+
+<ul>
+<li>IT 天空万能驱动</li>
+<li>智能软件选择安装</li>
+<li>瘦身及优化工具</li>
+</ul>
+</li>
+<li>技巧
+
+<ul>
+<li>注册表项 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders 常用目录定制</li>
+<li>系统属性:更新还原高级</li>
+<li>msconfig:服务</li>
+<li>gpedit.msc</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>tmux 使用     :tmux:<a id="orgheadline75"></a></h2>
+
+<ul>
+<li><p>一些管理 sessions 的命令</p>
+
+<pre><code>$ tmux list-session
+$ tmux new-session &lt;会话名&gt;
+$ tmux attach-session -t &lt;会话名&gt;
+$ tmux rename-session -t &lt;会话名&gt;
+$ tmux choose-session -t &lt;会话名&gt;
+$ tmux kill-session -t &lt;会话名&gt;
+</code></pre></li>
+<li>cmds: 默认 C-b 快捷键前缀
+
+<ul>
+<li><strong>s:</strong> list sessions</li>
+<li><strong>d:</strong> detach</li>
+<li><strong>c:</strong> new window</li>
+<li><strong>f:</strong> list frames</li>
+<li><strong>&ldquo;, %:</strong> new panes</li>
+<li><strong>up, down:</strong> move between panes</li>
+</ul>
+</li>
+<li>复制
+
+<ul>
+<li>a.PREFIX [ 进入复制模式</li>
+<li>b.按 space 开始复制，移动光标选择复制区域</li>
+<li>c.按 Enter 复制并退出 copy-mode。</li>
+<li>d.将光标移动到指定位置，按 PREIFX ] 粘贴</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>mednafen (nes 游戏模拟器的使用)<a id="orgheadline78"></a></h2>
+
+<h3>还有些功能 /usr/share/doc/mednafen/mednafen.html 自行查询<a id="orgheadline76"></a></h3>
+
+<ul>
+<li>f1 - 常用快捷键菜单</li>
+<li>Alt + Shift + [n] - 设置控制器 n(1-5)</li>
+<li>f2 - 更改默认的功能键</li>
+<li>F5 - 即时存档 类似于 epsxe 的即时存档 用 1~0 十个数字选择即时存档位置 用 F7 进行读取</li>
+<li>F6 - 选择磁盘(FC)</li>
+<li>F7 - 读取即时存档</li>
+<li>F8 - 投弊 ; 插入/退出磁盘(FC)</li>
+<li>F12/ESC - 离开</li>
+<li>` \ 加速, 减速</li>
+<li>f3 - 探测摇杆键位？</li>
+<li>ALT + S - 开启倒带功能(游戏中时间倒流) ; 游戏时按 ← 键</li>
+<li>F9 - 游戏截图</li>
+<li>F10 - 软件重启</li>
+<li>F11 - 硬件重启</li>
+</ul>
+
+
+<h3>一些问题的解决<a id="orgheadline77"></a></h3>
+
+<p>参考系统中自带文档，主要通过修改配置文件 ~/.mednafen/mednafen-09x.cfg</p>
+
+<ul>
+<li>无声音
+
+<ul>
+<li>doc 里有解释方法，修改 sound.device 从 default 到 hw:1</li>
+</ul>
+</li>
+<li>全屏太小
+
+<ul>
+<li>nes.stretch 改为 aspect</li>
+</ul>
+</li>
+</ul>
+
+
+<h1>task with tools<a id="orgheadline88"></a></h1>
+
+<h2>DONE emacs 语音输入     :#pMyth:#aNotes:<a id="orgheadline80"></a></h2>
+
+<p>github 上发现利用手机 ssh 终端和 emacsclient 输入中文到当前 emacs buffer 的 el 文件.
+尝试发现手机 ssh 执行 emacsclient -nw 后, 连接上很快退出. 尝试端口映射没能解决.</p>
+
+<p>但用手机 ssh 终端语音输入的方法可行. 可以 vim 输入, 也可 echo 重定向到指定 tmp 文件.
+写了个 shell 脚本 e 来做此事.</p>
+
+<pre><code>e "输入中文" # 输出到~/Downloads/test.org
+e # rm test.org
+</code></pre>
+
+<p><span class="timestamp-wrapper"><span class="timestamp">[2017-01-15 日 15:54]</span></span></p>
+
+<h2>简历<a id="orgheadline81"></a></h2>
+
+<p>使用 moderncv 或 komacv 宏包, 在原模板基础上修改.</p>
+
+<ul>
+<li>安装好 texlive 后, 缺少的宏包通过 <code>tlmgr install</code> 安装.</li>
+<li>缺少的字体拷贝到 <code>~/.fonts/</code> 目录后运行 <code>fc-cache -fv</code> 更新字体.</li>
+</ul>
+
+
+<h2>emacs vim 等宽字体配置<a id="orgheadline85"></a></h2>
+
+<p>可以实现中英文混排表格的对齐
+{&ldquo;Dejavu Sans Mono 10&rdquo; 与 &ldquo;WenQuanyi Micro Hei Mono 12&rdquo;}
+{&ldquo;Dejavu Sans Mono 14&rdquo; 与 &ldquo;WenQuanyi Micro Hei Mono 16&rdquo;}
+{&ldquo;Consolas 11&rdquo; 与 &ldquo;Microsoft Yahei 16&rdquo;}
+{&ldquo;Liberation Mono 12&rdquo; 与 &ldquo;WenQuanYi Micro Hei Mono 15&rdquo;}</p>
+
+<h3>vim font @winXP<a id="orgheadline84"></a></h3>
+
+<ol>
+<li><p>Q: 可选字体很少</p>
+
+<ul>
+<li>R:
+
+<ul>
+<li>官方编译的 vim 只列等宽字体</li>
+<li>字体列表未刷新</li>
+</ul>
+</li>
+<li>A:
+
+<ul>
+<li>自己编译?</li>
+<li>用控制面板-字体刷新</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Q: 中英文字体分别配置, 宽度合适</p>
+
+<ul>
+<li><p>所有 win vim 中文相关配置, 避免乱码</p>
+
+<pre><code>set guifont=Courier_new:h11
+set guifontwide=新宋体:h11
+set encoding=utf-8
+set fileencodings=utf-8,chinese,latin-1
+if has("win32")
+set fileencoding=chinese
+else
+set fileencoding=utf-8
+endif
+"解决菜单乱码
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+"解决 console 输出乱码
+language messages zh_CN.utf-8
+</code></pre></li>
+<li>A:
+
+<ul>
+<li>guifont(gfn), guifontwide(gfw)分别设置, 需要编译支持, 官方默认不支持</li>
+<li>注册表 fontlink, 见图, 缺点是中文字体可能变形
+<img src="./tool/figs/xp-fontlink.png" alt="img" /></li>
+<li>使用改造过的混合字体 Yahei Consolas Hybrid</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+
+
+<h2>python 自动安装模块<a id="orgheadline86"></a></h2>
+
+<p>python 脚本自动登录 ssh 网点,需要 setuptools 绝对是个好东西，它可以自动的安装模块，只
+    需要你提供给它一个模块名字就可以了，并且自动帮你解决模块的依赖问题。一般情况
+    下用 setuptools 给安装的模块会自动放到一个后缀是.egg 的目录里，下面看看怎么用
+    setuptools。首先，需要安装 setuptools 这个东西，安装它很简单，先去下载一个脚本：
+    　<a href="http://peak.telecommunity.com/dist/ez_setup.py">http://peak.telecommunity.com/dist/ez_setup.py</a> 下载完后直接执行它就会帮你把
+    setuptools 给装好了。</p>
+
+<p>之后安装模块的使用方法就是使用一个叫 easy_install 的命令，在 Windows 里，这个命令
+在 python 安装目录下的 scripts 里面，所以需要把 scripts 加到环境变量的 PATH 里，这样
+用起来就更方便，linux 下不需要注意这个问题。</p>
+
+<p>安装软件只需要执行</p>
+
+<p>easy_install 模块名</p>
+
+<p>就可以了，比如要安装 cherrypy，就把上面的模块名换成 cherrypy 就可以了。</p>
+
+<p>yaourt python-pip</p>
+
+<h2>ps 制作多张图片合成具有融入感的 PPT 背景图片<a id="orgheadline87"></a></h2>
+
+<ul>
+<li>高斯模糊</li>
+<li>羽化选区, 配合模糊的橡皮</li>
+<li>蒙板和渐变工具(白黑变化)</li>
+</ul>
+
 ]]></content>
   </entry>
   
